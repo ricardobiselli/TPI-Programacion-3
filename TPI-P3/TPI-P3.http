@@ -1,0 +1,6 @@
+@TPI_P3_HostAddress = http://localhost:5171
+
+GET {{TPI_P3_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
