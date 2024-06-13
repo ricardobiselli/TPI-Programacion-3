@@ -1,7 +1,7 @@
 {
   "version": 2,
-  "dgSpecHash": "o5npPYbFbEU=",
-  "success": false,
+  "dgSpecHash": "GToLRudcUqE=",
+  "success": true,
   "projectFilePath": "C:\\Users\\ricar\\source\\repos\\TPI-P3\\TPI-P3\\Presentation.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\ricar\\.nuget\\packages\\humanizer\\2.14.1\\humanizer.2.14.1.nupkg.sha512",
@@ -148,15 +148,5 @@
     "C:\\Users\\ricar\\.nuget\\packages\\system.threading.tasks.dataflow\\7.0.0\\system.threading.tasks.dataflow.7.0.0.nupkg.sha512",
     "C:\\Users\\ricar\\.nuget\\packages\\system.windows.extensions\\7.0.0\\system.windows.extensions.7.0.0.nupkg.sha512"
   ],
-  "logs": [
-    {
-      "code": "NU1108",
-      "level": "Error",
-      "message": "Cycle detected. \r\n  Presentation -> Application -> Infrastructure -> Application.",
-      "libraryId": "Application",
-      "targetGraphs": [
-        "net8.0"
-      ]
-    }
-  ]
+  "logs": []
 }

@@ -32,8 +32,8 @@ namespace Domain.Models.Products
         public string? Category { get; set; }
         public decimal PowerConsumption { get; set; }
 
-        public Compatibility? Compatibilities { get; set; }
-        public ICollection<Order>? Orders { get; set; }
-        public ICollection<ShoppingCart>? ShoppingCarts { get; set; }
+        public Compatibility? Compatibilities { get; set; } // one to one
+        public ICollection<Order>? Orders { get; set; } // many to many
+        public ICollection<ShoppingCart>? ShoppingCarts { get; set; } // many to many
     }
 }

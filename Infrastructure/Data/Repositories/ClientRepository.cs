@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Application.Interfaces;
 using Application.IRepositories;
 using Domain.Models.Users;
 using Microsoft.EntityFrameworkCore;

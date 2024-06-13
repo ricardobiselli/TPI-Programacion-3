@@ -1,7 +1,7 @@
 {
   "version": 2,
-  "dgSpecHash": "/VzVzByba5U=",
-  "success": false,
+  "dgSpecHash": "RZ2mxTkAFQU=",
+  "success": true,
   "projectFilePath": "C:\\Users\\ricar\\source\\repos\\TPI-P3\\Infrastructure\\Infrastructure.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\ricar\\.nuget\\packages\\microsoft.data.sqlite.core\\8.0.6\\microsoft.data.sqlite.core.8.0.6.nupkg.sha512",
@@ -29,15 +29,5 @@
     "C:\\Users\\ricar\\.nuget\\packages\\system.text.encodings.web\\8.0.0\\system.text.encodings.web.8.0.0.nupkg.sha512",
     "C:\\Users\\ricar\\.nuget\\packages\\system.text.json\\8.0.0\\system.text.json.8.0.0.nupkg.sha512"
   ],
-  "logs": [
-    {
-      "code": "NU1108",
-      "level": "Error",
-      "message": "Cycle detected. \r\n  Infrastructure -> Application -> Infrastructure.",
-      "libraryId": "Infrastructure",
-      "targetGraphs": [
-        "net8.0"
-      ]
-    }
-  ]
+  "logs": []
 }

@@ -2506,8 +2506,7 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v8.0",
         "dependencies": {
-          "Domain": "1.0.0",
-          "Infrastructure": "1.0.0"
+          "Domain": "1.0.0"
         },
         "compile": {
           "bin/placeholder/Application.dll": {}
@@ -2531,7 +2530,6 @@
         "framework": ".NETCoreApp,Version=v8.0",
         "dependencies": {
           "Application": "1.0.0",
-          "Domain": "1.0.0",
           "Microsoft.EntityFrameworkCore": "8.0.6",
           "Microsoft.EntityFrameworkCore.Sqlite": "8.0.6"
         },
@@ -7111,6 +7109,7 @@
   "projectFileDependencyGroups": {
     "net8.0": [
       "Application >= 1.0.0",
+      "Infrastructure >= 1.0.0",
       "Microsoft.EntityFrameworkCore.Tools >= 8.0.5",
       "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 8.0.2",
       "Swashbuckle.AspNetCore >= 6.4.0"
@@ -7146,6 +7145,9 @@
           "projectReferences": {
             "C:\\Users\\ricar\\source\\repos\\TPI-P3\\Application\\Application.csproj": {
               "projectPath": "C:\\Users\\ricar\\source\\repos\\TPI-P3\\Application\\Application.csproj"
+            },
+            "C:\\Users\\ricar\\source\\repos\\TPI-P3\\Infrastructure\\Infrastructure.csproj": {
+              "projectPath": "C:\\Users\\ricar\\source\\repos\\TPI-P3\\Infrastructure\\Infrastructure.csproj"
             }
           }
         }
@@ -7202,16 +7204,5 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.300/PortableRuntimeIdentifierGraph.json"
       }
     }
-  },
-  "logs": [
-    {
-      "code": "NU1108",
-      "level": "Error",
-      "message": "Cycle detected. \r\n  Presentation -> Application -> Infrastructure -> Application.",
-      "libraryId": "Application",
-      "targetGraphs": [
-        "net8.0"
-      ]
-    }
-  ]
+  }
 }

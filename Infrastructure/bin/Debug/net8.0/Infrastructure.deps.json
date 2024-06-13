@@ -9,7 +9,6 @@
       "Infrastructure/1.0.0": {
         "dependencies": {
           "Application": "1.0.0",
-          "Domain": "1.0.0",
           "Microsoft.EntityFrameworkCore": "8.0.6",
           "Microsoft.EntityFrameworkCore.Sqlite": "8.0.6"
         },
