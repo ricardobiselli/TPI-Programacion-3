@@ -1,5 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Domain.Models;
+using Domain.Models.Users;
+using Domain.Models.Purchases;
+using Domain.Models.Products;
 
 namespace Infrastructure.Data
 {
@@ -21,44 +23,77 @@ namespace Infrastructure.Data
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            base.OnModelCreating(modelBuilder);
+            {
+                modelBuilder.Entity<Product>()
+                    .HasOne(p => p.Compatibilities)
+                    .WithOne(c => c.Product)
+                    .HasForeignKey<Compatibility>(c => c.ProductId)
+                    .OnDelete(DeleteBehavior.Cascade);
 
-            // User - AdminClass - SuperAdmin
-           /*modelBuilder.Entity<AdminClass>()
-                .HasOne(a => a.User)
-                .WithOne()
-                .HasForeignKey<AdminClass>(a => a.Id);
+                modelBuilder.Entity<Client>()
+                    .HasMany(c => c.Orders)
+                    .WithOne(o => o.Client)
+                    .HasForeignKey(o => o.ClientId)
+                    .OnDelete(DeleteBehavior.Cascade);
 
-            modelBuilder.Entity<SuperAdmin>()
-                .HasOne(s => s.User)
-                .WithOne()
-                .HasForeignKey<SuperAdmin>(s => s.Id);
-           
+                modelBuilder.Entity<Client>()
+                    .HasMany(c => c.Payments)
+                    .WithOne(p => p.Client)
+                    .HasForeignKey(p => p.ClientId)
+                    .OnDelete(DeleteBehavior.Cascade);
 
-            // Client - Order
-            modelBuilder.Entity<Client>()
-                .HasMany(c => c.Orders)
-                .WithOne(o => o.Client)
-                .HasForeignKey(o => o.ClientId);
+                modelBuilder.Entity<Client>()
+                    .HasOne(c => c.Cart)
+                    .WithOne(sc => sc.Client)
+                    .HasForeignKey<ShoppingCart>(sc => sc.ClientId)
+                    .OnDelete(DeleteBehavior.Cascade);
 
-            // Order - Product
-            modelBuilder.Entity<Order>()
-                .HasMany(o => o.Products)
-                .WithOne(p => p.Order)
-                .HasForeignKey(p => p.OrderId);
+                modelBuilder.Entity<ShoppingCart>()
+                    .HasMany(sc => sc.Products)
+                    .WithMany(p => p.ShoppingCarts)
+                    .UsingEntity<Dictionary<string, object>>(
+                        "CartProduct",
+                        j => j
+                            .HasOne<Product>()
+                            .WithMany()
+                            .HasForeignKey("ProductId")
+                            .OnDelete(DeleteBehavior.Cascade),
+                        j => j
+                            .HasOne<ShoppingCart>()
+                            .WithMany()
+                            .HasForeignKey("CartId")
+                            .OnDelete(DeleteBehavior.Cascade),
+                        j =>
+                        {
+                            j.HasKey("CartId", "ProductId");
+                            j.ToTable("CartProduct");
+                        });
 
-            // Product - Compatibility
-            modelBuilder.Entity<Product>()
-                .HasMany(p => p.Compatibilities)
-                .WithOne(c => c.Product)
-                .HasForeignKey(c => c.ProductId);
+                modelBuilder.Entity<Order>()
+                    .HasMany(o => o.Products)
+                    .WithMany(p => p.Orders)
+                    .UsingEntity<Dictionary<string, object>>(
+                        "OrderProduct",
+                        j => j
+                            .HasOne<Product>()
+                            .WithMany()
+                            .HasForeignKey("ProductId")
+                            .OnDelete(DeleteBehavior.Cascade),
+                        j => j
+                            .HasOne<Order>()
+                            .WithMany()
+                            .HasForeignKey("OrderId")
+                            .OnDelete(DeleteBehavior.Cascade),
+                        j =>
+                        {
+                            j.HasKey("OrderId", "ProductId");
+                            j.ToTable("OrderProduct");
+                        });
 
-            // Product - ShoppingCart
-            modelBuilder.Entity<Product>()
-                .HasOne(p => p.ShoppingCart)
-                .WithMany(c => c.Products)
-                .HasForeignKey(p => p.ShoppingCartId);
-           */
+                base.OnModelCreating(modelBuilder);
+            }
+
         }
+
     }
 }
