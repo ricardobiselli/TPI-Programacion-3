@@ -31,6 +31,9 @@
             "projectReferences": {
               "C:\\Users\\ricar\\source\\repos\\TPI-P3\\Domain\\Domain.csproj": {
                 "projectPath": "C:\\Users\\ricar\\source\\repos\\TPI-P3\\Domain\\Domain.csproj"
+              },
+              "C:\\Users\\ricar\\source\\repos\\TPI-P3\\Infrastructure\\Infrastructure.csproj": {
+                "projectPath": "C:\\Users\\ricar\\source\\repos\\TPI-P3\\Infrastructure\\Infrastructure.csproj"
               }
             }
           }

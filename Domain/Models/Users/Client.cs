@@ -14,7 +14,7 @@ namespace Domain.Models.Users
             LastName = lastName;
             DniNumber = dniNumber;
             Address = address;
-            ZipCode = zipCode;
+            //ZipCode = zipCode;
             PhoneNumber = phoneNumber;
             BirthDate = DateTime.Now;
             Orders = new List<Order>();
@@ -27,7 +27,7 @@ namespace Domain.Models.Users
         public string? DniNumber { get; set; }
         public DateTime BirthDate { get; set; }
         public string? Address { get; set; }
-        public int ZipCode { get; set; }
+        //public int ZipCode { get; set; }
         public string? PhoneNumber { get; set; }
 
         public ICollection<Order>? Orders { get; set; }
