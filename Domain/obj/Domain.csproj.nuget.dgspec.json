@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\ricar\\source\\repos\\TPI-P3\\Domain\\Domain.csproj": {}
+    "C:\\Users\\lucia\\source\\repos\\TPI-Programacion-3\\Domain\\Domain.csproj": {}
   },
   "projects": {
-    "C:\\Users\\ricar\\source\\repos\\TPI-P3\\Domain\\Domain.csproj": {
+    "C:\\Users\\lucia\\source\\repos\\TPI-Programacion-3\\Domain\\Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ricar\\source\\repos\\TPI-P3\\Domain\\Domain.csproj",
+        "projectUniqueName": "C:\\Users\\lucia\\source\\repos\\TPI-Programacion-3\\Domain\\Domain.csproj",
         "projectName": "Domain",
-        "projectPath": "C:\\Users\\ricar\\source\\repos\\TPI-P3\\Domain\\Domain.csproj",
-        "packagesPath": "C:\\Users\\ricar\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ricar\\source\\repos\\TPI-P3\\Domain\\obj\\",
+        "projectPath": "C:\\Users\\lucia\\source\\repos\\TPI-Programacion-3\\Domain\\Domain.csproj",
+        "packagesPath": "C:\\Users\\lucia\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\lucia\\source\\repos\\TPI-Programacion-3\\Domain\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\ricar\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\lucia\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -60,7 +60,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.204/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.202/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

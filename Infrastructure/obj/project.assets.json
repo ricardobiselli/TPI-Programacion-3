@@ -1203,19 +1203,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\ricar\\.nuget\\packages\\": {}
+    "C:\\Users\\lucia\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\ricar\\source\\repos\\TPI-P3\\Infrastructure\\Infrastructure.csproj",
+      "projectUniqueName": "C:\\Users\\lucia\\source\\repos\\TPI-Programacion-3\\Infrastructure\\Infrastructure.csproj",
       "projectName": "Infrastructure",
-      "projectPath": "C:\\Users\\ricar\\source\\repos\\TPI-P3\\Infrastructure\\Infrastructure.csproj",
-      "packagesPath": "C:\\Users\\ricar\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\ricar\\source\\repos\\TPI-P3\\Infrastructure\\obj\\",
+      "projectPath": "C:\\Users\\lucia\\source\\repos\\TPI-Programacion-3\\Infrastructure\\Infrastructure.csproj",
+      "packagesPath": "C:\\Users\\lucia\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\lucia\\source\\repos\\TPI-Programacion-3\\Infrastructure\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\ricar\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\lucia\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -1229,8 +1229,8 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "C:\\Users\\ricar\\source\\repos\\TPI-P3\\Domain\\Domain.csproj": {
-              "projectPath": "C:\\Users\\ricar\\source\\repos\\TPI-P3\\Domain\\Domain.csproj"
+            "C:\\Users\\lucia\\source\\repos\\TPI-Programacion-3\\Domain\\Domain.csproj": {
+              "projectPath": "C:\\Users\\lucia\\source\\repos\\TPI-Programacion-3\\Domain\\Domain.csproj"
             }
           }
         }
@@ -1275,7 +1275,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.204/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.202/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

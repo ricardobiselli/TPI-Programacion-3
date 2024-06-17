@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\ricar\\source\\repos\\TPI-P3\\TPI-P3\\Presentation.csproj": {}
+    "C:\\Users\\lucia\\source\\repos\\TPI-Programacion-3\\TPI-P3\\Presentation.csproj": {}
   },
   "projects": {
-    "C:\\Users\\ricar\\source\\repos\\TPI-P3\\Application\\Application.csproj": {
+    "C:\\Users\\lucia\\source\\repos\\TPI-Programacion-3\\Application\\Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ricar\\source\\repos\\TPI-P3\\Application\\Application.csproj",
+        "projectUniqueName": "C:\\Users\\lucia\\source\\repos\\TPI-Programacion-3\\Application\\Application.csproj",
         "projectName": "Application",
-        "projectPath": "C:\\Users\\ricar\\source\\repos\\TPI-P3\\Application\\Application.csproj",
-        "packagesPath": "C:\\Users\\ricar\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ricar\\source\\repos\\TPI-P3\\Application\\obj\\",
+        "projectPath": "C:\\Users\\lucia\\source\\repos\\TPI-Programacion-3\\Application\\Application.csproj",
+        "packagesPath": "C:\\Users\\lucia\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\lucia\\source\\repos\\TPI-Programacion-3\\Application\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\ricar\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\lucia\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -28,11 +28,11 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\ricar\\source\\repos\\TPI-P3\\Domain\\Domain.csproj": {
-                "projectPath": "C:\\Users\\ricar\\source\\repos\\TPI-P3\\Domain\\Domain.csproj"
+              "C:\\Users\\lucia\\source\\repos\\TPI-Programacion-3\\Domain\\Domain.csproj": {
+                "projectPath": "C:\\Users\\lucia\\source\\repos\\TPI-Programacion-3\\Domain\\Domain.csproj"
               },
-              "C:\\Users\\ricar\\source\\repos\\TPI-P3\\Infrastructure\\Infrastructure.csproj": {
-                "projectPath": "C:\\Users\\ricar\\source\\repos\\TPI-P3\\Infrastructure\\Infrastructure.csproj"
+              "C:\\Users\\lucia\\source\\repos\\TPI-Programacion-3\\Infrastructure\\Infrastructure.csproj": {
+                "projectPath": "C:\\Users\\lucia\\source\\repos\\TPI-Programacion-3\\Infrastructure\\Infrastructure.csproj"
               }
             }
           }
@@ -67,21 +67,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.204/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.202/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\ricar\\source\\repos\\TPI-P3\\Domain\\Domain.csproj": {
+    "C:\\Users\\lucia\\source\\repos\\TPI-Programacion-3\\Domain\\Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ricar\\source\\repos\\TPI-P3\\Domain\\Domain.csproj",
+        "projectUniqueName": "C:\\Users\\lucia\\source\\repos\\TPI-Programacion-3\\Domain\\Domain.csproj",
         "projectName": "Domain",
-        "projectPath": "C:\\Users\\ricar\\source\\repos\\TPI-P3\\Domain\\Domain.csproj",
-        "packagesPath": "C:\\Users\\ricar\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ricar\\source\\repos\\TPI-P3\\Domain\\obj\\",
+        "projectPath": "C:\\Users\\lucia\\source\\repos\\TPI-Programacion-3\\Domain\\Domain.csproj",
+        "packagesPath": "C:\\Users\\lucia\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\lucia\\source\\repos\\TPI-Programacion-3\\Domain\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\ricar\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\lucia\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -127,21 +127,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.204/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.202/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\ricar\\source\\repos\\TPI-P3\\Infrastructure\\Infrastructure.csproj": {
+    "C:\\Users\\lucia\\source\\repos\\TPI-Programacion-3\\Infrastructure\\Infrastructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ricar\\source\\repos\\TPI-P3\\Infrastructure\\Infrastructure.csproj",
+        "projectUniqueName": "C:\\Users\\lucia\\source\\repos\\TPI-Programacion-3\\Infrastructure\\Infrastructure.csproj",
         "projectName": "Infrastructure",
-        "projectPath": "C:\\Users\\ricar\\source\\repos\\TPI-P3\\Infrastructure\\Infrastructure.csproj",
-        "packagesPath": "C:\\Users\\ricar\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ricar\\source\\repos\\TPI-P3\\Infrastructure\\obj\\",
+        "projectPath": "C:\\Users\\lucia\\source\\repos\\TPI-Programacion-3\\Infrastructure\\Infrastructure.csproj",
+        "packagesPath": "C:\\Users\\lucia\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\lucia\\source\\repos\\TPI-Programacion-3\\Infrastructure\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\ricar\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\lucia\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -155,8 +155,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\ricar\\source\\repos\\TPI-P3\\Domain\\Domain.csproj": {
-                "projectPath": "C:\\Users\\ricar\\source\\repos\\TPI-P3\\Domain\\Domain.csproj"
+              "C:\\Users\\lucia\\source\\repos\\TPI-Programacion-3\\Domain\\Domain.csproj": {
+                "projectPath": "C:\\Users\\lucia\\source\\repos\\TPI-Programacion-3\\Domain\\Domain.csproj"
               }
             }
           }
@@ -201,21 +201,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.204/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.202/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\ricar\\source\\repos\\TPI-P3\\TPI-P3\\Presentation.csproj": {
+    "C:\\Users\\lucia\\source\\repos\\TPI-Programacion-3\\TPI-P3\\Presentation.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ricar\\source\\repos\\TPI-P3\\TPI-P3\\Presentation.csproj",
+        "projectUniqueName": "C:\\Users\\lucia\\source\\repos\\TPI-Programacion-3\\TPI-P3\\Presentation.csproj",
         "projectName": "Presentation",
-        "projectPath": "C:\\Users\\ricar\\source\\repos\\TPI-P3\\TPI-P3\\Presentation.csproj",
-        "packagesPath": "C:\\Users\\ricar\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ricar\\source\\repos\\TPI-P3\\TPI-P3\\obj\\",
+        "projectPath": "C:\\Users\\lucia\\source\\repos\\TPI-Programacion-3\\TPI-P3\\Presentation.csproj",
+        "packagesPath": "C:\\Users\\lucia\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\lucia\\source\\repos\\TPI-Programacion-3\\TPI-P3\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\ricar\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\lucia\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -229,8 +229,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\ricar\\source\\repos\\TPI-P3\\Application\\Application.csproj": {
-                "projectPath": "C:\\Users\\ricar\\source\\repos\\TPI-P3\\Application\\Application.csproj"
+              "C:\\Users\\lucia\\source\\repos\\TPI-Programacion-3\\Application\\Application.csproj": {
+                "projectPath": "C:\\Users\\lucia\\source\\repos\\TPI-Programacion-3\\Application\\Application.csproj"
               }
             }
           }
@@ -250,6 +250,10 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "Microsoft.AspNetCore.Cors": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
             "Microsoft.EntityFrameworkCore.Tools": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
@@ -284,7 +288,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.204/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.202/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
