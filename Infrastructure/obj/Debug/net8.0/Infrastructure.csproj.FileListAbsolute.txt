@@ -13,3 +13,6 @@ C:\Users\ricar\source\repos\TPI-P3\Infrastructure\obj\Debug\net8.0\Infrastructur
 C:\Users\ricar\source\repos\TPI-P3\Infrastructure\obj\Debug\net8.0\refint\Infrastructure.dll
 C:\Users\ricar\source\repos\TPI-P3\Infrastructure\obj\Debug\net8.0\Infrastructure.pdb
 C:\Users\ricar\source\repos\TPI-P3\Infrastructure\obj\Debug\net8.0\ref\Infrastructure.dll
+C:\Users\ricar\source\repos\TPI-P3\Infrastructure\obj\Debug\net8.0\Infrastructure.sourcelink.json
+C:\Users\ricar\source\repos\TPI-P3\Infrastructure\bin\Debug\net8.0\Application.dll
+C:\Users\ricar\source\repos\TPI-P3\Infrastructure\bin\Debug\net8.0\Application.pdb

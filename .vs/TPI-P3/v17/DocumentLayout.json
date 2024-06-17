@@ -3,60 +3,112 @@
   "WorkspaceRootPath": "C:\\Users\\ricar\\source\\repos\\TPI-P3\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{BD4B9B1B-9225-40DA-9E61-B49A2CCDD69A}|Domain\\Domain.csproj|c:\\users\\ricar\\source\\repos\\tpi-p3\\domain\\models\\users\\client.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BD4B9B1B-9225-40DA-9E61-B49A2CCDD69A}|Domain\\Domain.csproj|solutionrelative:domain\\models\\users\\client.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F215EEED-AE3C-4F2D-8AD0-83323008CF58}|TPI-P3\\Presentation.csproj|c:\\users\\ricar\\source\\repos\\tpi-p3\\tpi-p3\\controllers\\clientcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F215EEED-AE3C-4F2D-8AD0-83323008CF58}|TPI-P3\\Presentation.csproj|solutionrelative:tpi-p3\\controllers\\clientcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D643B7E8-3D21-4539-B036-2EC199D3685A}|Infrastructure\\Infrastructure.csproj|c:\\users\\ricar\\source\\repos\\tpi-p3\\infrastructure\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D643B7E8-3D21-4539-B036-2EC199D3685A}|Infrastructure\\Infrastructure.csproj|solutionrelative:infrastructure\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{F215EEED-AE3C-4F2D-8AD0-83323008CF58}|TPI-P3\\Presentation.csproj|c:\\users\\ricar\\source\\repos\\tpi-p3\\tpi-p3\\controllers\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F215EEED-AE3C-4F2D-8AD0-83323008CF58}|TPI-P3\\Presentation.csproj|solutionrelative:tpi-p3\\controllers\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DE50F24C-75E6-4358-8DD6-F1753CE087DC}|Application\\Application.csproj|c:\\users\\ricar\\source\\repos\\tpi-p3\\application\\interfaces\\iproductservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DE50F24C-75E6-4358-8DD6-F1753CE087DC}|Application\\Application.csproj|solutionrelative:application\\interfaces\\iproductservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{BD4B9B1B-9225-40DA-9E61-B49A2CCDD69A}|Domain\\Domain.csproj|c:\\users\\ricar\\source\\repos\\tpi-p3\\domain\\models\\products\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BD4B9B1B-9225-40DA-9E61-B49A2CCDD69A}|Domain\\Domain.csproj|solutionrelative:domain\\models\\products\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BD4B9B1B-9225-40DA-9E61-B49A2CCDD69A}|Domain\\Domain.csproj|c:\\users\\ricar\\source\\repos\\tpi-p3\\domain\\models\\users\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BD4B9B1B-9225-40DA-9E61-B49A2CCDD69A}|Domain\\Domain.csproj|solutionrelative:domain\\models\\users\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F215EEED-AE3C-4F2D-8AD0-83323008CF58}|TPI-P3\\Presentation.csproj|c:\\users\\ricar\\source\\repos\\tpi-p3\\tpi-p3\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{F215EEED-AE3C-4F2D-8AD0-83323008CF58}|TPI-P3\\Presentation.csproj|solutionrelative:tpi-p3\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{DE50F24C-75E6-4358-8DD6-F1753CE087DC}|Application\\Application.csproj|c:\\users\\ricar\\source\\repos\\tpi-p3\\application\\services\\clientservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{DE50F24C-75E6-4358-8DD6-F1753CE087DC}|Application\\Application.csproj|solutionrelative:application\\services\\clientservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BD4B9B1B-9225-40DA-9E61-B49A2CCDD69A}|Domain\\Domain.csproj|c:\\users\\ricar\\source\\repos\\tpi-p3\\domain\\interfaces\\iclient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BD4B9B1B-9225-40DA-9E61-B49A2CCDD69A}|Domain\\Domain.csproj|solutionrelative:domain\\interfaces\\iclient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{DE50F24C-75E6-4358-8DD6-F1753CE087DC}|Application\\Application.csproj|c:\\users\\ricar\\source\\repos\\tpi-p3\\application\\interfaces\\iclientservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE50F24C-75E6-4358-8DD6-F1753CE087DC}|Application\\Application.csproj|solutionrelative:application\\interfaces\\iclientservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BD4B9B1B-9225-40DA-9E61-B49A2CCDD69A}|Domain\\Domain.csproj|c:\\users\\ricar\\source\\repos\\tpi-p3\\domain\\models\\adminclass.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BD4B9B1B-9225-40DA-9E61-B49A2CCDD69A}|Domain\\Domain.csproj|solutionrelative:domain\\models\\adminclass.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{DE50F24C-75E6-4358-8DD6-F1753CE087DC}|Application\\Application.csproj|c:\\users\\ricar\\source\\repos\\tpi-p3\\application\\services\\productservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE50F24C-75E6-4358-8DD6-F1753CE087DC}|Application\\Application.csproj|solutionrelative:application\\services\\productservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BD4B9B1B-9225-40DA-9E61-B49A2CCDD69A}|Domain\\Domain.csproj|c:\\users\\ricar\\source\\repos\\tpi-p3\\domain\\models\\client.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BD4B9B1B-9225-40DA-9E61-B49A2CCDD69A}|Domain\\Domain.csproj|solutionrelative:domain\\models\\client.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{DE50F24C-75E6-4358-8DD6-F1753CE087DC}|Application\\Application.csproj|c:\\users\\ricar\\source\\repos\\tpi-p3\\application\\interfaces\\iproductservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE50F24C-75E6-4358-8DD6-F1753CE087DC}|Application\\Application.csproj|solutionrelative:application\\interfaces\\iproductservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BD4B9B1B-9225-40DA-9E61-B49A2CCDD69A}|Domain\\Domain.csproj|c:\\users\\ricar\\source\\repos\\tpi-p3\\domain\\models\\compatibility.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BD4B9B1B-9225-40DA-9E61-B49A2CCDD69A}|Domain\\Domain.csproj|solutionrelative:domain\\models\\compatibility.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{D643B7E8-3D21-4539-B036-2EC199D3685A}|Infrastructure\\Infrastructure.csproj|c:\\users\\ricar\\source\\repos\\tpi-p3\\infrastructure\\data\\repositories\\productrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D643B7E8-3D21-4539-B036-2EC199D3685A}|Infrastructure\\Infrastructure.csproj|solutionrelative:infrastructure\\data\\repositories\\productrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BD4B9B1B-9225-40DA-9E61-B49A2CCDD69A}|Domain\\Domain.csproj|c:\\users\\ricar\\source\\repos\\tpi-p3\\domain\\models\\order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BD4B9B1B-9225-40DA-9E61-B49A2CCDD69A}|Domain\\Domain.csproj|solutionrelative:domain\\models\\order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{DE50F24C-75E6-4358-8DD6-F1753CE087DC}|Application\\Application.csproj|c:\\users\\ricar\\source\\repos\\tpi-p3\\application\\irepositories\\iproductrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE50F24C-75E6-4358-8DD6-F1753CE087DC}|Application\\Application.csproj|solutionrelative:application\\irepositories\\iproductrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BD4B9B1B-9225-40DA-9E61-B49A2CCDD69A}|Domain\\Domain.csproj|c:\\users\\ricar\\source\\repos\\tpi-p3\\domain\\models\\payment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BD4B9B1B-9225-40DA-9E61-B49A2CCDD69A}|Domain\\Domain.csproj|solutionrelative:domain\\models\\payment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{F215EEED-AE3C-4F2D-8AD0-83323008CF58}|TPI-P3\\Presentation.csproj|c:\\users\\ricar\\source\\repos\\tpi-p3\\tpi-p3\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F215EEED-AE3C-4F2D-8AD0-83323008CF58}|TPI-P3\\Presentation.csproj|solutionrelative:tpi-p3\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BD4B9B1B-9225-40DA-9E61-B49A2CCDD69A}|Domain\\Domain.csproj|c:\\users\\ricar\\source\\repos\\tpi-p3\\domain\\models\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BD4B9B1B-9225-40DA-9E61-B49A2CCDD69A}|Domain\\Domain.csproj|solutionrelative:domain\\models\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{BD4B9B1B-9225-40DA-9E61-B49A2CCDD69A}|Domain\\Domain.csproj|c:\\users\\ricar\\source\\repos\\tpi-p3\\domain\\models\\users\\superadmin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BD4B9B1B-9225-40DA-9E61-B49A2CCDD69A}|Domain\\Domain.csproj|solutionrelative:domain\\models\\users\\superadmin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BD4B9B1B-9225-40DA-9E61-B49A2CCDD69A}|Domain\\Domain.csproj|c:\\users\\ricar\\source\\repos\\tpi-p3\\domain\\models\\shoppingcart.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BD4B9B1B-9225-40DA-9E61-B49A2CCDD69A}|Domain\\Domain.csproj|solutionrelative:domain\\models\\shoppingcart.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{BD4B9B1B-9225-40DA-9E61-B49A2CCDD69A}|Domain\\Domain.csproj|c:\\users\\ricar\\source\\repos\\tpi-p3\\domain\\models\\users\\adminclass.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BD4B9B1B-9225-40DA-9E61-B49A2CCDD69A}|Domain\\Domain.csproj|solutionrelative:domain\\models\\users\\adminclass.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BD4B9B1B-9225-40DA-9E61-B49A2CCDD69A}|Domain\\Domain.csproj|c:\\users\\ricar\\source\\repos\\tpi-p3\\domain\\models\\superadmin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BD4B9B1B-9225-40DA-9E61-B49A2CCDD69A}|Domain\\Domain.csproj|solutionrelative:domain\\models\\superadmin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{D643B7E8-3D21-4539-B036-2EC199D3685A}|Infrastructure\\Infrastructure.csproj|c:\\users\\ricar\\source\\repos\\tpi-p3\\infrastructure\\data\\repositories\\clientrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D643B7E8-3D21-4539-B036-2EC199D3685A}|Infrastructure\\Infrastructure.csproj|solutionrelative:infrastructure\\data\\repositories\\clientrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BD4B9B1B-9225-40DA-9E61-B49A2CCDD69A}|Domain\\Domain.csproj|c:\\users\\ricar\\source\\repos\\tpi-p3\\domain\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BD4B9B1B-9225-40DA-9E61-B49A2CCDD69A}|Domain\\Domain.csproj|solutionrelative:domain\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{DE50F24C-75E6-4358-8DD6-F1753CE087DC}|Application\\Application.csproj|c:\\users\\ricar\\source\\repos\\tpi-p3\\application\\irepositories\\iclientrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE50F24C-75E6-4358-8DD6-F1753CE087DC}|Application\\Application.csproj|solutionrelative:application\\irepositories\\iclientrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F215EEED-AE3C-4F2D-8AD0-83323008CF58}|TPI-P3\\Presentation.csproj|c:\\users\\ricar\\source\\repos\\tpi-p3\\tpi-p3\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{F215EEED-AE3C-4F2D-8AD0-83323008CF58}|TPI-P3\\Presentation.csproj|solutionrelative:tpi-p3\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+      "AbsoluteMoniker": "D:0:0:{BD4B9B1B-9225-40DA-9E61-B49A2CCDD69A}|Domain\\Domain.csproj|c:\\users\\ricar\\source\\repos\\tpi-p3\\domain\\models\\purchases\\shoppingcart.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BD4B9B1B-9225-40DA-9E61-B49A2CCDD69A}|Domain\\Domain.csproj|solutionrelative:domain\\models\\purchases\\shoppingcart.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BD4B9B1B-9225-40DA-9E61-B49A2CCDD69A}|Domain\\Domain.csproj|c:\\users\\ricar\\source\\repos\\tpi-p3\\domain\\models\\purchases\\order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BD4B9B1B-9225-40DA-9E61-B49A2CCDD69A}|Domain\\Domain.csproj|solutionrelative:domain\\models\\purchases\\order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BD4B9B1B-9225-40DA-9E61-B49A2CCDD69A}|Domain\\Domain.csproj|c:\\users\\ricar\\source\\repos\\tpi-p3\\domain\\domain.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{BD4B9B1B-9225-40DA-9E61-B49A2CCDD69A}|Domain\\Domain.csproj|solutionrelative:domain\\domain.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F215EEED-AE3C-4F2D-8AD0-83323008CF58}|TPI-P3\\Presentation.csproj|c:\\users\\ricar\\source\\repos\\tpi-p3\\tpi-p3\\presentation.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{F215EEED-AE3C-4F2D-8AD0-83323008CF58}|TPI-P3\\Presentation.csproj|solutionrelative:tpi-p3\\presentation.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D643B7E8-3D21-4539-B036-2EC199D3685A}|Infrastructure\\Infrastructure.csproj|c:\\users\\ricar\\source\\repos\\tpi-p3\\infrastructure\\infrastructure.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{D643B7E8-3D21-4539-B036-2EC199D3685A}|Infrastructure\\Infrastructure.csproj|solutionrelative:infrastructure\\infrastructure.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DE50F24C-75E6-4358-8DD6-F1753CE087DC}|Application\\Application.csproj|c:\\users\\ricar\\source\\repos\\tpi-p3\\application\\application.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{DE50F24C-75E6-4358-8DD6-F1753CE087DC}|Application\\Application.csproj|solutionrelative:application\\application.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BD4B9B1B-9225-40DA-9E61-B49A2CCDD69A}|Domain\\Domain.csproj|c:\\users\\ricar\\source\\repos\\tpi-p3\\domain\\models\\purchases\\payment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BD4B9B1B-9225-40DA-9E61-B49A2CCDD69A}|Domain\\Domain.csproj|solutionrelative:domain\\models\\purchases\\payment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BD4B9B1B-9225-40DA-9E61-B49A2CCDD69A}|Domain\\Domain.csproj|c:\\users\\ricar\\source\\repos\\tpi-p3\\domain\\models\\products\\compatibility.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BD4B9B1B-9225-40DA-9E61-B49A2CCDD69A}|Domain\\Domain.csproj|solutionrelative:domain\\models\\products\\compatibility.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D643B7E8-3D21-4539-B036-2EC199D3685A}|Infrastructure\\Infrastructure.csproj|c:\\users\\ricar\\source\\repos\\tpi-p3\\infrastructure\\migrations\\20240609033722_newcompatibilitydesign.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D643B7E8-3D21-4539-B036-2EC199D3685A}|Infrastructure\\Infrastructure.csproj|solutionrelative:infrastructure\\migrations\\20240609033722_newcompatibilitydesign.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\ricar\\source\\repos\\TPI-P3\\Infrastructure\\Migrations\\20240525053841_fixproductorderrelationship2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -65,10 +117,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\ricar\\source\\repos\\TPI-P3\\Infrastructure\\Migrations\\20240525053659_fixproductorderrelationship.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Infrastructure\\Migrations\\20240525053659_fixproductorderrelationship.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D643B7E8-3D21-4539-B036-2EC199D3685A}|Infrastructure\\Infrastructure.csproj|c:\\users\\ricar\\source\\repos\\tpi-p3\\infrastructure\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D643B7E8-3D21-4539-B036-2EC199D3685A}|Infrastructure\\Infrastructure.csproj|solutionrelative:infrastructure\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\ricar\\source\\repos\\TPI-P3\\Infrastructure\\Migrations\\20240525052551_initialcreate3.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -83,10 +131,6 @@
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Infrastructure\\Migrations\\20240525050553_initialcreate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F215EEED-AE3C-4F2D-8AD0-83323008CF58}|TPI-P3\\Presentation.csproj|c:\\users\\ricar\\source\\repos\\tpi-p3\\tpi-p3\\presentation.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
-      "RelativeMoniker": "D:0:0:{F215EEED-AE3C-4F2D-8AD0-83323008CF58}|TPI-P3\\Presentation.csproj|solutionrelative:tpi-p3\\presentation.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\ricar\\source\\repos\\TPI-P3\\Infrastructure\\Migrations\\20240525040812_InitialCreate3.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Infrastructure\\Migrations\\20240525040812_InitialCreate3.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -95,28 +139,96 @@
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Infrastructure\\Migrations\\20240525034215_InitialCreate2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D643B7E8-3D21-4539-B036-2EC199D3685A}|Infrastructure\\Infrastructure.csproj|c:\\users\\ricar\\source\\repos\\tpi-p3\\infrastructure\\repositories\\clientrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D643B7E8-3D21-4539-B036-2EC199D3685A}|Infrastructure\\Infrastructure.csproj|solutionrelative:infrastructure\\repositories\\clientrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D643B7E8-3D21-4539-B036-2EC199D3685A}|Infrastructure\\Infrastructure.csproj|c:\\users\\ricar\\source\\repos\\tpi-p3\\infrastructure\\infrastructure.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
-      "RelativeMoniker": "D:0:0:{D643B7E8-3D21-4539-B036-2EC199D3685A}|Infrastructure\\Infrastructure.csproj|solutionrelative:infrastructure\\infrastructure.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BD4B9B1B-9225-40DA-9E61-B49A2CCDD69A}|Domain\\Domain.csproj|c:\\users\\ricar\\source\\repos\\tpi-p3\\domain\\domain.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
-      "RelativeMoniker": "D:0:0:{BD4B9B1B-9225-40DA-9E61-B49A2CCDD69A}|Domain\\Domain.csproj|solutionrelative:domain\\domain.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DE50F24C-75E6-4358-8DD6-F1753CE087DC}|Application\\Application.csproj|c:\\users\\ricar\\source\\repos\\tpi-p3\\application\\application.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
-      "RelativeMoniker": "D:0:0:{DE50F24C-75E6-4358-8DD6-F1753CE087DC}|Application\\Application.csproj|solutionrelative:application\\application.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{D643B7E8-3D21-4539-B036-2EC199D3685A}|Infrastructure\\Infrastructure.csproj|c:\\users\\ricar\\source\\repos\\tpi-p3\\infrastructure\\migrations\\20240525054554_firstone1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{D643B7E8-3D21-4539-B036-2EC199D3685A}|Infrastructure\\Infrastructure.csproj|solutionrelative:infrastructure\\migrations\\20240525054554_firstone1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{D643B7E8-3D21-4539-B036-2EC199D3685A}|Infrastructure\\Infrastructure.csproj|c:\\users\\ricar\\source\\repos\\tpi-p3\\infrastructure\\migrations\\20240525054441_firstone.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{D643B7E8-3D21-4539-B036-2EC199D3685A}|Infrastructure\\Infrastructure.csproj|solutionrelative:infrastructure\\migrations\\20240525054441_firstone.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\ricar\\source\\repos\\TPI-P3\\Infrastructure\\Repositories\\ClientRepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Infrastructure\\Repositories\\ClientRepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\ricar\\source\\repos\\TPI-P3\\Domain\\Interfaces\\IClient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Domain\\Interfaces\\IClient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D643B7E8-3D21-4539-B036-2EC199D3685A}|Infrastructure\\Infrastructure.csproj|c:\\users\\ricar\\source\\repos\\tpi-p3\\infrastructure\\migrations\\20240526033150_26052024.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D643B7E8-3D21-4539-B036-2EC199D3685A}|Infrastructure\\Infrastructure.csproj|solutionrelative:infrastructure\\migrations\\20240526033150_26052024.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D643B7E8-3D21-4539-B036-2EC199D3685A}|Infrastructure\\Infrastructure.csproj|c:\\users\\ricar\\source\\repos\\tpi-p3\\infrastructure\\migrations\\20240528030414_refactor-models-relations.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D643B7E8-3D21-4539-B036-2EC199D3685A}|Infrastructure\\Infrastructure.csproj|solutionrelative:infrastructure\\migrations\\20240528030414_refactor-models-relations.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D643B7E8-3D21-4539-B036-2EC199D3685A}|Infrastructure\\Infrastructure.csproj|c:\\users\\ricar\\source\\repos\\tpi-p3\\infrastructure\\migrations\\20240602042533_testingforeignkeychanges.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D643B7E8-3D21-4539-B036-2EC199D3685A}|Infrastructure\\Infrastructure.csproj|solutionrelative:infrastructure\\migrations\\20240602042533_testingforeignkeychanges.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D643B7E8-3D21-4539-B036-2EC199D3685A}|Infrastructure\\Infrastructure.csproj|c:\\users\\ricar\\source\\repos\\tpi-p3\\infrastructure\\migrations\\20240602045138_testingintermediarytables.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D643B7E8-3D21-4539-B036-2EC199D3685A}|Infrastructure\\Infrastructure.csproj|solutionrelative:infrastructure\\migrations\\20240602045138_testingintermediarytables.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D643B7E8-3D21-4539-B036-2EC199D3685A}|Infrastructure\\Infrastructure.csproj|c:\\users\\ricar\\source\\repos\\tpi-p3\\infrastructure\\migrations\\20240602045845_testingintermediarytables2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D643B7E8-3D21-4539-B036-2EC199D3685A}|Infrastructure\\Infrastructure.csproj|solutionrelative:infrastructure\\migrations\\20240602045845_testingintermediarytables2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D643B7E8-3D21-4539-B036-2EC199D3685A}|Infrastructure\\Infrastructure.csproj|c:\\users\\ricar\\source\\repos\\tpi-p3\\infrastructure\\migrations\\20240602013014_ondeletecascade-added.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D643B7E8-3D21-4539-B036-2EC199D3685A}|Infrastructure\\Infrastructure.csproj|solutionrelative:infrastructure\\migrations\\20240602013014_ondeletecascade-added.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D643B7E8-3D21-4539-B036-2EC199D3685A}|Infrastructure\\Infrastructure.csproj|c:\\users\\ricar\\source\\repos\\tpi-p3\\infrastructure\\migrations\\20240602011219_01062024.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D643B7E8-3D21-4539-B036-2EC199D3685A}|Infrastructure\\Infrastructure.csproj|solutionrelative:infrastructure\\migrations\\20240602011219_01062024.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D643B7E8-3D21-4539-B036-2EC199D3685A}|Infrastructure\\Infrastructure.csproj|c:\\users\\ricar\\source\\repos\\tpi-p3\\infrastructure\\migrations\\20240607034555_newforeignkeyconfiguration4.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D643B7E8-3D21-4539-B036-2EC199D3685A}|Infrastructure\\Infrastructure.csproj|solutionrelative:infrastructure\\migrations\\20240607034555_newforeignkeyconfiguration4.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D643B7E8-3D21-4539-B036-2EC199D3685A}|Infrastructure\\Infrastructure.csproj|c:\\users\\ricar\\source\\repos\\tpi-p3\\infrastructure\\migrations\\20240607033810_newforeignkeyconfiguration-nouserregistered.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D643B7E8-3D21-4539-B036-2EC199D3685A}|Infrastructure\\Infrastructure.csproj|solutionrelative:infrastructure\\migrations\\20240607033810_newforeignkeyconfiguration-nouserregistered.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D643B7E8-3D21-4539-B036-2EC199D3685A}|Infrastructure\\Infrastructure.csproj|c:\\users\\ricar\\source\\repos\\tpi-p3\\infrastructure\\migrations\\20240607033613_newforeignkeyconfiguration2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D643B7E8-3D21-4539-B036-2EC199D3685A}|Infrastructure\\Infrastructure.csproj|solutionrelative:infrastructure\\migrations\\20240607033613_newforeignkeyconfiguration2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D643B7E8-3D21-4539-B036-2EC199D3685A}|Infrastructure\\Infrastructure.csproj|c:\\users\\ricar\\source\\repos\\tpi-p3\\infrastructure\\migrations\\20240607033348_newforeignkeyconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D643B7E8-3D21-4539-B036-2EC199D3685A}|Infrastructure\\Infrastructure.csproj|solutionrelative:infrastructure\\migrations\\20240607033348_newforeignkeyconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D643B7E8-3D21-4539-B036-2EC199D3685A}|Infrastructure\\Infrastructure.csproj|c:\\users\\ricar\\source\\repos\\tpi-p3\\infrastructure\\migrations\\20240608041403_powerconsumptiontodecimal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D643B7E8-3D21-4539-B036-2EC199D3685A}|Infrastructure\\Infrastructure.csproj|solutionrelative:infrastructure\\migrations\\20240608041403_powerconsumptiontodecimal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D643B7E8-3D21-4539-B036-2EC199D3685A}|Infrastructure\\Infrastructure.csproj|c:\\users\\ricar\\source\\repos\\tpi-p3\\infrastructure\\migrations\\20240608042650_jsonignore.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D643B7E8-3D21-4539-B036-2EC199D3685A}|Infrastructure\\Infrastructure.csproj|solutionrelative:infrastructure\\migrations\\20240608042650_jsonignore.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D643B7E8-3D21-4539-B036-2EC199D3685A}|Infrastructure\\Infrastructure.csproj|c:\\users\\ricar\\source\\repos\\tpi-p3\\infrastructure\\migrations\\20240608041559_clientin_order_nullable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D643B7E8-3D21-4539-B036-2EC199D3685A}|Infrastructure\\Infrastructure.csproj|solutionrelative:infrastructure\\migrations\\20240608041559_clientin_order_nullable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D643B7E8-3D21-4539-B036-2EC199D3685A}|Infrastructure\\Infrastructure.csproj|c:\\users\\ricar\\source\\repos\\tpi-p3\\infrastructure\\migrations\\20240608040741_changeinusertype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D643B7E8-3D21-4539-B036-2EC199D3685A}|Infrastructure\\Infrastructure.csproj|solutionrelative:infrastructure\\migrations\\20240608040741_changeinusertype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D643B7E8-3D21-4539-B036-2EC199D3685A}|Infrastructure\\Infrastructure.csproj|c:\\users\\ricar\\source\\repos\\tpi-p3\\infrastructure\\migrations\\20240608034718_usertypechange.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D643B7E8-3D21-4539-B036-2EC199D3685A}|Infrastructure\\Infrastructure.csproj|solutionrelative:infrastructure\\migrations\\20240608034718_usertypechange.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D643B7E8-3D21-4539-B036-2EC199D3685A}|Infrastructure\\Infrastructure.csproj|c:\\users\\ricar\\source\\repos\\tpi-p3\\infrastructure\\migrations\\20240608033158_clientcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D643B7E8-3D21-4539-B036-2EC199D3685A}|Infrastructure\\Infrastructure.csproj|solutionrelative:infrastructure\\migrations\\20240608033158_clientcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D643B7E8-3D21-4539-B036-2EC199D3685A}|Infrastructure\\Infrastructure.csproj|c:\\users\\ricar\\source\\repos\\tpi-p3\\infrastructure\\migrations\\20240608233818_fixedallrelations.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D643B7E8-3D21-4539-B036-2EC199D3685A}|Infrastructure\\Infrastructure.csproj|solutionrelative:infrastructure\\migrations\\20240608233818_fixedallrelations.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D643B7E8-3D21-4539-B036-2EC199D3685A}|Infrastructure\\Infrastructure.csproj|c:\\users\\ricar\\source\\repos\\tpi-p3\\infrastructure\\migrations\\20240613032614_13062024.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D643B7E8-3D21-4539-B036-2EC199D3685A}|Infrastructure\\Infrastructure.csproj|solutionrelative:infrastructure\\migrations\\20240613032614_13062024.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -126,7 +238,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 15,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Bookmark",
@@ -146,320 +258,309 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "IProductService.cs",
-              "DocumentMoniker": "C:\\Users\\ricar\\source\\repos\\TPI-P3\\Application\\Interfaces\\IProductService.cs",
-              "RelativeDocumentMoniker": "Application\\Interfaces\\IProductService.cs",
-              "ToolTip": "C:\\Users\\ricar\\source\\repos\\TPI-P3\\Application\\Interfaces\\IProductService.cs",
-              "RelativeToolTip": "Application\\Interfaces\\IProductService.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAAHAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-25T05:49:56.07Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "ShoppingCart.cs",
-              "DocumentMoniker": "C:\\Users\\ricar\\source\\repos\\TPI-P3\\Domain\\Models\\ShoppingCart.cs",
-              "RelativeDocumentMoniker": "Domain\\Models\\ShoppingCart.cs",
-              "ToolTip": "C:\\Users\\ricar\\source\\repos\\TPI-P3\\Domain\\Models\\ShoppingCart.cs",
-              "RelativeToolTip": "Domain\\Models\\ShoppingCart.cs",
-              "ViewState": "AQIAAAkAAAAAAAAAAAAqwBUAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-25T03:29:44.355Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "Product.cs",
-              "DocumentMoniker": "C:\\Users\\ricar\\source\\repos\\TPI-P3\\Domain\\Models\\Product.cs",
-              "RelativeDocumentMoniker": "Domain\\Models\\Product.cs",
-              "ToolTip": "C:\\Users\\ricar\\source\\repos\\TPI-P3\\Domain\\Models\\Product.cs",
-              "RelativeToolTip": "Domain\\Models\\Product.cs",
-              "ViewState": "AQIAABMAAAAAAAAAAAAAwCYAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-24T21:48:15.973Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "Order.cs",
-              "DocumentMoniker": "C:\\Users\\ricar\\source\\repos\\TPI-P3\\Domain\\Models\\Order.cs",
-              "RelativeDocumentMoniker": "Domain\\Models\\Order.cs",
-              "ToolTip": "C:\\Users\\ricar\\source\\repos\\TPI-P3\\Domain\\Models\\Order.cs",
-              "RelativeToolTip": "Domain\\Models\\Order.cs",
-              "ViewState": "AQIAAAcAAAAAAAAAAAAkwBAAAAAIAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-25T00:17:48.526Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 14,
               "Title": "SuperAdmin.cs",
-              "DocumentMoniker": "C:\\Users\\ricar\\source\\repos\\TPI-P3\\Domain\\Models\\SuperAdmin.cs",
-              "RelativeDocumentMoniker": "Domain\\Models\\SuperAdmin.cs",
-              "ToolTip": "C:\\Users\\ricar\\source\\repos\\TPI-P3\\Domain\\Models\\SuperAdmin.cs",
-              "RelativeToolTip": "Domain\\Models\\SuperAdmin.cs",
+              "DocumentMoniker": "C:\\Users\\ricar\\source\\repos\\TPI-P3\\Domain\\Models\\Users\\SuperAdmin.cs",
+              "RelativeDocumentMoniker": "Domain\\Models\\Users\\SuperAdmin.cs",
+              "ToolTip": "C:\\Users\\ricar\\source\\repos\\TPI-P3\\Domain\\Models\\Users\\SuperAdmin.cs",
+              "RelativeToolTip": "Domain\\Models\\Users\\SuperAdmin.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-05-25T00:56:18.191Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "Payment.cs",
-              "DocumentMoniker": "C:\\Users\\ricar\\source\\repos\\TPI-P3\\Domain\\Models\\Payment.cs",
-              "RelativeDocumentMoniker": "Domain\\Models\\Payment.cs",
-              "ToolTip": "C:\\Users\\ricar\\source\\repos\\TPI-P3\\Domain\\Models\\Payment.cs",
-              "RelativeToolTip": "Domain\\Models\\Payment.cs",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAkwAoAAAArAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-25T00:15:25.87Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "Compatibility.cs",
-              "DocumentMoniker": "C:\\Users\\ricar\\source\\repos\\TPI-P3\\Domain\\Models\\Compatibility.cs",
-              "RelativeDocumentMoniker": "Domain\\Models\\Compatibility.cs",
-              "ToolTip": "C:\\Users\\ricar\\source\\repos\\TPI-P3\\Domain\\Models\\Compatibility.cs",
-              "RelativeToolTip": "Domain\\Models\\Compatibility.cs",
-              "ViewState": "AQIAAAcAAAAAAAAAAADwvwsAAAAjAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-24T21:49:32.18Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 0,
               "Title": "Client.cs",
-              "DocumentMoniker": "C:\\Users\\ricar\\source\\repos\\TPI-P3\\Domain\\Models\\Client.cs",
-              "RelativeDocumentMoniker": "Domain\\Models\\Client.cs",
-              "ToolTip": "C:\\Users\\ricar\\source\\repos\\TPI-P3\\Domain\\Models\\Client.cs",
-              "RelativeToolTip": "Domain\\Models\\Client.cs",
-              "ViewState": "AQIAABEAAAAAAAAAAAA8wBUAAAAAAAAA",
+              "DocumentMoniker": "C:\\Users\\ricar\\source\\repos\\TPI-P3\\Domain\\Models\\Users\\Client.cs",
+              "RelativeDocumentMoniker": "Domain\\Models\\Users\\Client.cs",
+              "ToolTip": "C:\\Users\\ricar\\source\\repos\\TPI-P3\\Domain\\Models\\Users\\Client.cs",
+              "RelativeToolTip": "Domain\\Models\\Users\\Client.cs",
+              "ViewState": "AQIAABIAAAAAAAAAAAAuwAoAAAC8AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-25T00:20:54.074Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "AdminClass.cs",
-              "DocumentMoniker": "C:\\Users\\ricar\\source\\repos\\TPI-P3\\Domain\\Models\\AdminClass.cs",
-              "RelativeDocumentMoniker": "Domain\\Models\\AdminClass.cs",
-              "ToolTip": "C:\\Users\\ricar\\source\\repos\\TPI-P3\\Domain\\Models\\AdminClass.cs",
-              "RelativeToolTip": "Domain\\Models\\AdminClass.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-25T00:35:43.9Z"
+              "WhenOpened": "2024-05-25T00:20:54.074Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "IClient.cs",
-              "DocumentMoniker": "C:\\Users\\ricar\\source\\repos\\TPI-P3\\Domain\\Interfaces\\IClient.cs",
-              "RelativeDocumentMoniker": "Domain\\Interfaces\\IClient.cs",
-              "ToolTip": "C:\\Users\\ricar\\source\\repos\\TPI-P3\\Domain\\Interfaces\\IClient.cs",
-              "RelativeToolTip": "Domain\\Interfaces\\IClient.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAHAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-25T01:21:05.687Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "ClientService.cs",
-              "DocumentMoniker": "C:\\Users\\ricar\\source\\repos\\TPI-P3\\Application\\Services\\ClientService.cs",
-              "RelativeDocumentMoniker": "Application\\Services\\ClientService.cs",
-              "ToolTip": "C:\\Users\\ricar\\source\\repos\\TPI-P3\\Application\\Services\\ClientService.cs",
-              "RelativeToolTip": "Application\\Services\\ClientService.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAACAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-25T01:36:04.075Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
               "Title": "ProductController.cs",
               "DocumentMoniker": "C:\\Users\\ricar\\source\\repos\\TPI-P3\\TPI-P3\\Controllers\\ProductController.cs",
               "RelativeDocumentMoniker": "TPI-P3\\Controllers\\ProductController.cs",
               "ToolTip": "C:\\Users\\ricar\\source\\repos\\TPI-P3\\TPI-P3\\Controllers\\ProductController.cs",
               "RelativeToolTip": "TPI-P3\\Controllers\\ProductController.cs",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAAABcAAAAAAAAA",
+              "ViewState": "AQIAADAAAAAAAAAAAAAmwEsAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-05-25T04:49:32.835Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "user.cs",
-              "DocumentMoniker": "C:\\Users\\ricar\\source\\repos\\TPI-P3\\Domain\\Models\\user.cs",
-              "RelativeDocumentMoniker": "Domain\\Models\\user.cs",
-              "ToolTip": "C:\\Users\\ricar\\source\\repos\\TPI-P3\\Domain\\Models\\user.cs",
-              "RelativeToolTip": "Domain\\Models\\user.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABUAAAAAAAAA",
+              "DocumentIndex": 4,
+              "Title": "Product.cs",
+              "DocumentMoniker": "C:\\Users\\ricar\\source\\repos\\TPI-P3\\Domain\\Models\\Products\\Product.cs",
+              "RelativeDocumentMoniker": "Domain\\Models\\Products\\Product.cs",
+              "ToolTip": "C:\\Users\\ricar\\source\\repos\\TPI-P3\\Domain\\Models\\Products\\Product.cs",
+              "RelativeToolTip": "Domain\\Models\\Products\\Product.cs",
+              "ViewState": "AQIAAAoAAAAAAAAAAAAmwBoAAAAHAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-25T00:32:13.519Z"
+              "WhenOpened": "2024-05-24T21:48:15.973Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 27,
-              "Title": "20240525054554_firstone1.cs",
-              "DocumentMoniker": "C:\\Users\\ricar\\source\\repos\\TPI-P3\\Infrastructure\\Migrations\\20240525054554_firstone1.cs",
-              "RelativeDocumentMoniker": "Infrastructure\\Migrations\\20240525054554_firstone1.cs",
-              "ToolTip": "C:\\Users\\ricar\\source\\repos\\TPI-P3\\Infrastructure\\Migrations\\20240525054554_firstone1.cs",
-              "RelativeToolTip": "Infrastructure\\Migrations\\20240525054554_firstone1.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "DocumentIndex": 7,
+              "Title": "ClientService.cs",
+              "DocumentMoniker": "C:\\Users\\ricar\\source\\repos\\TPI-P3\\Application\\Services\\ClientService.cs",
+              "RelativeDocumentMoniker": "Application\\Services\\ClientService.cs",
+              "ToolTip": "C:\\Users\\ricar\\source\\repos\\TPI-P3\\Application\\Services\\ClientService.cs",
+              "RelativeToolTip": "Application\\Services\\ClientService.cs",
+              "ViewState": "AQIAABIAAAAAAAAAAAA5wBMAAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-25T05:45:54.243Z"
+              "WhenOpened": "2024-05-25T01:36:04.075Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "20240525052551_initialcreate3.cs",
-              "DocumentMoniker": "C:\\Users\\ricar\\source\\repos\\TPI-P3\\Infrastructure\\Migrations\\20240525052551_initialcreate3.cs",
-              "RelativeDocumentMoniker": "Infrastructure\\Migrations\\20240525052551_initialcreate3.cs",
-              "ToolTip": "C:\\Users\\ricar\\source\\repos\\TPI-P3\\Infrastructure\\Migrations\\20240525052551_initialcreate3.cs",
-              "RelativeToolTip": "Infrastructure\\Migrations\\20240525052551_initialcreate3.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "DocumentIndex": 8,
+              "Title": "IClientService.cs",
+              "DocumentMoniker": "C:\\Users\\ricar\\source\\repos\\TPI-P3\\Application\\Interfaces\\IClientService.cs",
+              "RelativeDocumentMoniker": "Application\\Interfaces\\IClientService.cs",
+              "ToolTip": "C:\\Users\\ricar\\source\\repos\\TPI-P3\\Application\\Interfaces\\IClientService.cs",
+              "RelativeToolTip": "Application\\Interfaces\\IClientService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAoAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-25T05:25:52.616Z"
+              "WhenOpened": "2024-06-08T02:19:33.822Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "20240525053659_fixproductorderrelationship.cs",
-              "DocumentMoniker": "C:\\Users\\ricar\\source\\repos\\TPI-P3\\Infrastructure\\Migrations\\20240525053659_fixproductorderrelationship.cs",
-              "RelativeDocumentMoniker": "Infrastructure\\Migrations\\20240525053659_fixproductorderrelationship.cs",
-              "ToolTip": "C:\\Users\\ricar\\source\\repos\\TPI-P3\\Infrastructure\\Migrations\\20240525053659_fixproductorderrelationship.cs",
-              "RelativeToolTip": "Infrastructure\\Migrations\\20240525053659_fixproductorderrelationship.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABMAAAAJAAAA",
+              "DocumentIndex": 9,
+              "Title": "ProductService.cs",
+              "DocumentMoniker": "C:\\Users\\ricar\\source\\repos\\TPI-P3\\Application\\Services\\ProductService.cs",
+              "RelativeDocumentMoniker": "Application\\Services\\ProductService.cs",
+              "ToolTip": "C:\\Users\\ricar\\source\\repos\\TPI-P3\\Application\\Services\\ProductService.cs",
+              "RelativeToolTip": "Application\\Services\\ProductService.cs",
+              "ViewState": "AQIAABEAAAAAAAAAAAAqwCUAAAAIAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-25T05:36:59.654Z"
+              "WhenOpened": "2024-05-26T03:25:09.598Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "20240525053841_fixproductorderrelationship2.cs",
-              "DocumentMoniker": "C:\\Users\\ricar\\source\\repos\\TPI-P3\\Infrastructure\\Migrations\\20240525053841_fixproductorderrelationship2.cs",
-              "RelativeDocumentMoniker": "Infrastructure\\Migrations\\20240525053841_fixproductorderrelationship2.cs",
-              "ToolTip": "C:\\Users\\ricar\\source\\repos\\TPI-P3\\Infrastructure\\Migrations\\20240525053841_fixproductorderrelationship2.cs",
-              "RelativeToolTip": "Infrastructure\\Migrations\\20240525053841_fixproductorderrelationship2.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "DocumentIndex": 11,
+              "Title": "ProductRepository.cs",
+              "DocumentMoniker": "C:\\Users\\ricar\\source\\repos\\TPI-P3\\Infrastructure\\Data\\Repositories\\ProductRepository.cs",
+              "RelativeDocumentMoniker": "Infrastructure\\Data\\Repositories\\ProductRepository.cs",
+              "ToolTip": "C:\\Users\\ricar\\source\\repos\\TPI-P3\\Infrastructure\\Data\\Repositories\\ProductRepository.cs",
+              "RelativeToolTip": "Infrastructure\\Data\\Repositories\\ProductRepository.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAAB4AAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-25T05:38:41.705Z"
+              "WhenOpened": "2024-05-26T03:20:32.929Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 28,
-              "Title": "20240525054441_firstone.cs",
-              "DocumentMoniker": "C:\\Users\\ricar\\source\\repos\\TPI-P3\\Infrastructure\\Migrations\\20240525054441_firstone.cs",
-              "RelativeDocumentMoniker": "Infrastructure\\Migrations\\20240525054441_firstone.cs",
-              "ToolTip": "C:\\Users\\ricar\\source\\repos\\TPI-P3\\Infrastructure\\Migrations\\20240525054441_firstone.cs",
-              "RelativeToolTip": "Infrastructure\\Migrations\\20240525054441_firstone.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "DocumentIndex": 1,
+              "Title": "ClientController.cs",
+              "DocumentMoniker": "C:\\Users\\ricar\\source\\repos\\TPI-P3\\TPI-P3\\Controllers\\ClientController.cs",
+              "RelativeDocumentMoniker": "TPI-P3\\Controllers\\ClientController.cs",
+              "ToolTip": "C:\\Users\\ricar\\source\\repos\\TPI-P3\\TPI-P3\\Controllers\\ClientController.cs",
+              "RelativeToolTip": "TPI-P3\\Controllers\\ClientController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAaAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-25T05:44:41.655Z"
+              "WhenOpened": "2024-06-06T02:25:45.933Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "C:\\Users\\ricar\\source\\repos\\TPI-P3\\TPI-P3\\appsettings.json",
-              "RelativeDocumentMoniker": "TPI-P3\\appsettings.json",
-              "ToolTip": "C:\\Users\\ricar\\source\\repos\\TPI-P3\\TPI-P3\\appsettings.json",
-              "RelativeToolTip": "TPI-P3\\appsettings.json",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAIAAAApAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-05-25T02:45:32.721Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 18,
-              "Title": "20240525051527_initialcreate2.cs",
-              "DocumentMoniker": "C:\\Users\\ricar\\source\\repos\\TPI-P3\\Infrastructure\\Migrations\\20240525051527_initialcreate2.cs",
-              "RelativeDocumentMoniker": "Infrastructure\\Migrations\\20240525051527_initialcreate2.cs",
-              "ToolTip": "C:\\Users\\ricar\\source\\repos\\TPI-P3\\Infrastructure\\Migrations\\20240525051527_initialcreate2.cs",
-              "RelativeToolTip": "Infrastructure\\Migrations\\20240525051527_initialcreate2.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-25T05:15:28.043Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 2,
               "Title": "ApplicationDbContext.cs",
               "DocumentMoniker": "C:\\Users\\ricar\\source\\repos\\TPI-P3\\Infrastructure\\Data\\ApplicationDbContext.cs",
               "RelativeDocumentMoniker": "Infrastructure\\Data\\ApplicationDbContext.cs",
               "ToolTip": "C:\\Users\\ricar\\source\\repos\\TPI-P3\\Infrastructure\\Data\\ApplicationDbContext.cs",
               "RelativeToolTip": "Infrastructure\\Data\\ApplicationDbContext.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAA0AAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAA1AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-25T02:30:42.068Z"
+              "WhenOpened": "2024-05-25T02:30:42.068Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "User.cs",
+              "DocumentMoniker": "C:\\Users\\ricar\\source\\repos\\TPI-P3\\Domain\\Models\\Users\\User.cs",
+              "RelativeDocumentMoniker": "Domain\\Models\\Users\\User.cs",
+              "ToolTip": "C:\\Users\\ricar\\source\\repos\\TPI-P3\\Domain\\Models\\Users\\User.cs",
+              "RelativeToolTip": "Domain\\Models\\Users\\User.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABkAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-25T00:32:13.519Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\ricar\\source\\repos\\TPI-P3\\TPI-P3\\Program.cs",
+              "RelativeDocumentMoniker": "TPI-P3\\Program.cs",
+              "ToolTip": "C:\\Users\\ricar\\source\\repos\\TPI-P3\\TPI-P3\\Program.cs",
+              "RelativeToolTip": "TPI-P3\\Program.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAB8AAAARAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-26T03:35:08.087Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "IProductRepository.cs",
+              "DocumentMoniker": "C:\\Users\\ricar\\source\\repos\\TPI-P3\\Application\\IRepositories\\IProductRepository.cs",
+              "RelativeDocumentMoniker": "Application\\IRepositories\\IProductRepository.cs",
+              "ToolTip": "C:\\Users\\ricar\\source\\repos\\TPI-P3\\Application\\IRepositories\\IProductRepository.cs",
+              "RelativeToolTip": "Application\\IRepositories\\IProductRepository.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAqwAYAAAAVAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-06T21:29:32.348Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\ricar\\source\\repos\\TPI-P3\\TPI-P3\\appsettings.json",
+              "RelativeDocumentMoniker": "TPI-P3\\appsettings.json",
+              "ToolTip": "C:\\Users\\ricar\\source\\repos\\TPI-P3\\TPI-P3\\appsettings.json",
+              "RelativeToolTip": "TPI-P3\\appsettings.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-05-25T02:45:32.721Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "IProductService.cs",
+              "DocumentMoniker": "C:\\Users\\ricar\\source\\repos\\TPI-P3\\Application\\Interfaces\\IProductService.cs",
+              "RelativeDocumentMoniker": "Application\\Interfaces\\IProductService.cs",
+              "ToolTip": "C:\\Users\\ricar\\source\\repos\\TPI-P3\\Application\\Interfaces\\IProductService.cs",
+              "RelativeToolTip": "Application\\Interfaces\\IProductService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAqwAkAAAAVAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-26T03:43:30.625Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "AdminClass.cs",
+              "DocumentMoniker": "C:\\Users\\ricar\\source\\repos\\TPI-P3\\Domain\\Models\\Users\\AdminClass.cs",
+              "RelativeDocumentMoniker": "Domain\\Models\\Users\\AdminClass.cs",
+              "ToolTip": "C:\\Users\\ricar\\source\\repos\\TPI-P3\\Domain\\Models\\Users\\AdminClass.cs",
+              "RelativeToolTip": "Domain\\Models\\Users\\AdminClass.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-25T00:35:43.9Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "ShoppingCart.cs",
+              "DocumentMoniker": "C:\\Users\\ricar\\source\\repos\\TPI-P3\\Domain\\Models\\Purchases\\ShoppingCart.cs",
+              "RelativeDocumentMoniker": "Domain\\Models\\Purchases\\ShoppingCart.cs",
+              "ToolTip": "C:\\Users\\ricar\\source\\repos\\TPI-P3\\Domain\\Models\\Purchases\\ShoppingCart.cs",
+              "RelativeToolTip": "Domain\\Models\\Purchases\\ShoppingCart.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAqwAkAAAARAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-25T03:29:44.355Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 19,
-              "Title": "20240525050553_initialcreate.cs",
-              "DocumentMoniker": "C:\\Users\\ricar\\source\\repos\\TPI-P3\\Infrastructure\\Migrations\\20240525050553_initialcreate.cs",
-              "RelativeDocumentMoniker": "Infrastructure\\Migrations\\20240525050553_initialcreate.cs",
-              "ToolTip": "C:\\Users\\ricar\\source\\repos\\TPI-P3\\Infrastructure\\Migrations\\20240525050553_initialcreate.cs",
-              "RelativeToolTip": "Infrastructure\\Migrations\\20240525050553_initialcreate.cs",
+              "Title": "Order.cs",
+              "DocumentMoniker": "C:\\Users\\ricar\\source\\repos\\TPI-P3\\Domain\\Models\\Purchases\\Order.cs",
+              "RelativeDocumentMoniker": "Domain\\Models\\Purchases\\Order.cs",
+              "ToolTip": "C:\\Users\\ricar\\source\\repos\\TPI-P3\\Domain\\Models\\Purchases\\Order.cs",
+              "RelativeToolTip": "Domain\\Models\\Purchases\\Order.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAB4AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-25T00:17:48.526Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "IClientRepository.cs",
+              "DocumentMoniker": "C:\\Users\\ricar\\source\\repos\\TPI-P3\\Application\\IRepositories\\IClientRepository.cs",
+              "RelativeDocumentMoniker": "Application\\IRepositories\\IClientRepository.cs",
+              "ToolTip": "C:\\Users\\ricar\\source\\repos\\TPI-P3\\Application\\IRepositories\\IClientRepository.cs",
+              "RelativeToolTip": "Application\\IRepositories\\IClientRepository.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-25T05:05:53.542Z"
+              "WhenOpened": "2024-06-08T02:27:01.708Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "ClientRepository.cs",
+              "DocumentMoniker": "C:\\Users\\ricar\\source\\repos\\TPI-P3\\Infrastructure\\Data\\Repositories\\ClientRepository.cs",
+              "RelativeDocumentMoniker": "Infrastructure\\Data\\Repositories\\ClientRepository.cs",
+              "ToolTip": "C:\\Users\\ricar\\source\\repos\\TPI-P3\\Infrastructure\\Data\\Repositories\\ClientRepository.cs",
+              "RelativeToolTip": "Infrastructure\\Data\\Repositories\\ClientRepository.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAIBZwB4AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-08T02:16:45.996Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 56,
+              "Title": "20240613032614_13062024.cs",
+              "DocumentMoniker": "C:\\Users\\ricar\\source\\repos\\TPI-P3\\Infrastructure\\Migrations\\20240613032614_13062024.cs",
+              "RelativeDocumentMoniker": "Infrastructure\\Migrations\\20240613032614_13062024.cs",
+              "ToolTip": "C:\\Users\\ricar\\source\\repos\\TPI-P3\\Infrastructure\\Migrations\\20240613032614_13062024.cs",
+              "RelativeToolTip": "Infrastructure\\Migrations\\20240613032614_13062024.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-13T03:26:15.122Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 20,
+              "Title": "Domain.csproj",
+              "DocumentMoniker": "C:\\Users\\ricar\\source\\repos\\TPI-P3\\Domain\\Domain.csproj",
+              "RelativeDocumentMoniker": "Domain\\Domain.csproj",
+              "ToolTip": "C:\\Users\\ricar\\source\\repos\\TPI-P3\\Domain\\Domain.csproj",
+              "RelativeToolTip": "Domain\\Domain.csproj",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2024-05-24T20:53:03.291Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
               "Title": "Presentation.csproj",
               "DocumentMoniker": "C:\\Users\\ricar\\source\\repos\\TPI-P3\\TPI-P3\\Presentation.csproj",
               "RelativeDocumentMoniker": "TPI-P3\\Presentation.csproj",
               "ToolTip": "C:\\Users\\ricar\\source\\repos\\TPI-P3\\TPI-P3\\Presentation.csproj",
               "RelativeToolTip": "TPI-P3\\Presentation.csproj",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAANAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
               "WhenOpened": "2024-05-24T20:53:04.697Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
-              "Title": "20240525040812_InitialCreate3.cs",
-              "DocumentMoniker": "C:\\Users\\ricar\\source\\repos\\TPI-P3\\Infrastructure\\Migrations\\20240525040812_InitialCreate3.cs",
-              "RelativeDocumentMoniker": "Infrastructure\\Migrations\\20240525040812_InitialCreate3.cs",
-              "ToolTip": "C:\\Users\\ricar\\source\\repos\\TPI-P3\\Infrastructure\\Migrations\\20240525040812_InitialCreate3.cs",
-              "RelativeToolTip": "Infrastructure\\Migrations\\20240525040812_InitialCreate3.cs",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-25T04:08:12.951Z"
+              "DocumentIndex": 23,
+              "Title": "Application.csproj",
+              "DocumentMoniker": "C:\\Users\\ricar\\source\\repos\\TPI-P3\\Application\\Application.csproj",
+              "RelativeDocumentMoniker": "Application\\Application.csproj",
+              "ToolTip": "C:\\Users\\ricar\\source\\repos\\TPI-P3\\Application\\Application.csproj",
+              "RelativeToolTip": "Application\\Application.csproj",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2024-05-24T20:53:04.822Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 22,
-              "Title": "20240525034215_InitialCreate2.cs",
-              "DocumentMoniker": "C:\\Users\\ricar\\source\\repos\\TPI-P3\\Infrastructure\\Migrations\\20240525034215_InitialCreate2.cs",
-              "RelativeDocumentMoniker": "Infrastructure\\Migrations\\20240525034215_InitialCreate2.cs",
-              "ToolTip": "C:\\Users\\ricar\\source\\repos\\TPI-P3\\Infrastructure\\Migrations\\20240525034215_InitialCreate2.cs",
-              "RelativeToolTip": "Infrastructure\\Migrations\\20240525034215_InitialCreate2.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAnAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-25T03:42:16.152Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 23,
-              "Title": "ClientRepository.cs",
-              "DocumentMoniker": "C:\\Users\\ricar\\source\\repos\\TPI-P3\\Infrastructure\\Repositories\\ClientRepository.cs",
-              "RelativeDocumentMoniker": "Infrastructure\\Repositories\\ClientRepository.cs",
-              "ToolTip": "C:\\Users\\ricar\\source\\repos\\TPI-P3\\Infrastructure\\Repositories\\ClientRepository.cs",
-              "RelativeToolTip": "Infrastructure\\Repositories\\ClientRepository.cs",
-              "ViewState": "AQIAAAoAAAAAAAAAAAAgwBgAAAACAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-25T02:23:48.085Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 24,
               "Title": "Infrastructure.csproj",
               "DocumentMoniker": "C:\\Users\\ricar\\source\\repos\\TPI-P3\\Infrastructure\\Infrastructure.csproj",
               "RelativeDocumentMoniker": "Infrastructure\\Infrastructure.csproj",
@@ -471,27 +572,378 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 26,
-              "Title": "Application.csproj",
-              "DocumentMoniker": "C:\\Users\\ricar\\source\\repos\\TPI-P3\\Application\\Application.csproj",
-              "RelativeDocumentMoniker": "Application\\Application.csproj",
-              "ToolTip": "C:\\Users\\ricar\\source\\repos\\TPI-P3\\Application\\Application.csproj",
-              "RelativeToolTip": "Application\\Application.csproj",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2024-05-24T20:53:04.822Z"
+              "DocumentIndex": 25,
+              "Title": "Compatibility.cs",
+              "DocumentMoniker": "C:\\Users\\ricar\\source\\repos\\TPI-P3\\Domain\\Models\\Products\\Compatibility.cs",
+              "RelativeDocumentMoniker": "Domain\\Models\\Products\\Compatibility.cs",
+              "ToolTip": "C:\\Users\\ricar\\source\\repos\\TPI-P3\\Domain\\Models\\Products\\Compatibility.cs",
+              "RelativeToolTip": "Domain\\Models\\Products\\Compatibility.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAqwBMAAAAqAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-24T21:49:32.18Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
-              "Title": "Domain.csproj",
-              "DocumentMoniker": "C:\\Users\\ricar\\source\\repos\\TPI-P3\\Domain\\Domain.csproj",
-              "RelativeDocumentMoniker": "Domain\\Domain.csproj",
-              "ToolTip": "C:\\Users\\ricar\\source\\repos\\TPI-P3\\Domain\\Domain.csproj",
-              "RelativeToolTip": "Domain\\Domain.csproj",
+              "DocumentIndex": 24,
+              "Title": "Payment.cs",
+              "DocumentMoniker": "C:\\Users\\ricar\\source\\repos\\TPI-P3\\Domain\\Models\\Purchases\\Payment.cs",
+              "RelativeDocumentMoniker": "Domain\\Models\\Purchases\\Payment.cs",
+              "ToolTip": "C:\\Users\\ricar\\source\\repos\\TPI-P3\\Domain\\Models\\Purchases\\Payment.cs",
+              "RelativeToolTip": "Domain\\Models\\Purchases\\Payment.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAA1AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-25T00:15:25.87Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "20240609033722_newCompatibilityDesign.cs",
+              "DocumentMoniker": "C:\\Users\\ricar\\source\\repos\\TPI-P3\\Infrastructure\\Migrations\\20240609033722_newCompatibilityDesign.cs",
+              "RelativeDocumentMoniker": "Infrastructure\\Migrations\\20240609033722_newCompatibilityDesign.cs",
+              "ToolTip": "C:\\Users\\ricar\\source\\repos\\TPI-P3\\Infrastructure\\Migrations\\20240609033722_newCompatibilityDesign.cs",
+              "RelativeToolTip": "Infrastructure\\Migrations\\20240609033722_newCompatibilityDesign.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2024-05-24T20:53:03.291Z"
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-09T03:37:23.701Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 55,
+              "Title": "20240608233818_FixedAllRelations.cs",
+              "DocumentMoniker": "C:\\Users\\ricar\\source\\repos\\TPI-P3\\Infrastructure\\Migrations\\20240608233818_FixedAllRelations.cs",
+              "RelativeDocumentMoniker": "Infrastructure\\Migrations\\20240608233818_FixedAllRelations.cs",
+              "ToolTip": "C:\\Users\\ricar\\source\\repos\\TPI-P3\\Infrastructure\\Migrations\\20240608233818_FixedAllRelations.cs",
+              "RelativeToolTip": "Infrastructure\\Migrations\\20240608233818_FixedAllRelations.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-08T23:38:18.744Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 49,
+              "Title": "20240608041403_PowerConsumptionToDecimal.cs",
+              "DocumentMoniker": "C:\\Users\\ricar\\source\\repos\\TPI-P3\\Infrastructure\\Migrations\\20240608041403_PowerConsumptionToDecimal.cs",
+              "RelativeDocumentMoniker": "Infrastructure\\Migrations\\20240608041403_PowerConsumptionToDecimal.cs",
+              "ToolTip": "C:\\Users\\ricar\\source\\repos\\TPI-P3\\Infrastructure\\Migrations\\20240608041403_PowerConsumptionToDecimal.cs",
+              "RelativeToolTip": "Infrastructure\\Migrations\\20240608041403_PowerConsumptionToDecimal.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-08T04:14:03.544Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 50,
+              "Title": "20240608042650_jsonIgnore.cs",
+              "DocumentMoniker": "C:\\Users\\ricar\\source\\repos\\TPI-P3\\Infrastructure\\Migrations\\20240608042650_jsonIgnore.cs",
+              "RelativeDocumentMoniker": "Infrastructure\\Migrations\\20240608042650_jsonIgnore.cs",
+              "ToolTip": "C:\\Users\\ricar\\source\\repos\\TPI-P3\\Infrastructure\\Migrations\\20240608042650_jsonIgnore.cs",
+              "RelativeToolTip": "Infrastructure\\Migrations\\20240608042650_jsonIgnore.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-08T04:26:50.379Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 51,
+              "Title": "20240608041559_ClientIn_Order_nullable.cs",
+              "DocumentMoniker": "C:\\Users\\ricar\\source\\repos\\TPI-P3\\Infrastructure\\Migrations\\20240608041559_ClientIn_Order_nullable.cs",
+              "RelativeDocumentMoniker": "Infrastructure\\Migrations\\20240608041559_ClientIn_Order_nullable.cs",
+              "ToolTip": "C:\\Users\\ricar\\source\\repos\\TPI-P3\\Infrastructure\\Migrations\\20240608041559_ClientIn_Order_nullable.cs",
+              "RelativeToolTip": "Infrastructure\\Migrations\\20240608041559_ClientIn_Order_nullable.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-08T04:15:59.836Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 52,
+              "Title": "20240608040741_changeInUserType.cs",
+              "DocumentMoniker": "C:\\Users\\ricar\\source\\repos\\TPI-P3\\Infrastructure\\Migrations\\20240608040741_changeInUserType.cs",
+              "RelativeDocumentMoniker": "Infrastructure\\Migrations\\20240608040741_changeInUserType.cs",
+              "ToolTip": "C:\\Users\\ricar\\source\\repos\\TPI-P3\\Infrastructure\\Migrations\\20240608040741_changeInUserType.cs",
+              "RelativeToolTip": "Infrastructure\\Migrations\\20240608040741_changeInUserType.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-08T04:07:41.707Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 53,
+              "Title": "20240608034718_userTypeChange.cs",
+              "DocumentMoniker": "C:\\Users\\ricar\\source\\repos\\TPI-P3\\Infrastructure\\Migrations\\20240608034718_userTypeChange.cs",
+              "RelativeDocumentMoniker": "Infrastructure\\Migrations\\20240608034718_userTypeChange.cs",
+              "ToolTip": "C:\\Users\\ricar\\source\\repos\\TPI-P3\\Infrastructure\\Migrations\\20240608034718_userTypeChange.cs",
+              "RelativeToolTip": "Infrastructure\\Migrations\\20240608034718_userTypeChange.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-08T03:47:18.641Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 54,
+              "Title": "20240608033158_clientController.cs",
+              "DocumentMoniker": "C:\\Users\\ricar\\source\\repos\\TPI-P3\\Infrastructure\\Migrations\\20240608033158_clientController.cs",
+              "RelativeDocumentMoniker": "Infrastructure\\Migrations\\20240608033158_clientController.cs",
+              "ToolTip": "C:\\Users\\ricar\\source\\repos\\TPI-P3\\Infrastructure\\Migrations\\20240608033158_clientController.cs",
+              "RelativeToolTip": "Infrastructure\\Migrations\\20240608033158_clientController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-08T03:31:59.182Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 48,
+              "Title": "20240607033348_NewForeignKeyConfiguration.cs",
+              "DocumentMoniker": "C:\\Users\\ricar\\source\\repos\\TPI-P3\\Infrastructure\\Migrations\\20240607033348_NewForeignKeyConfiguration.cs",
+              "RelativeDocumentMoniker": "Infrastructure\\Migrations\\20240607033348_NewForeignKeyConfiguration.cs",
+              "ToolTip": "C:\\Users\\ricar\\source\\repos\\TPI-P3\\Infrastructure\\Migrations\\20240607033348_NewForeignKeyConfiguration.cs",
+              "RelativeToolTip": "Infrastructure\\Migrations\\20240607033348_NewForeignKeyConfiguration.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-07T03:33:48.901Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 47,
+              "Title": "20240607033613_NewForeignKeyConfiguration2.cs",
+              "DocumentMoniker": "C:\\Users\\ricar\\source\\repos\\TPI-P3\\Infrastructure\\Migrations\\20240607033613_NewForeignKeyConfiguration2.cs",
+              "RelativeDocumentMoniker": "Infrastructure\\Migrations\\20240607033613_NewForeignKeyConfiguration2.cs",
+              "ToolTip": "C:\\Users\\ricar\\source\\repos\\TPI-P3\\Infrastructure\\Migrations\\20240607033613_NewForeignKeyConfiguration2.cs",
+              "RelativeToolTip": "Infrastructure\\Migrations\\20240607033613_NewForeignKeyConfiguration2.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-07T03:36:13.925Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 46,
+              "Title": "20240607033810_NewForeignKeyConfiguration-nouserregistered.cs",
+              "DocumentMoniker": "C:\\Users\\ricar\\source\\repos\\TPI-P3\\Infrastructure\\Migrations\\20240607033810_NewForeignKeyConfiguration-nouserregistered.cs",
+              "RelativeDocumentMoniker": "Infrastructure\\Migrations\\20240607033810_NewForeignKeyConfiguration-nouserregistered.cs",
+              "ToolTip": "C:\\Users\\ricar\\source\\repos\\TPI-P3\\Infrastructure\\Migrations\\20240607033810_NewForeignKeyConfiguration-nouserregistered.cs",
+              "RelativeToolTip": "Infrastructure\\Migrations\\20240607033810_NewForeignKeyConfiguration-nouserregistered.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-07T03:38:10.742Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 45,
+              "Title": "20240607034555_NewForeignKeyConfiguration4.cs",
+              "DocumentMoniker": "C:\\Users\\ricar\\source\\repos\\TPI-P3\\Infrastructure\\Migrations\\20240607034555_NewForeignKeyConfiguration4.cs",
+              "RelativeDocumentMoniker": "Infrastructure\\Migrations\\20240607034555_NewForeignKeyConfiguration4.cs",
+              "ToolTip": "C:\\Users\\ricar\\source\\repos\\TPI-P3\\Infrastructure\\Migrations\\20240607034555_NewForeignKeyConfiguration4.cs",
+              "RelativeToolTip": "Infrastructure\\Migrations\\20240607034555_NewForeignKeyConfiguration4.cs",
+              "ViewState": "AQIAABYAAAAAAAAAAAAgwAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-07T03:45:55.877Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 40,
+              "Title": "20240602042533_testingForeignKeyChanges.cs",
+              "DocumentMoniker": "C:\\Users\\ricar\\source\\repos\\TPI-P3\\Infrastructure\\Migrations\\20240602042533_testingForeignKeyChanges.cs",
+              "RelativeDocumentMoniker": "Infrastructure\\Migrations\\20240602042533_testingForeignKeyChanges.cs",
+              "ToolTip": "C:\\Users\\ricar\\source\\repos\\TPI-P3\\Infrastructure\\Migrations\\20240602042533_testingForeignKeyChanges.cs",
+              "RelativeToolTip": "Infrastructure\\Migrations\\20240602042533_testingForeignKeyChanges.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-02T04:25:33.718Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 41,
+              "Title": "20240602045138_testingIntermediaryTables.cs",
+              "DocumentMoniker": "C:\\Users\\ricar\\source\\repos\\TPI-P3\\Infrastructure\\Migrations\\20240602045138_testingIntermediaryTables.cs",
+              "RelativeDocumentMoniker": "Infrastructure\\Migrations\\20240602045138_testingIntermediaryTables.cs",
+              "ToolTip": "C:\\Users\\ricar\\source\\repos\\TPI-P3\\Infrastructure\\Migrations\\20240602045138_testingIntermediaryTables.cs",
+              "RelativeToolTip": "Infrastructure\\Migrations\\20240602045138_testingIntermediaryTables.cs",
+              "ViewState": "AQIAAAsAAAAAAAAAAAAQwAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-02T04:51:39.003Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 42,
+              "Title": "20240602045845_testingIntermediaryTables2.cs",
+              "DocumentMoniker": "C:\\Users\\ricar\\source\\repos\\TPI-P3\\Infrastructure\\Migrations\\20240602045845_testingIntermediaryTables2.cs",
+              "RelativeDocumentMoniker": "Infrastructure\\Migrations\\20240602045845_testingIntermediaryTables2.cs",
+              "ToolTip": "C:\\Users\\ricar\\source\\repos\\TPI-P3\\Infrastructure\\Migrations\\20240602045845_testingIntermediaryTables2.cs",
+              "RelativeToolTip": "Infrastructure\\Migrations\\20240602045845_testingIntermediaryTables2.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-02T04:58:45.573Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 43,
+              "Title": "20240602013014_OndeleteCascade-added.cs",
+              "DocumentMoniker": "C:\\Users\\ricar\\source\\repos\\TPI-P3\\Infrastructure\\Migrations\\20240602013014_OndeleteCascade-added.cs",
+              "RelativeDocumentMoniker": "Infrastructure\\Migrations\\20240602013014_OndeleteCascade-added.cs",
+              "ToolTip": "C:\\Users\\ricar\\source\\repos\\TPI-P3\\Infrastructure\\Migrations\\20240602013014_OndeleteCascade-added.cs",
+              "RelativeToolTip": "Infrastructure\\Migrations\\20240602013014_OndeleteCascade-added.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-02T01:30:14.903Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 44,
+              "Title": "20240602011219_01062024.cs",
+              "DocumentMoniker": "C:\\Users\\ricar\\source\\repos\\TPI-P3\\Infrastructure\\Migrations\\20240602011219_01062024.cs",
+              "RelativeDocumentMoniker": "Infrastructure\\Migrations\\20240602011219_01062024.cs",
+              "ToolTip": "C:\\Users\\ricar\\source\\repos\\TPI-P3\\Infrastructure\\Migrations\\20240602011219_01062024.cs",
+              "RelativeToolTip": "Infrastructure\\Migrations\\20240602011219_01062024.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-02T01:12:19.333Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 39,
+              "Title": "20240528030414_refactor-models-relations.cs",
+              "DocumentMoniker": "C:\\Users\\ricar\\source\\repos\\TPI-P3\\Infrastructure\\Migrations\\20240528030414_refactor-models-relations.cs",
+              "RelativeDocumentMoniker": "Infrastructure\\Migrations\\20240528030414_refactor-models-relations.cs",
+              "ToolTip": "C:\\Users\\ricar\\source\\repos\\TPI-P3\\Infrastructure\\Migrations\\20240528030414_refactor-models-relations.cs",
+              "RelativeToolTip": "Infrastructure\\Migrations\\20240528030414_refactor-models-relations.cs",
+              "ViewState": "AQIAADEAAAAAAAAAAAAgwAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-28T03:04:14.465Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 38,
+              "Title": "20240526033150_26052024.cs",
+              "DocumentMoniker": "C:\\Users\\ricar\\source\\repos\\TPI-P3\\Infrastructure\\Migrations\\20240526033150_26052024.cs",
+              "RelativeDocumentMoniker": "Infrastructure\\Migrations\\20240526033150_26052024.cs",
+              "ToolTip": "C:\\Users\\ricar\\source\\repos\\TPI-P3\\Infrastructure\\Migrations\\20240526033150_26052024.cs",
+              "RelativeToolTip": "Infrastructure\\Migrations\\20240526033150_26052024.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-26T03:31:50.887Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "20240525052551_initialcreate3.cs",
+              "DocumentMoniker": "C:\\Users\\ricar\\source\\repos\\TPI-P3\\Infrastructure\\Migrations\\20240525052551_initialcreate3.cs",
+              "RelativeDocumentMoniker": "Infrastructure\\Migrations\\20240525052551_initialcreate3.cs",
+              "ToolTip": "C:\\Users\\ricar\\source\\repos\\TPI-P3\\Infrastructure\\Migrations\\20240525052551_initialcreate3.cs",
+              "RelativeToolTip": "Infrastructure\\Migrations\\20240525052551_initialcreate3.cs",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-25T05:25:52.616Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 34,
+              "Title": "20240525054554_firstone1.cs",
+              "DocumentMoniker": "C:\\Users\\ricar\\source\\repos\\TPI-P3\\Infrastructure\\Migrations\\20240525054554_firstone1.cs",
+              "RelativeDocumentMoniker": "Infrastructure\\Migrations\\20240525054554_firstone1.cs",
+              "ToolTip": "C:\\Users\\ricar\\source\\repos\\TPI-P3\\Infrastructure\\Migrations\\20240525054554_firstone1.cs",
+              "RelativeToolTip": "Infrastructure\\Migrations\\20240525054554_firstone1.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-25T05:45:54.243Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 37,
+              "Title": "IClient.cs",
+              "DocumentMoniker": "C:\\Users\\ricar\\source\\repos\\TPI-P3\\Domain\\Interfaces\\IClient.cs",
+              "RelativeDocumentMoniker": "Domain\\Interfaces\\IClient.cs",
+              "ToolTip": "C:\\Users\\ricar\\source\\repos\\TPI-P3\\Domain\\Interfaces\\IClient.cs",
+              "RelativeToolTip": "Domain\\Interfaces\\IClient.cs",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-25T01:21:05.687Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "20240525053659_fixproductorderrelationship.cs",
+              "DocumentMoniker": "C:\\Users\\ricar\\source\\repos\\TPI-P3\\Infrastructure\\Migrations\\20240525053659_fixproductorderrelationship.cs",
+              "RelativeDocumentMoniker": "Infrastructure\\Migrations\\20240525053659_fixproductorderrelationship.cs",
+              "ToolTip": "C:\\Users\\ricar\\source\\repos\\TPI-P3\\Infrastructure\\Migrations\\20240525053659_fixproductorderrelationship.cs",
+              "RelativeToolTip": "Infrastructure\\Migrations\\20240525053659_fixproductorderrelationship.cs",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-25T05:36:59.654Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "20240525053841_fixproductorderrelationship2.cs",
+              "DocumentMoniker": "C:\\Users\\ricar\\source\\repos\\TPI-P3\\Infrastructure\\Migrations\\20240525053841_fixproductorderrelationship2.cs",
+              "RelativeDocumentMoniker": "Infrastructure\\Migrations\\20240525053841_fixproductorderrelationship2.cs",
+              "ToolTip": "C:\\Users\\ricar\\source\\repos\\TPI-P3\\Infrastructure\\Migrations\\20240525053841_fixproductorderrelationship2.cs",
+              "RelativeToolTip": "Infrastructure\\Migrations\\20240525053841_fixproductorderrelationship2.cs",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-25T05:38:41.705Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 35,
+              "Title": "20240525054441_firstone.cs",
+              "DocumentMoniker": "C:\\Users\\ricar\\source\\repos\\TPI-P3\\Infrastructure\\Migrations\\20240525054441_firstone.cs",
+              "RelativeDocumentMoniker": "Infrastructure\\Migrations\\20240525054441_firstone.cs",
+              "ToolTip": "C:\\Users\\ricar\\source\\repos\\TPI-P3\\Infrastructure\\Migrations\\20240525054441_firstone.cs",
+              "RelativeToolTip": "Infrastructure\\Migrations\\20240525054441_firstone.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-25T05:44:41.655Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 30,
+              "Title": "20240525051527_initialcreate2.cs",
+              "DocumentMoniker": "C:\\Users\\ricar\\source\\repos\\TPI-P3\\Infrastructure\\Migrations\\20240525051527_initialcreate2.cs",
+              "RelativeDocumentMoniker": "Infrastructure\\Migrations\\20240525051527_initialcreate2.cs",
+              "ToolTip": "C:\\Users\\ricar\\source\\repos\\TPI-P3\\Infrastructure\\Migrations\\20240525051527_initialcreate2.cs",
+              "RelativeToolTip": "Infrastructure\\Migrations\\20240525051527_initialcreate2.cs",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-25T05:15:28.043Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 31,
+              "Title": "20240525050553_initialcreate.cs",
+              "DocumentMoniker": "C:\\Users\\ricar\\source\\repos\\TPI-P3\\Infrastructure\\Migrations\\20240525050553_initialcreate.cs",
+              "RelativeDocumentMoniker": "Infrastructure\\Migrations\\20240525050553_initialcreate.cs",
+              "ToolTip": "C:\\Users\\ricar\\source\\repos\\TPI-P3\\Infrastructure\\Migrations\\20240525050553_initialcreate.cs",
+              "RelativeToolTip": "Infrastructure\\Migrations\\20240525050553_initialcreate.cs",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-25T05:05:53.542Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 32,
+              "Title": "20240525040812_InitialCreate3.cs",
+              "DocumentMoniker": "C:\\Users\\ricar\\source\\repos\\TPI-P3\\Infrastructure\\Migrations\\20240525040812_InitialCreate3.cs",
+              "RelativeDocumentMoniker": "Infrastructure\\Migrations\\20240525040812_InitialCreate3.cs",
+              "ToolTip": "C:\\Users\\ricar\\source\\repos\\TPI-P3\\Infrastructure\\Migrations\\20240525040812_InitialCreate3.cs",
+              "RelativeToolTip": "Infrastructure\\Migrations\\20240525040812_InitialCreate3.cs",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-25T04:08:12.951Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 33,
+              "Title": "20240525034215_InitialCreate2.cs",
+              "DocumentMoniker": "C:\\Users\\ricar\\source\\repos\\TPI-P3\\Infrastructure\\Migrations\\20240525034215_InitialCreate2.cs",
+              "RelativeDocumentMoniker": "Infrastructure\\Migrations\\20240525034215_InitialCreate2.cs",
+              "ToolTip": "C:\\Users\\ricar\\source\\repos\\TPI-P3\\Infrastructure\\Migrations\\20240525034215_InitialCreate2.cs",
+              "RelativeToolTip": "Infrastructure\\Migrations\\20240525034215_InitialCreate2.cs",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-25T03:42:16.152Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 36,
+              "Title": "ClientRepository.cs",
+              "DocumentMoniker": "C:\\Users\\ricar\\source\\repos\\TPI-P3\\Infrastructure\\Repositories\\ClientRepository.cs",
+              "RelativeDocumentMoniker": "Infrastructure\\Repositories\\ClientRepository.cs",
+              "ToolTip": "C:\\Users\\ricar\\source\\repos\\TPI-P3\\Infrastructure\\Repositories\\ClientRepository.cs",
+              "RelativeToolTip": "Infrastructure\\Repositories\\ClientRepository.cs",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-25T02:23:48.085Z"
             }
           ]
         },

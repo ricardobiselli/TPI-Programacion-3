@@ -258,3 +258,4 @@ C:\Users\ricar\source\repos\TPI-P3\TPI-P3\bin\Debug\net8.0\runtimes\win\lib\net7
 C:\Users\ricar\source\repos\TPI-P3\TPI-P3\bin\Debug\net8.0\runtimes\win\lib\net7.0\System.Drawing.Common.dll
 C:\Users\ricar\source\repos\TPI-P3\TPI-P3\bin\Debug\net8.0\runtimes\win\lib\net7.0\System.Security.Cryptography.ProtectedData.dll
 C:\Users\ricar\source\repos\TPI-P3\TPI-P3\bin\Debug\net8.0\runtimes\win\lib\net7.0\System.Windows.Extensions.dll
+C:\Users\ricar\source\repos\TPI-P3\TPI-P3\obj\Debug\net8.0\Presentation.sourcelink.json

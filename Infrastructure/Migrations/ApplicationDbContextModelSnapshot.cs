@@ -15,34 +15,82 @@ namespace Infrastructure.Migrations
         protected override void BuildModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
-            modelBuilder.HasAnnotation("ProductVersion", "8.0.5");
+            modelBuilder.HasAnnotation("ProductVersion", "8.0.6");
 
-            modelBuilder.Entity("Domain.Models.Compatibility", b =>
+            modelBuilder.Entity("CartProduct", b =>
+                {
+                    b.Property<int>("CartId")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int>("ProductId")
+                        .HasColumnType("INTEGER");
+
+                    b.HasKey("CartId", "ProductId");
+
+                    b.HasIndex("ProductId");
+
+                    b.ToTable("CartProduct", (string)null);
+                });
+
+            modelBuilder.Entity("Domain.Models.Products.Compatibility", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
-                    b.Property<int?>("ProductId")
+                    b.Property<string>("GpuType")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("PowerSupplyType")
+                        .HasColumnType("TEXT");
+
+                    b.Property<int>("ProductId")
                         .HasColumnType("INTEGER");
 
-                    b.Property<string>("Ram")
+                    b.Property<string>("RamType")
                         .HasColumnType("TEXT");
 
-                    b.Property<string>("Series")
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("Socket")
+                    b.Property<string>("SocketType")
                         .HasColumnType("TEXT");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("ProductId");
+                    b.HasIndex("ProductId")
+                        .IsUnique();
 
                     b.ToTable("Compatibilities");
                 });
 
-            modelBuilder.Entity("Domain.Models.Order", b =>
+            modelBuilder.Entity("Domain.Models.Products.Product", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("Category")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Description")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("TEXT");
+
+                    b.Property<decimal>("PowerConsumption")
+                        .HasColumnType("TEXT");
+
+                    b.Property<decimal>("Price")
+                        .HasColumnType("TEXT");
+
+                    b.Property<int>("StockQuantity")
+                        .HasColumnType("INTEGER");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Products");
+                });
+
+            modelBuilder.Entity("Domain.Models.Purchases.Order", b =>
                 {
                     b.Property<int>("OrderId")
                         .ValueGeneratedOnAdd()
@@ -64,7 +112,7 @@ namespace Infrastructure.Migrations
                     b.ToTable("Orders");
                 });
 
-            modelBuilder.Entity("Domain.Models.Payment", b =>
+            modelBuilder.Entity("Domain.Models.Purchases.Payment", b =>
                 {
                     b.Property<int?>("PaymentId")
                         .ValueGeneratedOnAdd()
@@ -80,7 +128,6 @@ namespace Infrastructure.Migrations
                         .HasColumnType("TEXT");
 
                     b.Property<string>("PaymentMethod")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<bool>("PaymentStatus")
@@ -93,59 +140,24 @@ namespace Infrastructure.Migrations
                     b.ToTable("Payments");
                 });
 
-            modelBuilder.Entity("Domain.Models.Product", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("INTEGER");
-
-                    b.Property<string>("Category")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("Description")
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
-
-                    b.Property<int?>("OrderId")
-                        .HasColumnType("INTEGER");
-
-                    b.Property<int>("PowerConsumption")
-                        .HasColumnType("INTEGER");
-
-                    b.Property<decimal>("Price")
-                        .HasColumnType("TEXT");
-
-                    b.Property<int?>("ShoppingCartCartId")
-                        .HasColumnType("INTEGER");
-
-                    b.Property<int>("StockQuantity")
-                        .HasColumnType("INTEGER");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("OrderId");
-
-                    b.HasIndex("ShoppingCartCartId");
-
-                    b.ToTable("Products");
-                });
-
-            modelBuilder.Entity("Domain.Models.ShoppingCart", b =>
+            modelBuilder.Entity("Domain.Models.Purchases.ShoppingCart", b =>
                 {
                     b.Property<int>("CartId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
+                    b.Property<int>("ClientId")
+                        .HasColumnType("INTEGER");
+
                     b.HasKey("CartId");
+
+                    b.HasIndex("ClientId")
+                        .IsUnique();
 
                     b.ToTable("Carts");
                 });
 
-            modelBuilder.Entity("Domain.Models.User", b =>
+            modelBuilder.Entity("Domain.Models.Users.User", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -160,14 +172,12 @@ namespace Infrastructure.Migrations
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Password")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<string>("UserName")
                         .HasColumnType("TEXT");
 
                     b.Property<string>("UserType")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.HasKey("Id");
@@ -179,25 +189,37 @@ namespace Infrastructure.Migrations
                     b.UseTphMappingStrategy();
                 });
 
-            modelBuilder.Entity("Domain.Models.AdminClass", b =>
+            modelBuilder.Entity("OrderProduct", b =>
                 {
-                    b.HasBaseType("Domain.Models.User");
+                    b.Property<int>("OrderId")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int>("ProductId")
+                        .HasColumnType("INTEGER");
+
+                    b.HasKey("OrderId", "ProductId");
+
+                    b.HasIndex("ProductId");
+
+                    b.ToTable("OrderProduct", (string)null);
+                });
+
+            modelBuilder.Entity("Domain.Models.Users.AdminClass", b =>
+                {
+                    b.HasBaseType("Domain.Models.Users.User");
 
                     b.HasDiscriminator().HasValue("AdminClass");
                 });
 
-            modelBuilder.Entity("Domain.Models.Client", b =>
+            modelBuilder.Entity("Domain.Models.Users.Client", b =>
                 {
-                    b.HasBaseType("Domain.Models.User");
+                    b.HasBaseType("Domain.Models.Users.User");
 
                     b.Property<string>("Address")
                         .HasColumnType("TEXT");
 
                     b.Property<DateTime>("BirthDate")
                         .HasColumnType("TEXT");
-
-                    b.Property<int>("ClientId")
-                        .HasColumnType("INTEGER");
 
                     b.Property<string>("DniNumber")
                         .HasColumnType("TEXT");
@@ -211,29 +233,45 @@ namespace Infrastructure.Migrations
                     b.Property<string>("PhoneNumber")
                         .HasColumnType("TEXT");
 
-                    b.Property<int>("ZipCode")
-                        .HasColumnType("INTEGER");
-
                     b.HasDiscriminator().HasValue("Client");
                 });
 
-            modelBuilder.Entity("Domain.Models.SuperAdmin", b =>
+            modelBuilder.Entity("Domain.Models.Users.SuperAdmin", b =>
                 {
-                    b.HasBaseType("Domain.Models.AdminClass");
+                    b.HasBaseType("Domain.Models.Users.AdminClass");
 
                     b.HasDiscriminator().HasValue("SuperAdmin");
                 });
 
-            modelBuilder.Entity("Domain.Models.Compatibility", b =>
+            modelBuilder.Entity("CartProduct", b =>
                 {
-                    b.HasOne("Domain.Models.Product", null)
-                        .WithMany("Compatibilities")
-                        .HasForeignKey("ProductId");
+                    b.HasOne("Domain.Models.Purchases.ShoppingCart", null)
+                        .WithMany()
+                        .HasForeignKey("CartId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Domain.Models.Products.Product", null)
+                        .WithMany()
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 
-            modelBuilder.Entity("Domain.Models.Order", b =>
+            modelBuilder.Entity("Domain.Models.Products.Compatibility", b =>
                 {
-                    b.HasOne("Domain.Models.Client", "Client")
+                    b.HasOne("Domain.Models.Products.Product", "Product")
+                        .WithOne("Compatibilities")
+                        .HasForeignKey("Domain.Models.Products.Compatibility", "ProductId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Product");
+                });
+
+            modelBuilder.Entity("Domain.Models.Purchases.Order", b =>
+                {
+                    b.HasOne("Domain.Models.Users.Client", "Client")
                         .WithMany("Orders")
                         .HasForeignKey("ClientId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -242,10 +280,10 @@ namespace Infrastructure.Migrations
                     b.Navigation("Client");
                 });
 
-            modelBuilder.Entity("Domain.Models.Payment", b =>
+            modelBuilder.Entity("Domain.Models.Purchases.Payment", b =>
                 {
-                    b.HasOne("Domain.Models.Client", "Client")
-                        .WithMany()
+                    b.HasOne("Domain.Models.Users.Client", "Client")
+                        .WithMany("Payments")
                         .HasForeignKey("ClientId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -253,35 +291,44 @@ namespace Infrastructure.Migrations
                     b.Navigation("Client");
                 });
 
-            modelBuilder.Entity("Domain.Models.Product", b =>
+            modelBuilder.Entity("Domain.Models.Purchases.ShoppingCart", b =>
                 {
-                    b.HasOne("Domain.Models.Order", null)
-                        .WithMany("Products")
-                        .HasForeignKey("OrderId");
+                    b.HasOne("Domain.Models.Users.Client", "Client")
+                        .WithOne("Cart")
+                        .HasForeignKey("Domain.Models.Purchases.ShoppingCart", "ClientId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
-                    b.HasOne("Domain.Models.ShoppingCart", null)
-                        .WithMany("Products")
-                        .HasForeignKey("ShoppingCartCartId");
+                    b.Navigation("Client");
                 });
 
-            modelBuilder.Entity("Domain.Models.Order", b =>
+            modelBuilder.Entity("OrderProduct", b =>
                 {
-                    b.Navigation("Products");
+                    b.HasOne("Domain.Models.Purchases.Order", null)
+                        .WithMany()
+                        .HasForeignKey("OrderId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Domain.Models.Products.Product", null)
+                        .WithMany()
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 
-            modelBuilder.Entity("Domain.Models.Product", b =>
+            modelBuilder.Entity("Domain.Models.Products.Product", b =>
                 {
                     b.Navigation("Compatibilities");
                 });
 
-            modelBuilder.Entity("Domain.Models.ShoppingCart", b =>
+            modelBuilder.Entity("Domain.Models.Users.Client", b =>
                 {
-                    b.Navigation("Products");
-                });
+                    b.Navigation("Cart");
 
-            modelBuilder.Entity("Domain.Models.Client", b =>
-                {
                     b.Navigation("Orders");
+
+                    b.Navigation("Payments");
                 });
 #pragma warning restore 612, 618
         }
