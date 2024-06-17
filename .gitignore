@@ -28,10 +28,10 @@ bld/
 
 # Visual Studio 2015 cache/options directory
 .vs/
-.vs/
 .vscode/
+
 # Uncomment if you have tasks that create the project's static files in wwwroot
-#wwwroot/
+# wwwroot/
 
 # MSTest test Results
 [Tt]est[Rr]esult*/
@@ -107,4 +107,169 @@ _ReSharper*/
 *.[Rr]e[Ss]harper
 *.DotSettings.user
 
-# JustCode is a .
+# JustCode is a .NET coding add-in
+*.dotCover
+.justcode
+JustCodeProfile.xml
+*.dotSettings
+
+# TeamCity is a build add-in
+_TeamCity*
+
+# DotCover is a Code Coverage Tool
+*.dotCover
+
+# NCrunch
+_NCrunch_*
+.*crunch*.local.xml
+nCrunchTemp_*
+
+# MightyMoose
+*.mm.*
+
+# Web workbench (sass)
+.sass-cache/
+
+# Installshield output folder
+[Ee]xpress/
+
+# DocProject is a documentation generator add-in
+DocProject/buildhelp/
+DocProject/Help/*.HxT
+DocProject/Help/*.HxC
+DocProject/Help/*.hhc
+DocProject/Help/*.hhk
+DocProject/Help/*.hhp
+DocProject/Help/Html2
+
+# Click-Once directory
+publish/
+
+# Publish Web Output
+*.[Pp]ublish.xml
+*.azurePubxml
+# Note: Comment the next line if you have MS Web Deploy installed
+# and you want to deploy to web sites of the cloud service providers
+[Ww]eb[Pp]ublish/
+
+# NuGet Packages
+*.nupkg
+# NuGet Symbol Packages
+*.snupkg
+
+# Windows image file caches
+Thumbs.db
+ehthumbs.db
+
+# Folder config file for Windows
+Desktop.ini
+
+# Recycle Bin used on file shares
+$RECYCLE.BIN/
+
+# VS Code directories
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+*.code-workspace
+
+# Telerik controls
+_Telerik*
+
+# JetBrains Rider
+.idea/
+*.sln.iml
+
+# .NET Core
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+# StyleCop
+StyleCopReport.xml
+
+# MongoDB
+*.log
+*.json
+*.csv
+*.tsv
+*.log.*
+*.tmp
+.lock
+mongod.lock
+storage.bson
+diagnostic.data
+
+# Local history for Visual Studio
+.localhistory/
+
+# SQL Server files
+*.mdf
+*.ldf
+
+# Azure App Service Backup Folder
+[Backup]*/
+
+### Database ###
+# Ignore all database files
+*.db
+*.sqlite
+*.sqlite3
+*.db-journal
+
+# Ignore all SQLite files
+*.sqlite
+*.sqlite-shm
+*.sqlite-wal
+
+# Ignore SQL dumps
+*.sql
+*.dump
+
+# Ignore database backups
+*.bak
+*.backup
+
+# Ignore SQL Server database files
+*.mdf
+*.ldf
+
+# Ignore PostgreSQL files
+*.pgsql
+.pgsql_tmp/
+
+# Ignore MySQL files
+*.mysql
+*.mysql_tmp/
+
+# Ignore Oracle files
+*.dmp
+*.log
+*.dbf
+*.ora
+
+# Ignore Microsoft Access files
+*.accdb
+*.mdb
+
+# Ignore MongoDB files
+*.bson
+*.json
+*.log
+
+# Ignore Neo4j files
+*.graph.db
+*.conf
+*.log
+
+# Ignore Redis files
+*.rdb
+*.aof
+*.log
+
+# Ignore Cassandra files
+*.cql
+*.schema
+*.log
