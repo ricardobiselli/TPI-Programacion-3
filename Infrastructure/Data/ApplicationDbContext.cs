@@ -16,7 +16,7 @@ namespace Infrastructure.Data
         public DbSet<Client> Clients { get; set; }
         public DbSet<Payment> Payments { get; set; }
         public DbSet<Compatibility> Compatibilities { get; set; }
-        public DbSet<AdminClass> Admins { get; set; }
+        public DbSet<Admin> Admins { get; set; }
         public DbSet<SuperAdmin> SuperAdmins { get; set; }
         public DbSet<User> Users { get; set; }
         public DbSet<ShoppingCart> Carts { get; set; }

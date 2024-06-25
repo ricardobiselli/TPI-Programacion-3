@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Application.Interfaces;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace Application.Services
 {
@@ -37,10 +38,30 @@ namespace Application.Services
               await _clientRepository.DeleteAsync(id);
         }
 
-        public async Task UpdateAsync(Client client)
+       /* public async Task UpdateAsync(int id, Client updatedClient)
         {
-            await _clientRepository.UpdateAsync(client);
-            
+            updatedClient.Id = id; 
+            await _clientRepository.UpdateAsync(updatedClient);
+        }*/
+
+        public async Task UpdateAsync(int id, Client updateClient)
+        {
+            var client = await _clientRepository.GetByIdAsync(id);
+            if (client != null)
+            {
+                client.UserName = updateClient.UserName;
+                client.Email = updateClient.Email;
+                client.FirstName = updateClient.FirstName;
+                client.LastName = updateClient.LastName;
+                client.Address = updateClient.Address;
+                client.DniNumber = updateClient.DniNumber;
+
+
+    
+
+
+                await _clientRepository.UpdateAsync(client);
+            }
         }
 
     }

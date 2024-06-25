@@ -32,11 +32,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\ricar\\source\\repos\\TPI-P3\\Application\\Application.csproj",
+      "projectUniqueName": "C:\\Users\\ricar\\Desktop\\NUEVO P3\\TPI-Programacion-3\\Application\\Application.csproj",
       "projectName": "Application",
-      "projectPath": "C:\\Users\\ricar\\source\\repos\\TPI-P3\\Application\\Application.csproj",
+      "projectPath": "C:\\Users\\ricar\\Desktop\\NUEVO P3\\TPI-Programacion-3\\Application\\Application.csproj",
       "packagesPath": "C:\\Users\\ricar\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\ricar\\source\\repos\\TPI-P3\\Application\\obj\\",
+      "outputPath": "C:\\Users\\ricar\\Desktop\\NUEVO P3\\TPI-Programacion-3\\Application\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\ricar\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -54,8 +54,8 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "C:\\Users\\ricar\\source\\repos\\TPI-P3\\Domain\\Domain.csproj": {
-              "projectPath": "C:\\Users\\ricar\\source\\repos\\TPI-P3\\Domain\\Domain.csproj"
+            "C:\\Users\\ricar\\Desktop\\NUEVO P3\\TPI-Programacion-3\\Domain\\Domain.csproj": {
+              "projectPath": "C:\\Users\\ricar\\Desktop\\NUEVO P3\\TPI-Programacion-3\\Domain\\Domain.csproj"
             }
           }
         }
@@ -93,13 +93,5 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.300/PortableRuntimeIdentifierGraph.json"
       }
     }
-  },
-  "logs": [
-    {
-      "code": "Undefined",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Problem reading the cache file C:\\Users\\ricar\\source\\repos\\TPI-P3\\Application\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
-    }
-  ]
+  }
 }

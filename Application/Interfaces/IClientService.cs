@@ -13,7 +13,7 @@ namespace Application.Interfaces
         Task<IEnumerable<Client>> GetAllAsync();
         Task AddAsync(Client client);
         Task DeleteAsync(int id);
-        Task UpdateAsync(Client client);
+        Task UpdateAsync(int id, Client updateClient);
 
 
     }

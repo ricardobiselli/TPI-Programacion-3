@@ -204,11 +204,11 @@ namespace Infrastructure.Migrations
                     b.ToTable("OrderProduct", (string)null);
                 });
 
-            modelBuilder.Entity("Domain.Models.Users.AdminClass", b =>
+            modelBuilder.Entity("Domain.Models.Users.Admin", b =>
                 {
                     b.HasBaseType("Domain.Models.Users.User");
 
-                    b.HasDiscriminator().HasValue("AdminClass");
+                    b.HasDiscriminator().HasValue("Admin");
                 });
 
             modelBuilder.Entity("Domain.Models.Users.Client", b =>
@@ -216,9 +216,6 @@ namespace Infrastructure.Migrations
                     b.HasBaseType("Domain.Models.Users.User");
 
                     b.Property<string>("Address")
-                        .HasColumnType("TEXT");
-
-                    b.Property<DateTime>("BirthDate")
                         .HasColumnType("TEXT");
 
                     b.Property<string>("DniNumber")
@@ -230,15 +227,12 @@ namespace Infrastructure.Migrations
                     b.Property<string>("LastName")
                         .HasColumnType("TEXT");
 
-                    b.Property<string>("PhoneNumber")
-                        .HasColumnType("TEXT");
-
                     b.HasDiscriminator().HasValue("Client");
                 });
 
             modelBuilder.Entity("Domain.Models.Users.SuperAdmin", b =>
                 {
-                    b.HasBaseType("Domain.Models.Users.AdminClass");
+                    b.HasBaseType("Domain.Models.Users.Admin");
 
                     b.HasDiscriminator().HasValue("SuperAdmin");
                 });

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\ricar\\source\\repos\\TPI-P3\\TPI-P3\\Presentation.csproj": {}
+    "C:\\Users\\ricar\\Desktop\\NUEVO P3\\TPI-Programacion-3\\TPI-P3\\Presentation.csproj": {}
   },
   "projects": {
-    "C:\\Users\\ricar\\source\\repos\\TPI-P3\\Application\\Application.csproj": {
+    "C:\\Users\\ricar\\Desktop\\NUEVO P3\\TPI-Programacion-3\\Application\\Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ricar\\source\\repos\\TPI-P3\\Application\\Application.csproj",
+        "projectUniqueName": "C:\\Users\\ricar\\Desktop\\NUEVO P3\\TPI-Programacion-3\\Application\\Application.csproj",
         "projectName": "Application",
-        "projectPath": "C:\\Users\\ricar\\source\\repos\\TPI-P3\\Application\\Application.csproj",
+        "projectPath": "C:\\Users\\ricar\\Desktop\\NUEVO P3\\TPI-Programacion-3\\Application\\Application.csproj",
         "packagesPath": "C:\\Users\\ricar\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ricar\\source\\repos\\TPI-P3\\Application\\obj\\",
+        "outputPath": "C:\\Users\\ricar\\Desktop\\NUEVO P3\\TPI-Programacion-3\\Application\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\ricar\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -29,8 +29,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\ricar\\source\\repos\\TPI-P3\\Domain\\Domain.csproj": {
-                "projectPath": "C:\\Users\\ricar\\source\\repos\\TPI-P3\\Domain\\Domain.csproj"
+              "C:\\Users\\ricar\\Desktop\\NUEVO P3\\TPI-Programacion-3\\Domain\\Domain.csproj": {
+                "projectPath": "C:\\Users\\ricar\\Desktop\\NUEVO P3\\TPI-Programacion-3\\Domain\\Domain.csproj"
               }
             }
           }
@@ -69,14 +69,14 @@
         }
       }
     },
-    "C:\\Users\\ricar\\source\\repos\\TPI-P3\\Domain\\Domain.csproj": {
+    "C:\\Users\\ricar\\Desktop\\NUEVO P3\\TPI-Programacion-3\\Domain\\Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ricar\\source\\repos\\TPI-P3\\Domain\\Domain.csproj",
+        "projectUniqueName": "C:\\Users\\ricar\\Desktop\\NUEVO P3\\TPI-Programacion-3\\Domain\\Domain.csproj",
         "projectName": "Domain",
-        "projectPath": "C:\\Users\\ricar\\source\\repos\\TPI-P3\\Domain\\Domain.csproj",
+        "projectPath": "C:\\Users\\ricar\\Desktop\\NUEVO P3\\TPI-Programacion-3\\Domain\\Domain.csproj",
         "packagesPath": "C:\\Users\\ricar\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ricar\\source\\repos\\TPI-P3\\Domain\\obj\\",
+        "outputPath": "C:\\Users\\ricar\\Desktop\\NUEVO P3\\TPI-Programacion-3\\Domain\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\ricar\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -130,14 +130,14 @@
         }
       }
     },
-    "C:\\Users\\ricar\\source\\repos\\TPI-P3\\Infrastructure\\Infrastructure.csproj": {
+    "C:\\Users\\ricar\\Desktop\\NUEVO P3\\TPI-Programacion-3\\Infrastructure\\Infrastructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ricar\\source\\repos\\TPI-P3\\Infrastructure\\Infrastructure.csproj",
+        "projectUniqueName": "C:\\Users\\ricar\\Desktop\\NUEVO P3\\TPI-Programacion-3\\Infrastructure\\Infrastructure.csproj",
         "projectName": "Infrastructure",
-        "projectPath": "C:\\Users\\ricar\\source\\repos\\TPI-P3\\Infrastructure\\Infrastructure.csproj",
+        "projectPath": "C:\\Users\\ricar\\Desktop\\NUEVO P3\\TPI-Programacion-3\\Infrastructure\\Infrastructure.csproj",
         "packagesPath": "C:\\Users\\ricar\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ricar\\source\\repos\\TPI-P3\\Infrastructure\\obj\\",
+        "outputPath": "C:\\Users\\ricar\\Desktop\\NUEVO P3\\TPI-Programacion-3\\Infrastructure\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\ricar\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -155,8 +155,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\ricar\\source\\repos\\TPI-P3\\Application\\Application.csproj": {
-                "projectPath": "C:\\Users\\ricar\\source\\repos\\TPI-P3\\Application\\Application.csproj"
+              "C:\\Users\\ricar\\Desktop\\NUEVO P3\\TPI-Programacion-3\\Application\\Application.csproj": {
+                "projectPath": "C:\\Users\\ricar\\Desktop\\NUEVO P3\\TPI-Programacion-3\\Application\\Application.csproj"
               }
             }
           }
@@ -176,6 +176,10 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "Microsoft.AspNetCore.Authentication.JwtBearer": {
+              "target": "Package",
+              "version": "[8.0.6, )"
+            },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
               "version": "[8.0.6, )"
@@ -183,6 +187,14 @@
             "Microsoft.EntityFrameworkCore.Sqlite": {
               "target": "Package",
               "version": "[8.0.6, )"
+            },
+            "Microsoft.IdentityModel.Tokens": {
+              "target": "Package",
+              "version": "[7.6.2, )"
+            },
+            "System.IdentityModel.Tokens.Jwt": {
+              "target": "Package",
+              "version": "[7.6.2, )"
             }
           },
           "imports": [
@@ -205,14 +217,14 @@
         }
       }
     },
-    "C:\\Users\\ricar\\source\\repos\\TPI-P3\\TPI-P3\\Presentation.csproj": {
+    "C:\\Users\\ricar\\Desktop\\NUEVO P3\\TPI-Programacion-3\\TPI-P3\\Presentation.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ricar\\source\\repos\\TPI-P3\\TPI-P3\\Presentation.csproj",
+        "projectUniqueName": "C:\\Users\\ricar\\Desktop\\NUEVO P3\\TPI-Programacion-3\\TPI-P3\\Presentation.csproj",
         "projectName": "Presentation",
-        "projectPath": "C:\\Users\\ricar\\source\\repos\\TPI-P3\\TPI-P3\\Presentation.csproj",
+        "projectPath": "C:\\Users\\ricar\\Desktop\\NUEVO P3\\TPI-Programacion-3\\TPI-P3\\Presentation.csproj",
         "packagesPath": "C:\\Users\\ricar\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ricar\\source\\repos\\TPI-P3\\TPI-P3\\obj\\",
+        "outputPath": "C:\\Users\\ricar\\Desktop\\NUEVO P3\\TPI-Programacion-3\\TPI-P3\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\ricar\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -230,11 +242,11 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\ricar\\source\\repos\\TPI-P3\\Application\\Application.csproj": {
-                "projectPath": "C:\\Users\\ricar\\source\\repos\\TPI-P3\\Application\\Application.csproj"
+              "C:\\Users\\ricar\\Desktop\\NUEVO P3\\TPI-Programacion-3\\Application\\Application.csproj": {
+                "projectPath": "C:\\Users\\ricar\\Desktop\\NUEVO P3\\TPI-Programacion-3\\Application\\Application.csproj"
               },
-              "C:\\Users\\ricar\\source\\repos\\TPI-P3\\Infrastructure\\Infrastructure.csproj": {
-                "projectPath": "C:\\Users\\ricar\\source\\repos\\TPI-P3\\Infrastructure\\Infrastructure.csproj"
+              "C:\\Users\\ricar\\Desktop\\NUEVO P3\\TPI-Programacion-3\\Infrastructure\\Infrastructure.csproj": {
+                "projectPath": "C:\\Users\\ricar\\Desktop\\NUEVO P3\\TPI-Programacion-3\\Infrastructure\\Infrastructure.csproj"
               }
             }
           }

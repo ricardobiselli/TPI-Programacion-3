@@ -13,6 +13,6 @@ namespace Application.IRepositories
         Task<IEnumerable<Client>> GetAllAsync();
         Task AddAsync(Client client);
         Task DeleteAsync(int id);
-        Task UpdateAsync(Client client);
+        Task UpdateAsync( Client client);
     }
 }

@@ -51,6 +51,7 @@ namespace Infrastructure.Data.Repositories
             _context.Clients.Update(client);
             await _context.SaveChangesAsync();
         }
+
     }
 }
 
