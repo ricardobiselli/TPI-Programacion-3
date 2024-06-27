@@ -60,14 +60,14 @@ namespace Infrastructure.Services
 
             return new JwtSecurityTokenHandler().WriteToken(jwtSecurityToken);
         }
+        public class AuthenticationServiceOptions
+        {
+            public const string AuthenticationService = "AuthenticationService";
+            public string Issuer { get; set; }
+            public string Audience { get; set; }
+            public string SecretForKey { get; set; }
+        }
 
-    }
-    public class AuthenticationServiceOptions
-    {
-        public const string AuthenticationService = "AuthenticationService";
-        public string Issuer { get; set; }
-        public string Audience { get; set; }
-        public string SecretForKey { get; set; }
     }
 
 }
