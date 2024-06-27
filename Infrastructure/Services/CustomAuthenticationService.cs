@@ -1,17 +1,16 @@
-﻿using Application.Interfaces;
-using Domain.Models.Users;
-using Microsoft.Extensions.Options;
-using System;
+﻿using System;
 using System.Collections.Generic;
+using System.IdentityModel.Tokens.Jwt;
 using System.Linq;
 using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
-using System.IdentityModel.Tokens.Jwt;
-using Application.Models.Requests;
-using Microsoft.IdentityModel.Tokens;
+using Application.Interfaces;
 using Application.IRepositories;
-
+using Application.Models.Requests;
+using Domain.Models.Users;
+using Microsoft.Extensions.Options;
+using Microsoft.IdentityModel.Tokens;
 
 namespace Infrastructure.Services
 {
@@ -26,10 +25,9 @@ namespace Infrastructure.Services
             _options = options.Value;
         }
 
-        public string Authenticate(UserLoginRequest authenticationRequest)
+        public async Task<string> AuthenticateAsync(UserLoginRequest authenticationRequest)
         {
-            var user = _userRepository.GetUserByUserName(authenticationRequest.UserName);
-
+            var user = await _userRepository.GetUserByEmailOrUsername(authenticationRequest.UserNameOrEmail);
             if (user == null || user.Password != authenticationRequest.Password)
             {
                 throw new UnauthorizedAccessException("User authentication failed");
@@ -42,7 +40,7 @@ namespace Infrastructure.Services
             {
                 new Claim("sub", user.Id.ToString()),
                 new Claim("userName", user.UserName),
-                new Claim(ClaimTypes.Role, user.UserType) // Ensure user.UserType holds the correct role
+                new Claim(ClaimTypes.Role, user.UserType)
             };
 
             if (user is Client client)
@@ -51,7 +49,6 @@ namespace Infrastructure.Services
                 claimsForToken.Add(new Claim("lastName", client.LastName));
             }
 
-            // Log the claims for debugging
             Console.WriteLine($"Creating token with claims: {string.Join(", ", claimsForToken.Select(c => $"{c.Type}: {c.Value}"))}");
 
             var jwtSecurityToken = new JwtSecurityToken(
@@ -64,15 +61,13 @@ namespace Infrastructure.Services
             return new JwtSecurityTokenHandler().WriteToken(jwtSecurityToken);
         }
 
-
-        public class AuthenticationServiceOptions
-        {
-            public const string AuthenticationService = "AuthenticationService";
-            public string Issuer { get; set; }
-            public string Audience { get; set; }
-            public string SecretForKey { get; set; }
-        }
     }
+    public class AuthenticationServiceOptions
+    {
+        public const string AuthenticationService = "AuthenticationService";
+        public string Issuer { get; set; }
+        public string Audience { get; set; }
+        public string SecretForKey { get; set; }
+    }
+
 }
-
-

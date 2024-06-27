@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using Application.IRepositories;
 using Domain.Models.Users;
 using Infrastructure.Data;
@@ -17,10 +15,11 @@ namespace Infrastructure.Data.Repositories
             _context = context;
         }
 
-        public User? GetUserByUserName(string username)
+        public Task<User> GetUserByEmailOrUsername(string emailOrUsername)
         {
-            return _context.Users.FirstOrDefault(u => u.UserName == username);
+            return _context.Users.FirstOrDefaultAsync(u =>
+                u.Email.ToLower() == emailOrUsername.ToLower() ||
+                u.UserName.ToLower() == emailOrUsername.ToLower());
         }
-
     }
 }

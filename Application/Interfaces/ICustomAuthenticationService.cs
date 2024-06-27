@@ -5,10 +5,12 @@ using System.Text;
 using System.Threading.Tasks;
 using Application.Models.Requests;
 
+
+
 namespace Application.Interfaces
 {
     public interface ICustomAuthenticationService
     {
-        string Authenticate(UserLoginRequest authenticationRequest);
+        Task<string> AuthenticateAsync(UserLoginRequest authenticationRequest);
     }
 }

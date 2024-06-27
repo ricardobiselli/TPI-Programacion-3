@@ -6,7 +6,7 @@ namespace Application.IRepositories
 {
     public interface IUserRepository
     {
-        User? GetUserByUserName(string username);
+        Task <User>GetUserByEmailOrUsername(string emailOrUsername);
 
     }
 }

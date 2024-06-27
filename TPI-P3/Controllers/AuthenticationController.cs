@@ -8,6 +8,9 @@ using System.Security.Claims;
 using System.Text;
 using Application.Interfaces;
 
+
+using System.Threading.Tasks;
+
 namespace Presentation.Controllers
 {
     [Route("api/authentication")]
@@ -24,61 +27,10 @@ namespace Presentation.Controllers
         }
 
         [HttpPost("authenticate")]
-        public ActionResult<string> Authenticate(UserLoginRequest authenticationRequest)
+        public async Task<ActionResult<string>> AuthenticateAsync(UserLoginRequest authenticationRequest)
         {
-            string token = _customAuthenticationService.Authenticate(authenticationRequest);
+            string token = await _customAuthenticationService.AuthenticateAsync(authenticationRequest);
             return Ok(token);
         }
     }
 }
-/*{
-    [ApiController]
-    [Route("api/[controller]")]
-    public class AuthenticationController : ControllerBase
-    {
-        private readonly ApplicationDbContext _context;
-        private readonly IConfiguration _configuration;
-
-        public AuthenticationController(ApplicationDbContext context, IConfiguration configuration)
-        {
-            _context = context;
-            _configuration = configuration;
-        }
-
-        [HttpPost("login")]
-        public async Task<IActionResult> Login([FromBody] UserLoginRequest loginRequest)
-        {
-            var user = _context.Users.SingleOrDefault(u => u.UserName == loginRequest.UserName && u.Password == loginRequest.Password);
-
-            if (user == null)
-            {
-                return Unauthorized();
-            }
-
-            // Generate JWT token (similar to the previous steps)
-
-            var token = GenerateJwtToken(user);
-            return Ok(new { Token = token });
-        }
-
-        private string GenerateJwtToken(User user)
-        {
-            var tokenHandler = new JwtSecurityTokenHandler();
-            var key = Encoding.ASCII.GetBytes(_configuration["Jwt:Key"]);
-
-            var tokenDescriptor = new SecurityTokenDescriptor
-            {
-                Subject = new ClaimsIdentity(new[]
-                {
-                    new Claim(ClaimTypes.Name, user.UserName),
-                    new Claim(ClaimTypes.Role, user.UserType)
-                }),
-                Expires = DateTime.UtcNow.AddHours(1),
-                SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature)
-            };
-
-            var token = tokenHandler.CreateToken(tokenDescriptor);
-            return tokenHandler.WriteToken(token);
-        }
-    }
-}*/

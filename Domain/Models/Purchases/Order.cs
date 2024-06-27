@@ -25,6 +25,6 @@ namespace Domain.Models.Purchases
         public int ClientId { get; set; } 
         public Client Client { get; set; }
 
-        public ICollection<Product> Products { get; set; } //many to many
+        public ICollection<Product> Products { get; set; } 
     }
 }
