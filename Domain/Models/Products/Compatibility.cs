@@ -16,8 +16,8 @@ namespace Domain.Models.Products
         public string? PowerSupplyType { get; set; } // ATX(normal), SFX(mini)
         public string? GpuType { get; set; } // PCIe 3.0, PCIe 4.0
 
-        [ForeignKey("ProductId")]
-        public int ProductId { get; set; }
-        public Product? Product { get; set; }
+       // [ForeignKey("ProductId")]
+       // public int ProductId { get; set; }
+       // public Product? Product { get; set; }
     }
 }

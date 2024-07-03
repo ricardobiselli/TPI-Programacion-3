@@ -30,6 +30,7 @@ namespace Infrastructure.Data.Repositories
         public async Task AddAsync(Product product)
         {
             _context.Products.Add(product);
+            Console.WriteLine(product);
             await _context.SaveChangesAsync();
         }
 

@@ -20,6 +20,7 @@ namespace Domain.Models.Products
             PowerConsumption = power;
             Orders = new List<Order>();
             ShoppingCarts = new List<ShoppingCart>();
+            Compatibilities = new List<Compatibility>();
 
         }
 
@@ -32,7 +33,7 @@ namespace Domain.Models.Products
         public string? Category { get; set; }
         public decimal PowerConsumption { get; set; }
 
-        public Compatibility? Compatibilities { get; set; } // one to one
+        public ICollection<Compatibility>? Compatibilities { get; set; } // one to one
         public ICollection<Order>? Orders { get; set; } // many to many
         public ICollection<ShoppingCart>? ShoppingCarts { get; set; } // many to many
     }

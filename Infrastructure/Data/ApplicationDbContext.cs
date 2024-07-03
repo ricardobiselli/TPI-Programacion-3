@@ -24,11 +24,11 @@ namespace Infrastructure.Data
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             {
-                modelBuilder.Entity<Product>()
-                    .HasOne(p => p.Compatibilities)
-                    .WithOne(c => c.Product)
-                    .HasForeignKey<Compatibility>(c => c.ProductId)
-                    .OnDelete(DeleteBehavior.Cascade);
+                //modelBuilder.Entity<Product>()
+                //    .HasOne(p => p.Compatibilities)
+                //    .WithOne(c => c.Product)
+                //    .HasForeignKey<Compatibility>(c => c.ProductId)
+                //    .OnDelete(DeleteBehavior.Cascade);
 
                 modelBuilder.Entity<Client>()
                     .HasMany(c => c.Orders)
