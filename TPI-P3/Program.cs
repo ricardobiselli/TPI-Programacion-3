@@ -85,6 +85,8 @@ builder.Services.AddScoped<IProductService, ProductService>();
 builder.Services.AddScoped<IClientService, ClientService>();
 builder.Services.AddScoped<IAdminRepository, AdminRepository>();
 builder.Services.AddScoped<IAdminService, AdminService>();
+builder.Services.AddScoped<IOrderRepository, OrderRepository>();
+
 
 
 /*builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)

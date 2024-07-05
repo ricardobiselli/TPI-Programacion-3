@@ -20,7 +20,7 @@ namespace Domain.Models.Users
             DniNumber = dniNumber;
             Address = address;
             Orders = new List<Order>();
-            Payments = new List<Payment>();
+            //Payments = new List<Payment>();
         }
 
         public string? FirstName { get; set; }
@@ -28,8 +28,8 @@ namespace Domain.Models.Users
         public string? DniNumber { get; set; }
         public string? Address { get; set; }
 
-        public ICollection<Order>? Orders { get; set; } // one to many
-        public ICollection<Payment>? Payments { get; set; } // one to many
-        public ShoppingCart? Cart { get; set; } // one to one
+        public ICollection<Order>? Orders { get; set; } 
+        //public ICollection<Payment>? Payments { get; set; }
+        //public ShoppingCart? Cart { get; set; } 
     }
 }

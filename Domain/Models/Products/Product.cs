@@ -10,7 +10,7 @@ namespace Domain.Models.Products
     public class Product
     {
         public Product(){ }
-        public Product(string name, string description, string category, decimal price, int stock, int power)
+        public Product(string name, string description, string category, decimal price, int stock, int power, List<string> compatibilities)
         {
             Name = name;
             Description = description;
@@ -19,8 +19,8 @@ namespace Domain.Models.Products
             StockQuantity = stock;
             PowerConsumption = power;
             Orders = new List<Order>();
-            ShoppingCarts = new List<ShoppingCart>();
-            Compatibilities = new List<Compatibility>();
+            //ShoppingCarts = new List<ShoppingCart>();
+            Compatibilities = new List<string>(); 
 
         }
 
@@ -33,8 +33,10 @@ namespace Domain.Models.Products
         public string? Category { get; set; }
         public decimal PowerConsumption { get; set; }
 
-        public ICollection<Compatibility>? Compatibilities { get; set; } // one to one
-        public ICollection<Order>? Orders { get; set; } // many to many
-        public ICollection<ShoppingCart>? ShoppingCarts { get; set; } // many to many
+        public List<string>? Compatibilities { get; set; } 
+        public ICollection<Order>? Orders { get; set; } 
+        //public ICollection<ShoppingCart>? ShoppingCarts { get; set; } 
     }
+    
 }
+

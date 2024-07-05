@@ -3,6 +3,7 @@ using System;
 using Infrastructure.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,12 +11,57 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Infrastructure.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240704224947_04072024")]
+    partial class _04072024
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "8.0.6");
+
+            modelBuilder.Entity("CartProduct", b =>
+                {
+                    b.Property<int>("CartId")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int>("ProductId")
+                        .HasColumnType("INTEGER");
+
+                    b.HasKey("CartId", "ProductId");
+
+                    b.HasIndex("ProductId");
+
+                    b.ToTable("CartProduct", (string)null);
+                });
+
+            modelBuilder.Entity("Domain.Models.Products.Compatibility", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("GpuType")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("PowerSupplyType")
+                        .HasColumnType("TEXT");
+
+                    b.Property<int?>("ProductId")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("RamType")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("SocketType")
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ProductId");
+
+                    b.ToTable("Compatibilities");
+                });
 
             modelBuilder.Entity("Domain.Models.Products.Product", b =>
                 {
@@ -24,9 +70,6 @@ namespace Infrastructure.Migrations
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("Category")
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("Compatibilities")
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Description")
@@ -69,6 +112,51 @@ namespace Infrastructure.Migrations
                     b.HasIndex("ClientId");
 
                     b.ToTable("Orders");
+                });
+
+            modelBuilder.Entity("Domain.Models.Purchases.Payment", b =>
+                {
+                    b.Property<int?>("PaymentId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<decimal>("Amount")
+                        .HasColumnType("TEXT");
+
+                    b.Property<int>("ClientId")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<DateTime?>("PaymentDate")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("PaymentMethod")
+                        .HasColumnType("TEXT");
+
+                    b.Property<bool>("PaymentStatus")
+                        .HasColumnType("INTEGER");
+
+                    b.HasKey("PaymentId");
+
+                    b.HasIndex("ClientId");
+
+                    b.ToTable("Payments");
+                });
+
+            modelBuilder.Entity("Domain.Models.Purchases.ShoppingCart", b =>
+                {
+                    b.Property<int>("CartId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int>("ClientId")
+                        .HasColumnType("INTEGER");
+
+                    b.HasKey("CartId");
+
+                    b.HasIndex("ClientId")
+                        .IsUnique();
+
+                    b.ToTable("Carts");
                 });
 
             modelBuilder.Entity("Domain.Models.Users.User", b =>
@@ -151,11 +239,55 @@ namespace Infrastructure.Migrations
                     b.HasDiscriminator().HasValue("SuperAdmin");
                 });
 
+            modelBuilder.Entity("CartProduct", b =>
+                {
+                    b.HasOne("Domain.Models.Purchases.ShoppingCart", null)
+                        .WithMany()
+                        .HasForeignKey("CartId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Domain.Models.Products.Product", null)
+                        .WithMany()
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("Domain.Models.Products.Compatibility", b =>
+                {
+                    b.HasOne("Domain.Models.Products.Product", null)
+                        .WithMany("Compatibilities")
+                        .HasForeignKey("ProductId");
+                });
+
             modelBuilder.Entity("Domain.Models.Purchases.Order", b =>
                 {
                     b.HasOne("Domain.Models.Users.Client", "Client")
                         .WithMany("Orders")
                         .HasForeignKey("ClientId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Client");
+                });
+
+            modelBuilder.Entity("Domain.Models.Purchases.Payment", b =>
+                {
+                    b.HasOne("Domain.Models.Users.Client", "Client")
+                        .WithMany("Payments")
+                        .HasForeignKey("ClientId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Client");
+                });
+
+            modelBuilder.Entity("Domain.Models.Purchases.ShoppingCart", b =>
+                {
+                    b.HasOne("Domain.Models.Users.Client", "Client")
+                        .WithOne("Cart")
+                        .HasForeignKey("Domain.Models.Purchases.ShoppingCart", "ClientId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -177,9 +309,18 @@ namespace Infrastructure.Migrations
                         .IsRequired();
                 });
 
+            modelBuilder.Entity("Domain.Models.Products.Product", b =>
+                {
+                    b.Navigation("Compatibilities");
+                });
+
             modelBuilder.Entity("Domain.Models.Users.Client", b =>
                 {
+                    b.Navigation("Cart");
+
                     b.Navigation("Orders");
+
+                    b.Navigation("Payments");
                 });
 #pragma warning restore 612, 618
         }

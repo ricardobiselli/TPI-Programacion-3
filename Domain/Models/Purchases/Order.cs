@@ -14,6 +14,7 @@ namespace Domain.Models.Purchases
         {
             OrderDate = DateTime.Now;
             TotalAmount = totalAmount;
+            ClientId = clientId;
             Products = new List<Product>();
         }
 
