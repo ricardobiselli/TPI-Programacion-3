@@ -1,5 +1,4 @@
-﻿
-using Domain.Models.Users;
+﻿using Domain.Models.Users;
 using Application.Interfaces;
 using Domain.Models.Products;
 using Domain.Models.Purchases;
@@ -26,7 +25,7 @@ namespace Infrastructure.Data.Repositories
             return await _context.Orders.FindAsync(orderId);
         }
 
-        public async Task<List<Order>> GetAllOrdersAsync()
+        public async Task<List<Order>> GetAllOrdersAsync() 
         {
             return await _context.Orders.ToListAsync();
         }
@@ -58,4 +57,3 @@ namespace Infrastructure.Data.Repositories
         }
     }
 }
-

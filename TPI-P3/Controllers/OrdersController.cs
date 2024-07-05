@@ -52,11 +52,25 @@ namespace TPI_P3.Controllers
         }
 
         [HttpGet("{clientId}")]
-        public async Task<IActionResult> GetAllOrders(int clientId)
+        public async Task<IActionResult> GetOrdersByClientId(int clientId)
         {
             try
             {
                 var orders = await _orderRepository.GetOrdersByClientIdAsync(clientId);
+                return Ok(orders);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError, "Internal Server Error");
+            }
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> GetAllOrdersAsync()
+        {
+            try
+            {
+                var orders = await _orderRepository.GetAllOrdersAsync();
                 return Ok(orders);
             }
             catch (Exception ex)
