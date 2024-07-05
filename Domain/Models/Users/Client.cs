@@ -10,6 +10,8 @@ namespace Domain.Models.Users
         public Client()
         {
             UserType = "client";
+            Orders = new List<Order>();
+
         }
 
         public Client(string userName, string email, string password, string firstName, string lastName, string dniNumber, string address)
