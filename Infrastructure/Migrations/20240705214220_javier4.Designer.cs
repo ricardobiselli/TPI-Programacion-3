@@ -3,6 +3,7 @@ using System;
 using Infrastructure.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,12 +11,36 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Infrastructure.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240705214220_javier4")]
+    partial class javier4
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "8.0.6");
+
+            modelBuilder.Entity("Domain.Models.Products.Compatibility", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int?>("ProductId")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("RamType")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("SocketType")
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ProductId");
+
+                    b.ToTable("Compatibility");
+                });
 
             modelBuilder.Entity("Domain.Models.Products.Product", b =>
                 {
@@ -24,9 +49,6 @@ namespace Infrastructure.Migrations
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("Category")
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("Compatibilities")
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Description")
@@ -151,6 +173,14 @@ namespace Infrastructure.Migrations
                     b.HasDiscriminator().HasValue("SuperAdmin");
                 });
 
+            modelBuilder.Entity("Domain.Models.Products.Compatibility", b =>
+                {
+                    b.HasOne("Domain.Models.Products.Product", null)
+                        .WithMany("Compatibilities")
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Cascade);
+                });
+
             modelBuilder.Entity("Domain.Models.Purchases.Order", b =>
                 {
                     b.HasOne("Domain.Models.Users.Client", "Client")
@@ -175,6 +205,11 @@ namespace Infrastructure.Migrations
                         .HasForeignKey("ProductId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+                });
+
+            modelBuilder.Entity("Domain.Models.Products.Product", b =>
+                {
+                    b.Navigation("Compatibilities");
                 });
 
             modelBuilder.Entity("Domain.Models.Users.Client", b =>
