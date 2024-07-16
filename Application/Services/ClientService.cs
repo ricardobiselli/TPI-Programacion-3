@@ -34,15 +34,13 @@ namespace Application.Services
         }
 
         public async Task DeleteAsync(int id)
-        { 
-              await _clientRepository.DeleteAsync(id);
-        }
-
-       /* public async Task UpdateAsync(int id, Client updatedClient)
         {
-            updatedClient.Id = id; 
-            await _clientRepository.UpdateAsync(updatedClient);
-        }*/
+             var client = await _clientRepository.GetByIdAsync(id);
+            if (client != null) 
+            {
+                await _clientRepository.DeleteAsync(client);
+            }
+        }
 
         public async Task UpdateAsync(int id, Client updateClient)
         {

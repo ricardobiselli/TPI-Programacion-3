@@ -37,7 +37,11 @@ namespace Application.Services
 
         public async Task DeleteAsync(int id)
         {
-            await _productRepository.DeleteAsync(id);
+            var product = await _productRepository.GetByIdAsync(id);
+            if (product != null)
+            {
+                await _productRepository.DeleteAsync(product);
+            }
         }
     }
 }

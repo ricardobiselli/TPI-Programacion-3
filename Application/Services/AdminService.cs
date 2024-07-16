@@ -45,7 +45,11 @@ namespace Application.Services
 
         public async Task DeleteAsync(int id)
         {
-            await _adminRepository.DeleteAsync(id);
+            var admin = await _adminRepository.GetByIdAsync(id);
+            if (admin != null)
+            {
+                await _adminRepository.DeleteAsync(admin);
+            }
         }
     }
 }
