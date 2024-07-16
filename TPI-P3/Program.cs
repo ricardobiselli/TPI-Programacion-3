@@ -25,10 +25,6 @@ var issuer = authSettings["Issuer"];
 var audience = authSettings["Audience"];
 var jwtSecretKey = authSettings["SecretForKey"];
 
-if (string.IsNullOrEmpty(jwtSecretKey))
-{
-    throw new InvalidOperationException("JWT secret key is missing or empty in configuration.");
-}
 
 if (string.IsNullOrEmpty(jwtSecretKey))
 {
@@ -40,11 +36,11 @@ builder.Services.AddControllers()
     .AddJsonOptions(options =>
     {
         options.JsonSerializerOptions.ReferenceHandler = System.Text.Json.Serialization.ReferenceHandler.IgnoreCycles;
-    })
-    .AddJsonOptions(options =>
-    {
-        options.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.Preserve;
     });
+   // .AddJsonOptions(options =>
+   // {
+   //     options.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.Preserve;
+   // });
 // Swagger Configuration
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(setupAction =>
@@ -89,22 +85,6 @@ builder.Services.AddScoped<IOrderRepository, OrderRepository>();
 
 
 
-/*builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
-    .AddJwtBearer(options =>
-    {
-        options.TokenValidationParameters = new TokenValidationParameters
-        {
-            ValidateIssuer = true,
-            ValidateAudience = true,
-            ValidateLifetime = true,
-            ValidateIssuerSigningKey = true,
-            ValidIssuer = builder.Configuration["Jwt:Issuer"],
-            ValidAudience = builder.Configuration["Jwt:Audience"],
-            IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["Jwt:Key"]))
-        };
-    });*/
-
-// Authentication
 // Configure JWT authentication
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
     .AddJwtBearer(options =>

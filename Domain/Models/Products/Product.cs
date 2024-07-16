@@ -20,7 +20,6 @@ namespace Domain.Models.Products
             StockQuantity = stock;
             PowerConsumption = power;
             Orders = new List<Order>();
-            //ShoppingCarts = new List<ShoppingCart>();
             Compatibilities = compatibilities;
 
         }
@@ -36,7 +35,6 @@ namespace Domain.Models.Products
         public List<string>? Compatibilities { get; set; } 
 
         public ICollection<Order>? Orders { get; set; } 
-        //public ICollection<ShoppingCart>? ShoppingCarts { get; set; } 
     }
     
 }
