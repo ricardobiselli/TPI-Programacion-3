@@ -1,6 +1,7 @@
 ﻿using Application.Models;
 using Domain.Models.Purchases;
 using Infrastructure.Data.Repositories;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -10,6 +11,7 @@ namespace TPI_P3.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
+    [Authorize]
     public class OrdersController : ControllerBase
     {
         private readonly IOrderRepository _orderRepository;
@@ -66,6 +68,7 @@ namespace TPI_P3.Controllers
         }
 
         [HttpGet]
+        [Authorize(Roles = "admin, superadmin")]
         public async Task<IActionResult> GetAllOrdersAsync()
         {
             try

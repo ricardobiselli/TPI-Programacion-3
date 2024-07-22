@@ -3,11 +3,13 @@
     using System.Threading.Tasks;
     using Domain.Models.Users;
     using Application.Interfaces;
+using Microsoft.AspNetCore.Authorization;
 
-    namespace Api.Controllers
+namespace Api.Controllers
     {
         [Route("api/Admins")]
         [ApiController]
+        [Authorize(Roles = "superadmin")]
         public class AdminController : ControllerBase
         {
             private readonly IAdminService _adminService;

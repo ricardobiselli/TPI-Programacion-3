@@ -9,11 +9,13 @@ using Application.Models.Requests;
 using Microsoft.Extensions.Logging;
 using System;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Api.Controllers
 {
     [Route("api/Clients")]
     [ApiController]
+    [Authorize(Roles = "admin, superadmin")]
     public class ClientController : ControllerBase
     {
         private readonly IClientService _clientService;
@@ -45,6 +47,7 @@ namespace Api.Controllers
         }
 
         [HttpGet("{id}")]
+        [Authorize(Roles = "client")]
         public async Task<ActionResult<Client>> GetByIdAsync([FromRoute] int id)
         {
             var client = await _clientService.GetByIdAsync(id);

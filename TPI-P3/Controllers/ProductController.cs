@@ -4,11 +4,14 @@ using Domain.Models.Products;
 using Application.Interfaces;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 
 namespace TPI_P3.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize]
+
     public class ProductsController : ControllerBase
     {
         private readonly IProductService _productService;
@@ -19,6 +22,7 @@ namespace TPI_P3.Controllers
         }
 
         [HttpGet]
+        [AllowAnonymous]
         public async Task<ActionResult<IEnumerable<Product>>> GetAllAsync()
         {
             var products = await _productService.GetAllAsync();
@@ -26,6 +30,7 @@ namespace TPI_P3.Controllers
         }
 
         [HttpGet("{id}")]
+        [AllowAnonymous]
         public async Task<ActionResult<Product>> GetByIdAsync(int id)
         {
             var product = await _productService.GetByIdAsync(id);
@@ -39,6 +44,7 @@ namespace TPI_P3.Controllers
         }
 
         [HttpPost]
+        [Authorize(Roles = "admin, superadmin")]
         public async Task<ActionResult<Product>> AddAsync(Product product)
         {
             await _productService.AddAsync(product);
@@ -46,6 +52,7 @@ namespace TPI_P3.Controllers
         }
 
         [HttpPut("{id}")]
+        [Authorize(Roles = "admin, superadmin")]
         public async Task<IActionResult> UpdateAsync(int id, Product product)
         {
             if (id != product.Id)
@@ -59,6 +66,8 @@ namespace TPI_P3.Controllers
         }
         
         [HttpDelete("{id}")]
+        [Authorize(Roles = "admin, superadmin")]
+
         public async Task<IActionResult> DeleteAsync(int id)
         {
             var product = await _productService.GetByIdAsync(id);
