@@ -11,11 +11,7 @@ namespace Application.IRepositories
 {
     public interface IClientRepository : IRepositoryBase<Client>
     {
-       // Task<Client> GetByIdAsync(int id);
-       // Task<IEnumerable<Client>> GetAllAsync();
-       //  Task AddAsync(Client client);
-       // Task DeleteAsync(int id);
-       // Task UpdateAsync( Client client);
+
     }
 }
 

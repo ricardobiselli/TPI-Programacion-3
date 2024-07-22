@@ -19,46 +19,76 @@ namespace Application.Services
         }
         public async Task<Client> GetByIdAsync(int id)
         {
-            return await _clientRepository.GetByIdAsync(id);
+            try
+            {
+                return await _clientRepository.GetByIdAsync(id);
+            }
+            catch (Exception ex)
+            {
+                throw new ApplicationException($"An error occurred while retrieving the client with ID {id}.", ex);
+            }
         }
 
         public async Task<IEnumerable<Client>> GetAllAsync()
         {
-            return await _clientRepository.GetAllAsync();
+            try
+            {
+                return await _clientRepository.GetAllAsync();
+            }
+            catch (Exception ex)
+            {
+                throw new ApplicationException("An error occurred while retrieving all clients.", ex);
+            }
         }
 
         public async Task AddAsync(Client client)
         {
-            
-            await _clientRepository.AddAsync(client);
+            try
+            {
+                await _clientRepository.AddAsync(client);
+            }
+            catch (Exception ex)
+            {
+                throw new ApplicationException("An error occurred while adding the client.", ex);
+            }
         }
 
         public async Task DeleteAsync(int id)
         {
-             var client = await _clientRepository.GetByIdAsync(id);
-            if (client != null) 
+            try
             {
-                await _clientRepository.DeleteAsync(client);
+                var client = await _clientRepository.GetByIdAsync(id);
+                if (client != null)
+                {
+                    await _clientRepository.DeleteAsync(client);
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new ApplicationException($"An error occurred while deleting the client with ID {id}.", ex);
             }
         }
 
         public async Task UpdateAsync(int id, Client updateClient)
         {
-            var client = await _clientRepository.GetByIdAsync(id);
-            if (client != null)
+            try
             {
-                client.UserName = updateClient.UserName;
-                client.Email = updateClient.Email;
-                client.FirstName = updateClient.FirstName;
-                client.LastName = updateClient.LastName;
-                client.Address = updateClient.Address;
-                client.DniNumber = updateClient.DniNumber;
+                var client = await _clientRepository.GetByIdAsync(id);
+                if (client != null)
+                {
+                    client.UserName = updateClient.UserName;
+                    client.Email = updateClient.Email;
+                    client.FirstName = updateClient.FirstName;
+                    client.LastName = updateClient.LastName;
+                    client.Address = updateClient.Address;
+                    client.DniNumber = updateClient.DniNumber;
 
-
-    
-
-
-                await _clientRepository.UpdateAsync(client);
+                    await _clientRepository.UpdateAsync(client);
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new ApplicationException($"An error occurred while updating the client with ID {id}.", ex);
             }
         }
 

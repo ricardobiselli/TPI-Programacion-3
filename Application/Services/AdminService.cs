@@ -17,38 +17,73 @@ namespace Application.Services
 
         public async Task AddAsync(Admin admin)
         {
-            await _adminRepository.AddAsync(admin);
+            try
+            {
+                await _adminRepository.AddAsync(admin);
+            }
+            catch (Exception ex)
+            {
+                throw new ApplicationException("An error occurred while adding the admin.", ex);
+            }
         }
 
         public async Task<IEnumerable<Admin>> GetAllAsync()
         {
-            return await _adminRepository.GetAllAsync();
+            try
+            {
+                return await _adminRepository.GetAllAsync();
+            }
+            catch (Exception ex)
+            {
+                throw new ApplicationException("An error occurred while retrieving all admins.", ex);
+            }
         }
 
         public async Task<Admin> GetByIdAsync(int id)
         {
-            return await _adminRepository.GetByIdAsync(id);
+            try
+            {
+                return await _adminRepository.GetByIdAsync(id);
+            }
+            catch (Exception ex)
+            {
+                throw new ApplicationException($"An error occurred while retrieving the admin with ID {id}.", ex);
+            }
         }
 
         public async Task UpdateAsync(int id, Admin updatedAdmin)
         {
-            var admin = await _adminRepository.GetByIdAsync(id);
-            if (admin != null)
+            try
             {
-                admin.UserName = updatedAdmin.UserName;
-                admin.Email = updatedAdmin.Email;
-                admin.Password = updatedAdmin.Password;
+                var admin = await _adminRepository.GetByIdAsync(id);
+                if (admin != null)
+                {
+                    admin.UserName = updatedAdmin.UserName;
+                    admin.Email = updatedAdmin.Email;
+                    admin.Password = updatedAdmin.Password;
 
-                await _adminRepository.UpdateAsync(admin);
+                    await _adminRepository.UpdateAsync(admin);
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new ApplicationException($"An error occurred while updating the admin with ID {id}.", ex);
             }
         }
 
         public async Task DeleteAsync(int id)
         {
-            var admin = await _adminRepository.GetByIdAsync(id);
-            if (admin != null)
+            try
             {
-                await _adminRepository.DeleteAsync(admin);
+                var admin = await _adminRepository.GetByIdAsync(id);
+                if (admin != null)
+                {
+                    await _adminRepository.DeleteAsync(admin);
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new ApplicationException($"An error occurred while deleting the admin with ID {id}.", ex);
             }
         }
     }

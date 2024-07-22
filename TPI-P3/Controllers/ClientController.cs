@@ -47,7 +47,6 @@ namespace Api.Controllers
         }
 
         [HttpGet("{id}")]
-        [Authorize(Roles = "client")]
         public async Task<ActionResult<Client>> GetByIdAsync([FromRoute] int id)
         {
             var client = await _clientService.GetByIdAsync(id);

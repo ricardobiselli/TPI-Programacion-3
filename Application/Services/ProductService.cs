@@ -17,30 +17,65 @@ namespace Application.Services
 
         public async Task<Product> GetByIdAsync(int id)
         {
-            return await _productRepository.GetByIdAsync(id);
+            try
+            {
+                return await _productRepository.GetByIdAsync(id);
+            }
+            catch (Exception ex)
+            {
+                throw new ApplicationException($"An error occurred while retrieving the product with ID {id}.", ex);
+            }
         }
 
         public async Task<IEnumerable<Product>> GetAllAsync()
         {
-            return await _productRepository.GetAllAsync();
+            try
+            {
+                return await _productRepository.GetAllAsync();
+            }
+            catch (Exception ex)
+            {
+                throw new ApplicationException("An error occurred while retrieving all products.", ex);
+            }
         }
 
         public async Task AddAsync(Product product)
         {
-            await _productRepository.AddAsync(product);
+            try
+            {
+                await _productRepository.AddAsync(product);
+            }
+            catch (Exception ex)
+            {
+                throw new ApplicationException("An error occurred while adding the product.", ex);
+            }
         }
 
         public async Task UpdateAsync(Product product)
         {
-            await _productRepository.UpdateAsync(product);
+            try
+            {
+                await _productRepository.UpdateAsync(product);
+            }
+            catch (Exception ex)
+            {
+                throw new ApplicationException("An error occurred while updating the product.", ex);
+            }
         }
 
         public async Task DeleteAsync(int id)
         {
-            var product = await _productRepository.GetByIdAsync(id);
-            if (product != null)
+            try
             {
-                await _productRepository.DeleteAsync(product);
+                var product = await _productRepository.GetByIdAsync(id);
+                if (product != null)
+                {
+                    await _productRepository.DeleteAsync(product);
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new ApplicationException($"An error occurred while deleting the product with ID {id}.", ex);
             }
         }
     }
