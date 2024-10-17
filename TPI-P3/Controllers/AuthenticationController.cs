@@ -1,15 +1,6 @@
-﻿using Application.Models.Requests;
-using Domain.Models.Users;
-using Infrastructure.Data;
+﻿using Application.Interfaces;
+using Application.Models.Requests;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.IdentityModel.Tokens;
-using System.IdentityModel.Tokens.Jwt;
-using System.Security.Claims;
-using System.Text;
-using Application.Interfaces;
-
-
-using System.Threading.Tasks;
 
 namespace Presentation.Controllers
 {

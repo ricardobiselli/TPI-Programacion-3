@@ -1,19 +1,9 @@
-﻿using System;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace Domain.Models.Users
 {
     public abstract class User
     {
-        
-
-        public User(string userName, string email, string password, string userType)
-        {
-            UserName = userName;
-            Email = email;
-            Password = password;
-            UserType = userType;
-        }
 
         [Key]
         public int Id { get; set; }
@@ -23,6 +13,13 @@ namespace Domain.Models.Users
         public string? UserType { get; set; } 
         public User()
         {
+        }
+        public User(string userName, string email, string password, string userType)
+        {
+            UserName = userName;
+            Email = email;
+            Password = password;
+            UserType = userType;
         }
     }
 }

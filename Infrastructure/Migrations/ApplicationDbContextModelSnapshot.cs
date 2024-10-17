@@ -26,9 +26,6 @@ namespace Infrastructure.Migrations
                     b.Property<string>("Category")
                         .HasColumnType("TEXT");
 
-                    b.Property<string>("Compatibilities")
-                        .HasColumnType("TEXT");
-
                     b.Property<string>("Description")
                         .HasColumnType("TEXT");
 
@@ -61,6 +58,9 @@ namespace Infrastructure.Migrations
                     b.Property<DateTime>("OrderDate")
                         .HasColumnType("TEXT");
 
+                    b.Property<int?>("ShoppingCartId")
+                        .HasColumnType("INTEGER");
+
                     b.Property<decimal>("TotalAmount")
                         .HasColumnType("TEXT");
 
@@ -68,7 +68,83 @@ namespace Infrastructure.Migrations
 
                     b.HasIndex("ClientId");
 
+                    b.HasIndex("ShoppingCartId");
+
                     b.ToTable("Orders");
+                });
+
+            modelBuilder.Entity("Domain.Models.Purchases.OrderDetail", b =>
+                {
+                    b.Property<int>("OrderDetailId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int>("OrderId")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int>("ProductId")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int>("Quantity")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<decimal>("Subtotal")
+                        .HasColumnType("TEXT");
+
+                    b.Property<decimal>("UnitPrice")
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("OrderDetailId");
+
+                    b.HasIndex("OrderId");
+
+                    b.HasIndex("ProductId");
+
+                    b.ToTable("OrderDetails");
+                });
+
+            modelBuilder.Entity("Domain.Models.Purchases.ShoppingCart", b =>
+                {
+                    b.Property<int>("ShoppingCartId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int>("ClientId")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<DateTime>("DateOfShoppingCartCreation")
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("ShoppingCartId");
+
+                    b.HasIndex("ClientId")
+                        .IsUnique();
+
+                    b.ToTable("ShoppingCarts");
+                });
+
+            modelBuilder.Entity("Domain.Models.Purchases.ShoppingCartProduct", b =>
+                {
+                    b.Property<int>("ShoppingCartProductID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int>("ProductId")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int>("Quantity")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int>("ShoppingCartId")
+                        .HasColumnType("INTEGER");
+
+                    b.HasKey("ShoppingCartProductID");
+
+                    b.HasIndex("ProductId");
+
+                    b.HasIndex("ShoppingCartId");
+
+                    b.ToTable("ShoppingCartProducts");
                 });
 
             modelBuilder.Entity("Domain.Models.Users.User", b =>
@@ -101,21 +177,6 @@ namespace Infrastructure.Migrations
                     b.HasDiscriminator<string>("Discriminator").HasValue("User");
 
                     b.UseTphMappingStrategy();
-                });
-
-            modelBuilder.Entity("OrderProduct", b =>
-                {
-                    b.Property<int>("OrderId")
-                        .HasColumnType("INTEGER");
-
-                    b.Property<int>("ProductId")
-                        .HasColumnType("INTEGER");
-
-                    b.HasKey("OrderId", "ProductId");
-
-                    b.HasIndex("ProductId");
-
-                    b.ToTable("OrderProduct", (string)null);
                 });
 
             modelBuilder.Entity("Domain.Models.Users.Admin", b =>
@@ -159,27 +220,89 @@ namespace Infrastructure.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.HasOne("Domain.Models.Purchases.ShoppingCart", "ShoppingCart")
+                        .WithMany("Orders")
+                        .HasForeignKey("ShoppingCartId");
+
                     b.Navigation("Client");
+
+                    b.Navigation("ShoppingCart");
                 });
 
-            modelBuilder.Entity("OrderProduct", b =>
+            modelBuilder.Entity("Domain.Models.Purchases.OrderDetail", b =>
                 {
-                    b.HasOne("Domain.Models.Purchases.Order", null)
-                        .WithMany()
+                    b.HasOne("Domain.Models.Purchases.Order", "Order")
+                        .WithMany("OrderDetails")
                         .HasForeignKey("OrderId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("Domain.Models.Products.Product", null)
-                        .WithMany()
+                    b.HasOne("Domain.Models.Products.Product", "Product")
+                        .WithMany("OrderDetails")
                         .HasForeignKey("ProductId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.Navigation("Order");
+
+                    b.Navigation("Product");
+                });
+
+            modelBuilder.Entity("Domain.Models.Purchases.ShoppingCart", b =>
+                {
+                    b.HasOne("Domain.Models.Users.Client", "Client")
+                        .WithOne("ShoppingCart")
+                        .HasForeignKey("Domain.Models.Purchases.ShoppingCart", "ClientId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Client");
+                });
+
+            modelBuilder.Entity("Domain.Models.Purchases.ShoppingCartProduct", b =>
+                {
+                    b.HasOne("Domain.Models.Products.Product", "Product")
+                        .WithMany("ShoppingCartItems")
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Domain.Models.Purchases.ShoppingCart", "ShoppingCart")
+                        .WithMany("ShoppingCartProducts")
+                        .HasForeignKey("ShoppingCartId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Product");
+
+                    b.Navigation("ShoppingCart");
+                });
+
+            modelBuilder.Entity("Domain.Models.Products.Product", b =>
+                {
+                    b.Navigation("OrderDetails");
+
+                    b.Navigation("ShoppingCartItems");
+                });
+
+            modelBuilder.Entity("Domain.Models.Purchases.Order", b =>
+                {
+                    b.Navigation("OrderDetails");
+                });
+
+            modelBuilder.Entity("Domain.Models.Purchases.ShoppingCart", b =>
+                {
+                    b.Navigation("Orders");
+
+                    b.Navigation("ShoppingCartProducts");
                 });
 
             modelBuilder.Entity("Domain.Models.Users.Client", b =>
                 {
                     b.Navigation("Orders");
+
+                    b.Navigation("ShoppingCart")
+                        .IsRequired();
                 });
 #pragma warning restore 612, 618
         }

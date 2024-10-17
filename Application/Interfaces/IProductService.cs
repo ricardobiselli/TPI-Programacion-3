@@ -1,4 +1,5 @@
 ﻿using Domain.Models.Products;
+using Domain.Models.Users;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,12 +8,10 @@ using System.Threading.Tasks;
 
 namespace Application.Interfaces
 {
-    public interface IProductService
+    public interface IProductService : IBaseService<Product, int>
     {
-        Task<Product> GetByIdAsync(int id);
-        Task<IEnumerable<Product>> GetAllAsync();
-        Task AddAsync(Product product);
-        Task UpdateAsync(Product product);
-        Task DeleteAsync(int id);
+
+        
+
     }
 }

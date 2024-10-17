@@ -1,28 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using Domain.Models.Purchases;
 using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
-using System.Text.Json.Serialization;
-using Domain.Models.Purchases;
 
 
 namespace Domain.Models.Products
 {
     public class Product
     {
-        public Product() { }
-        public Product(string name, string description, string category, decimal price, int stock, int power, List<string> compatibilities)
-        {
-            Name = name;
-            Description = description;
-            Category = category;
-            Price = price;
-            StockQuantity = stock;
-            PowerConsumption = power;
-            Orders = new List<Order>();
-            Compatibilities = compatibilities;
-
-        }
 
         [Key]
         public int Id { get; set; }
@@ -32,10 +15,25 @@ namespace Domain.Models.Products
         public int StockQuantity { get; set; }
         public string? Category { get; set; }
         public decimal PowerConsumption { get; set; }
-        public List<string>? Compatibilities { get; set; } 
+        //public List<string>? Compatibilities { get; set; } 
 
-        public ICollection<Order>? Orders { get; set; } 
+        public ICollection<OrderDetail> OrderDetails { get; set; }
+        public ICollection<ShoppingCartProduct> ShoppingCartItems { get; set; }
+        public Product() { }
+        public Product(string name, string description, string category, decimal price, int stock, int power/*, List<string> compatibilities*/)
+        {
+            Name = name;
+            Description = description;
+            Category = category;
+            Price = price;
+            StockQuantity = stock;
+            PowerConsumption = power;
+            OrderDetails = new List<OrderDetail>();
+            ShoppingCartItems = new List<ShoppingCartProduct>();
+
+        }
+
     }
-    
+
 }
 

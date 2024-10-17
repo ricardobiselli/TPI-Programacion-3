@@ -1,9 +1,4 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Infrastructure.Data.Repositories
 {
@@ -16,37 +11,35 @@ namespace Infrastructure.Data.Repositories
             _context = context;
         }
 
-        public async Task<List<T>> GetAllAsync()
+        public virtual List<T> GetAll()
         {
-            return await _context.Set<T>().ToListAsync();
+            return  _context.Set<T>().ToList();
         }
 
-        public async Task <T?> GetByIdAsync<Tid>(Tid id)
+        public virtual  T? GetById<Tid>(Tid id)
         {
-            return await _context.Set<T>().FindAsync(new object[] { id });
+            return  _context.Set<T>().Find([id]);
         }
 
-        public async Task<T> AddAsync(T entity) //ver asincronía
+        public  T Add(T entity) 
 
         {
             _context.Set<T>().Add(entity);
-            _context.SaveChangesAsync();
+            _context.SaveChanges();
             return entity;
         }
 
-
-        public async Task <int> UpdateAsync(T entity)
+        public   int Update(T entity)
         {
             _context.Set<T>().Update(entity);
-            return await _context.SaveChangesAsync();
+            return  _context.SaveChanges();
 
         }
 
-
-        public async Task <int> DeleteAsync(T entity)
+        public   int Delete(T entity)
         {
             _context.Set<T>().Remove(entity);
-            return await _context.SaveChangesAsync();
+            return  _context.SaveChanges();
 
         }
 

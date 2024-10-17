@@ -11,55 +11,52 @@ namespace Infrastructure.Data
         {
         }
 
+
         public DbSet<Product> Products { get; set; }
         public DbSet<Order> Orders { get; set; }
         public DbSet<Client> Clients { get; set; }
-        
         public DbSet<Admin> Admins { get; set; }
         public DbSet<SuperAdmin> SuperAdmins { get; set; }
         public DbSet<User> Users { get; set; }
+        public DbSet<OrderDetail> OrderDetails { get; set; }
+        public DbSet<ShoppingCart> ShoppingCarts { get; set; }
+        public DbSet<ShoppingCartProduct> ShoppingCartProducts { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            {
-                
 
-                modelBuilder.Entity<Client>()
-                    .HasMany(c => c.Orders)
-                    .WithOne(o => o.Client)
-                    .HasForeignKey(o => o.ClientId)
-                    .OnDelete(DeleteBehavior.Cascade);
+            modelBuilder.Entity<ShoppingCart>()
+                .HasOne(sc => sc.Client)
+                .WithOne(c => c.ShoppingCart)
+                .HasForeignKey<ShoppingCart>(sc => sc.ClientId);
 
-                
+            modelBuilder.Entity<Order>()
+                .HasOne(x => x.ShoppingCart)
+                .WithMany(x => x.Orders)
+                .HasForeignKey(x => x.ShoppingCartId);
 
-                
+            modelBuilder.Entity<OrderDetail>()
+                .HasOne(x => x.Order)
+                .WithMany(x => x.OrderDetails)
+                .HasForeignKey(x => x.OrderId);
 
+            modelBuilder.Entity<OrderDetail>()
+                .HasOne(x => x.Product)
+                .WithMany(x => x.OrderDetails)
+                .HasForeignKey(x => x.ProductId);
 
-                modelBuilder.Entity<Order>()
-                    .HasMany(o => o.Products)
-                    .WithMany(p => p.Orders)
-                    .UsingEntity<Dictionary<string, object>>(
-                        "OrderProduct",
-                        j => j
-                            .HasOne<Product>()
-                            .WithMany()
-                            .HasForeignKey("ProductId")
-                            .OnDelete(DeleteBehavior.Cascade),
-                        j => j
-                            .HasOne<Order>()
-                            .WithMany()
-                            .HasForeignKey("OrderId")
-                            .OnDelete(DeleteBehavior.Cascade),
-                        j =>
-                        {
-                            j.HasKey("OrderId", "ProductId");
-                            j.ToTable("OrderProduct");
-                        });
+            modelBuilder.Entity<ShoppingCartProduct>()
+                .HasOne(x => x.ShoppingCart)
+                .WithMany(x => x.ShoppingCartProducts)
+                .HasForeignKey(x => x.ShoppingCartId);
 
-                base.OnModelCreating(modelBuilder);
-            }
-
+            modelBuilder.Entity<ShoppingCartProduct>()
+                .HasOne(x => x.Product)
+                .WithMany(x => x.ShoppingCartItems)
+                .HasForeignKey(x => x.ProductId);
         }
 
     }
+
+
 }

@@ -4,12 +4,8 @@ using Domain.Models.Users;
 
 namespace Application.Interfaces
 {
-    public interface IAdminService
+    public interface IAdminService : IBaseService<Admin, int>
     {
-        Task AddAsync(Admin admin);
-        Task<IEnumerable<Admin>> GetAllAsync();
-        Task<Admin> GetByIdAsync(int id);
-        Task UpdateAsync(int id, Admin updatedAdmin);
-        Task DeleteAsync(int id);
+        public void Update(int id, Admin updatedAdmin);
     }
 }

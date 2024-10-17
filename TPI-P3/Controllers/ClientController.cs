@@ -1,21 +1,12 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using System.Threading.Tasks;
+﻿using Application.Interfaces;
 using Domain.Models.Users;
-using Infrastructure.Data;
-using Application.Interfaces;
-using Domain.Models.Products;
-using Application.Services;
-using Application.Models.Requests;
-using Microsoft.Extensions.Logging;
-using System;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 
 namespace Api.Controllers
 {
     [Route("api/Clients")]
     [ApiController]
-    [Authorize(Roles = "admin, superadmin")]
+    //[Authorize(Roles = "admin, superadmin")]
     public class ClientController : ControllerBase
     {
         private readonly IClientService _clientService;
@@ -26,19 +17,19 @@ namespace Api.Controllers
         }
 
         [HttpPost("register")]
-        public async Task<ActionResult<Client>> AddAsync([FromBody] Client client)
+        public  ActionResult<Client> Add([FromBody] Client client)
         {
 
-            await _clientService.AddAsync(client);
+             _clientService.Add(client);
             return Ok(client);
 
 
         }
 
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Client>>> GetAllAsync()
+        public  ActionResult<IEnumerable<Client>> GetAll()
         {
-            var clients = await _clientService.GetAllAsync();
+            var clients =  _clientService.GetAll();
             if (clients == null)
             {
                 return NotFound();
@@ -47,9 +38,9 @@ namespace Api.Controllers
         }
 
         [HttpGet("{id}")]
-        public async Task<ActionResult<Client>> GetByIdAsync([FromRoute] int id)
+        public  ActionResult<Client> GetById([FromRoute] int id)
         {
-            var client = await _clientService.GetByIdAsync(id);
+            var client =  _clientService.GetById(id);
             if (client == null)
             {
                 return NotFound();
@@ -58,28 +49,28 @@ namespace Api.Controllers
         }
 
         [HttpDelete("{id}")]
-        public async Task<ActionResult> DeleteAsync([FromRoute] int id)
+        public  ActionResult Delete([FromRoute] int id)
         {
-            var client = await _clientService.GetByIdAsync(id);
+            var client =  _clientService.GetById(id);
             if (client == null)
             {
                 return NotFound();
             }
 
-            await _clientService.DeleteAsync(id);
+             _clientService.Delete(id);
             return NoContent();
         }
 
         [HttpPut("{id}")]
-        public async Task<ActionResult> UpdateAsync([FromRoute] int id, [FromBody] Client updatedClient)
+        public  ActionResult Update([FromRoute] int id, [FromBody] Client updatedClient)
         {
-            var client = await _clientService.GetByIdAsync(id);
+            var client =  _clientService.GetById(id);
             if (client == null)
             {
                 return NotFound();
             }
 
-            await _clientService.UpdateAsync(id, updatedClient);
+             _clientService.Update(id, updatedClient);
             return NoContent();
         }
 

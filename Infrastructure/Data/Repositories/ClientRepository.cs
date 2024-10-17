@@ -1,13 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Application.Interfaces;
-using Application.IRepositories;
+﻿using Domain.IRepositories;
 using Domain.Models.Users;
 using Microsoft.EntityFrameworkCore;
-using SQLitePCL;
 
 namespace Infrastructure.Data.Repositories
 {
@@ -18,48 +11,34 @@ namespace Infrastructure.Data.Repositories
         {
             _context = context;
         }
+
+        public Client? GetClientByIdWithDetailsIncluded(int id)
+        {
+            return _context.Clients
+                
+               
+                .Include(x => x.ShoppingCart)
+                    .ThenInclude(x => x.ShoppingCartProducts)
+                        .ThenInclude(x => x.Product)
+                .Include(x => x.Orders)
+                    .ThenInclude(x => x.OrderDetails)
+                        .ThenInclude(x => x.Product)
+                        
+
+
+                .FirstOrDefault(x => x.Id == id);
+        }
+
+        public override List<Client> GetAll()
+        {
+            return _context.Clients
+                
+                .Include(c => c.ShoppingCart)
+                    .ThenInclude(sc => sc.ShoppingCartProducts)
+                .Include(c => c.Orders)
+                    .ThenInclude(x => x.OrderDetails)
+                .ToList();
+            
+        }
     }
 }
-
-
-
-//        public async Task<Client> GetByIdAsync(int id)
-//        {
-//            return await _context.Clients.FindAsync(id);
-//        }
-
-//        public async Task<IEnumerable<Client>> GetAllAsync()
-//        {
-//            return await _context.Clients.ToListAsync();
-//        }
-
-//        public async Task AddAsync(Client client)
-//        {
-//            _context.Clients.Add(client);
-//            await _context.SaveChangesAsync();
-//        }
-
-//        public async Task DeleteAsync(int id)
-//        {
-//            var client = await _context.Clients.FindAsync(id);
-//            if (client != null)
-//            {
-//                _context.Clients.Remove(client);
-//                await _context.SaveChangesAsync();
-//            }
-
-//        }
-
-//        public async Task UpdateAsync(Client client)
-//        {
-//            _context.Clients.Update(client);
-//            await _context.SaveChangesAsync();
-//        }
-
-//    }
-//}
-
-
-
-
-

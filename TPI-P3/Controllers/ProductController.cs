@@ -1,16 +1,13 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
+﻿using Application.Interfaces;
 using Domain.Models.Products;
-using Application.Interfaces;
-using System.Collections.Generic;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 
 namespace TPI_P3.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    [Authorize]
+    //[Authorize]
 
     public class ProductsController : ControllerBase
     {
@@ -23,17 +20,17 @@ namespace TPI_P3.Controllers
 
         [HttpGet]
         [AllowAnonymous]
-        public async Task<ActionResult<IEnumerable<Product>>> GetAllAsync()
+        public  ActionResult<IEnumerable<Product>> GetAll()
         {
-            var products = await _productService.GetAllAsync();
+            var products =  _productService.GetAll();
             return Ok(products);
         }
 
         [HttpGet("{id}")]
         [AllowAnonymous]
-        public async Task<ActionResult<Product>> GetByIdAsync(int id)
+        public  ActionResult<Product> GetById(int id)
         {
-            var product = await _productService.GetByIdAsync(id);
+            var product =  _productService.GetById(id);
 
             if (product == null)
             {
@@ -43,40 +40,40 @@ namespace TPI_P3.Controllers
             return Ok(product);
         }
 
-        [HttpPost]
-        [Authorize(Roles = "admin, superadmin")]
-        public async Task<ActionResult<Product>> AddAsync(Product product)
+        [HttpPost("Add-Product")]
+        //[Authorize(Roles = "admin, superadmin")]
+        public  ActionResult<Product> Add(Product product)
         {
-            await _productService.AddAsync(product);
+             _productService.Add(product);
             return Ok(product);
         }
 
-        [HttpPut("{id}")]
-        [Authorize(Roles = "admin, superadmin")]
-        public async Task<IActionResult> UpdateAsync(int id, Product product)
+        [HttpPut("Update-Product{id}")]
+        //[Authorize(Roles = "admin, superadmin")]
+        public  IActionResult Update(int id, Product product)
         {
             if (id != product.Id)
             {
                 return BadRequest();
             }
 
-            await _productService.UpdateAsync(product);
+             _productService.Update(product);
 
             return NoContent();
         }
         
-        [HttpDelete("{id}")]
-        [Authorize(Roles = "admin, superadmin")]
+        [HttpDelete("Detele-Product/{id}")]
+        //[Authorize(Roles = "admin, superadmin")]
 
-        public async Task<IActionResult> DeleteAsync(int id)
+        public  IActionResult Delete(int id)
         {
-            var product = await _productService.GetByIdAsync(id);
+            var product =  _productService.GetById(id);
             if (product == null)
             {
                 return NotFound();
             }
 
-            await _productService.DeleteAsync(id);
+             _productService.Delete(id);
 
             return NoContent();
         }

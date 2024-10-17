@@ -7,14 +7,8 @@ using Domain.Models.Users;
 
 namespace Application.Interfaces
 {
-    public interface IClientService
+    public interface IClientService : IBaseService<Client, int>
     {
-        Task<Client> GetByIdAsync(int id);
-        Task<IEnumerable<Client>> GetAllAsync();
-        Task AddAsync(Client client);
-        Task DeleteAsync(int id);
-        Task UpdateAsync(int id, Client updateClient);
-
-
+        public void Update(int id, Client updatedClient);
     }
 }

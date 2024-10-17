@@ -1,5 +1,4 @@
-﻿using Application.IRepositories;
-using Domain.Models.Products;
+﻿using Domain.IRepositories;
 using Domain.Models.Users;
 using System;
 using System.Collections.Generic;
@@ -7,10 +6,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Application.IRepositories
+namespace Domain.IRepositories
 {
     public interface IClientRepository : IRepositoryBase<Client>
     {
+        public Client? GetClientByIdWithDetailsIncluded(int id);
+
 
     }
 }

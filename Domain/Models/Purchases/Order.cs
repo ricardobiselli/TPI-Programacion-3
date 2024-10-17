@@ -1,31 +1,31 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using Domain.Models.Users;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Text.Json.Serialization;
-using Domain.Models.Products;
-using Domain.Models.Users;
 
 namespace Domain.Models.Purchases
 {
     public class Order
     {
-        public Order(decimal totalAmount, int clientId)
-        {
-            OrderDate = DateTime.Now;
-            TotalAmount = totalAmount;
-            ClientId = clientId;
-            Products = new List<Product>();
-        }
-
         [Key]
         public int OrderId { get; set; }
         public DateTime OrderDate { get; set; }
         public decimal TotalAmount { get; set; }
         [ForeignKey("ClientId")]
-        public int ClientId { get; set; } 
+        public int ClientId { get; set; }
         public Client Client { get; set; }
+        [ForeignKey("ShoppingCartId")]
 
-        public ICollection<Product> Products { get; set; } 
+        public int ShoppingCartId { get; set; }
+        public ShoppingCart ShoppingCart { get; set; }
+        public ICollection<OrderDetail> OrderDetails { get; set; }
+
+        public Order(decimal totalAmount, int clientId)
+        {
+            OrderDate = DateTime.Now;
+            TotalAmount = totalAmount;
+            ClientId = clientId;
+            OrderDetails = new List<OrderDetail>();
+
+        }
     }
 }

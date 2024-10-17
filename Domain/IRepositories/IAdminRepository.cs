@@ -2,7 +2,7 @@
 using System.Threading.Tasks;
 using Domain.Models.Users;
 
-namespace Application.IRepositories
+namespace Domain.IRepositories
 {
     public interface IAdminRepository : IRepositoryBase<Admin>
     {

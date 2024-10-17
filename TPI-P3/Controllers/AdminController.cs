@@ -1,15 +1,12 @@
-﻿    using Microsoft.AspNetCore.Mvc;
-    using System.Collections.Generic;
-    using System.Threading.Tasks;
-    using Domain.Models.Users;
-    using Application.Interfaces;
-using Microsoft.AspNetCore.Authorization;
+﻿using Application.Interfaces;
+using Domain.Models.Users;
+using Microsoft.AspNetCore.Mvc;
 
 namespace Api.Controllers
-    {
-        [Route("api/Admins")]
+{
+    [Route("api/Admins")]
         [ApiController]
-        [Authorize(Roles = "superadmin")]
+        //[Authorize(Roles = "superadmin")]
         public class AdminController : ControllerBase
         {
             private readonly IAdminService _adminService;
@@ -20,16 +17,16 @@ namespace Api.Controllers
             }
 
             [HttpPost("register")]
-            public async Task<ActionResult<Admin>> AddAsync([FromBody] Admin admin)
+            public  ActionResult<Admin> AddAsync([FromBody] Admin admin)
             {
-                await _adminService.AddAsync(admin);
+                 _adminService.Add(admin);
                 return Ok(admin);
             }
 
             [HttpGet]
-            public async Task<ActionResult<IEnumerable<Admin>>> GetAllAsync()
+            public  ActionResult<IEnumerable<Admin>> GetAll()
             {
-                var admins = await _adminService.GetAllAsync();
+                var admins =  _adminService.GetAll();
                 if (admins == null)
                 {
                     return NotFound();
@@ -38,9 +35,9 @@ namespace Api.Controllers
             }
 
             [HttpGet("{id}")]
-            public async Task<ActionResult<Admin>> GetByIdAsync([FromRoute] int id)
+            public  ActionResult<Admin> GetById([FromRoute] int id)
             {
-                var admin = await _adminService.GetByIdAsync(id);
+                var admin =  _adminService.GetById(id);
                 if (admin == null)
                 {
                     return NotFound();
@@ -49,28 +46,28 @@ namespace Api.Controllers
             }
 
             [HttpDelete("{id}")]
-            public async Task<ActionResult> DeleteAsync([FromRoute] int id)
+            public  ActionResult Delete([FromRoute] int id)
             {
-                var admin = await _adminService.GetByIdAsync(id);
+                var admin =  _adminService.GetById(id);
                 if (admin == null)
                 {
                     return NotFound();
                 }
 
-                await _adminService.DeleteAsync(id);
+                 _adminService.Delete(id);
                 return NoContent();
             }
 
             [HttpPut("{id}")]
-            public async Task<ActionResult> UpdateAsync([FromRoute] int id, [FromBody] Admin updatedAdmin)
+            public ActionResult Update([FromRoute] int id, [FromBody] Admin updatedAdmin)
             {
-                var admin = await _adminService.GetByIdAsync(id);
+                var admin =  _adminService.GetById(id);
                 if (admin == null)
                 {
                     return NotFound();
                 }
 
-                await _adminService.UpdateAsync(id, updatedAdmin);
+                 _adminService.Update(id, updatedAdmin);
                 return NoContent();
             }
         }

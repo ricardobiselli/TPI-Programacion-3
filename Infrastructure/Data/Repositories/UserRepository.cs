@@ -1,7 +1,5 @@
-﻿using System.Threading.Tasks;
-using Application.IRepositories;
+﻿using Domain.IRepositories;
 using Domain.Models.Users;
-using Infrastructure.Data;
 using Microsoft.EntityFrameworkCore;
 
 namespace Infrastructure.Data.Repositories

@@ -1,4 +1,4 @@
-﻿using Application.IRepositories;
+﻿using Domain.IRepositories;
 using Domain.Models.Users;
 using System;
 using System.Collections.Generic;
@@ -7,73 +7,35 @@ using System.Text;
 using System.Threading.Tasks;
 using Application.Interfaces;
 using static System.Runtime.InteropServices.JavaScript.JSType;
+using Domain.Models.Purchases;
 
 namespace Application.Services
 {
-    public class ClientService : IClientService
+    public class ClientService : BaseService<Client, int>, IClientService
     {
         private readonly IClientRepository _clientRepository;
-        public ClientService(IClientRepository clientRepository)
+        public ClientService(IClientRepository clientRepository) : base(clientRepository) 
         {
             _clientRepository = clientRepository;
         }
-        public async Task<Client> GetByIdAsync(int id)
+        public override Client GetById(int id)
         {
             try
             {
-                return await _clientRepository.GetByIdAsync(id);
+                return _clientRepository.GetClientByIdWithDetailsIncluded(id);
             }
             catch (Exception ex)
             {
-                throw new ApplicationException($"An error occurred while retrieving the client with ID {id}.", ex);
+                throw new Exception($"Failed to load client with ID: {id}.", ex);
             }
         }
 
-        public async Task<IEnumerable<Client>> GetAllAsync()
+       
+        public void Update(int id, Client updateClient)
         {
             try
             {
-                return await _clientRepository.GetAllAsync();
-            }
-            catch (Exception ex)
-            {
-                throw new ApplicationException("An error occurred while retrieving all clients.", ex);
-            }
-        }
-
-        public async Task AddAsync(Client client)
-        {
-            try
-            {
-                await _clientRepository.AddAsync(client);
-            }
-            catch (Exception ex)
-            {
-                throw new ApplicationException("An error occurred while adding the client.", ex);
-            }
-        }
-
-        public async Task DeleteAsync(int id)
-        {
-            try
-            {
-                var client = await _clientRepository.GetByIdAsync(id);
-                if (client != null)
-                {
-                    await _clientRepository.DeleteAsync(client);
-                }
-            }
-            catch (Exception ex)
-            {
-                throw new ApplicationException($"An error occurred while deleting the client with ID {id}.", ex);
-            }
-        }
-
-        public async Task UpdateAsync(int id, Client updateClient)
-        {
-            try
-            {
-                var client = await _clientRepository.GetByIdAsync(id);
+                var client =  _clientRepository.GetById(id);
                 if (client != null)
                 {
                     client.UserName = updateClient.UserName;
@@ -83,7 +45,7 @@ namespace Application.Services
                     client.Address = updateClient.Address;
                     client.DniNumber = updateClient.DniNumber;
 
-                    await _clientRepository.UpdateAsync(client);
+                     _clientRepository.Update(client);
                 }
             }
             catch (Exception ex)

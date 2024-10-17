@@ -1,85 +1,46 @@
-﻿using Application.Models;
-using Domain.Models.Purchases;
-using Infrastructure.Data.Repositories;
-using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Http;
+﻿using Application.Interfaces;
+using Application.Models;
 using Microsoft.AspNetCore.Mvc;
-using System;
-using System.Threading.Tasks;
 
-namespace TPI_P3.Controllers
+namespace Api.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
-    [Authorize]
+    //[Authorize]
     public class OrdersController : ControllerBase
     {
-        private readonly IOrderRepository _orderRepository;
+        private readonly IOrderService _orderService;
 
-        public OrdersController(IOrderRepository orderRepository)
+        public OrdersController(IOrderService orderService)
         {
-            _orderRepository = orderRepository;
+            _orderService = orderService;
         }
 
-        [HttpPost]
-        public async Task<IActionResult> CreateOrder(OrderDTO orderDTO)
+        [HttpPost("Place-Order")]
+        public ActionResult ConfirmOrder(int clientId)
         {
-            try
+            var response = _orderService.PlaceAnOrderFromCartContent(clientId);
+            if (response)
             {
-                var client = await _orderRepository.GetClientByIdAsync(orderDTO.ClientId);
-                if (client == null)
-                {
-                    return NotFound("Client not found");
-                }
-
-                var products = await _orderRepository.GetProductsByIdsAsync(orderDTO.ProductIds);
-                if (products.Count != orderDTO.ProductIds.Count)
-                {
-                    return BadRequest("One or more products not found");
-                }
-
-                var order = new Order(orderDTO.TotalAmount, orderDTO.ClientId)
-                {
-                    Products = products
-                };
-
-                await _orderRepository.AddOrderAsync(order);
-
-                return Ok(order);
+                return Ok("Order confirmed successfully!");
             }
-            catch (Exception ex)
-            {
-                return StatusCode(StatusCodes.Status500InternalServerError, "Internal Server Error");
-            }
-        }
-
-        [HttpGet("{clientId}")]
-        public async Task<IActionResult> GetOrdersByClientId(int clientId)
-        {
-            try
-            {
-                var orders = await _orderRepository.GetOrdersByClientIdAsync(clientId);
-                return Ok(orders);
-            }
-            catch (Exception ex)
-            {
-                return StatusCode(StatusCodes.Status500InternalServerError, "Internal Server Error");
-            }
+            return BadRequest("Warning! Failed to confirm order");
         }
 
         [HttpGet]
-        [Authorize(Roles = "admin, superadmin")]
-        public async Task<IActionResult> GetAllOrdersAsync()
+        public ActionResult GetAllOrders()
         {
-            try
-            {
-                var orders = await _orderRepository.GetAllOrdersAsync();
-                return Ok(orders);
-            }
-            catch (Exception ex)
-            {
-                return StatusCode(StatusCodes.Status500InternalServerError, "Internal Server Error");
-            }
+            var orders = _orderService.GetAll();
+            return Ok(orders);
         }
+
+        [HttpGet("Get-One")]
+        public ActionResult GetById(int id)
+        {
+            var order = _orderService.GetById(id);
+            return Ok(order);
+        }
+
+
     }
 }
