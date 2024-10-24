@@ -15,30 +15,26 @@ namespace Infrastructure.Data.Repositories
         public Client? GetClientByIdWithDetailsIncluded(int id)
         {
             return _context.Clients
-                
-               
                 .Include(x => x.ShoppingCart)
                     .ThenInclude(x => x.ShoppingCartProducts)
-                        .ThenInclude(x => x.Product)
+                        .ThenInclude(x => x.Product)  
                 .Include(x => x.Orders)
                     .ThenInclude(x => x.OrderDetails)
-                        .ThenInclude(x => x.Product)
-                        
-
-
+                        .ThenInclude(x => x.Product)  
                 .FirstOrDefault(x => x.Id == id);
         }
 
         public override List<Client> GetAll()
         {
             return _context.Clients
-                
-                .Include(c => c.ShoppingCart)
-                    .ThenInclude(sc => sc.ShoppingCartProducts)
-                .Include(c => c.Orders)
+                .Include(x => x.ShoppingCart)
+                    .ThenInclude(x => x.ShoppingCartProducts)
+                        .ThenInclude(x => x.Product)
+                .Include(x => x.Orders)
                     .ThenInclude(x => x.OrderDetails)
+                        .ThenInclude(x => x.Product)
                 .ToList();
-            
         }
+
     }
 }

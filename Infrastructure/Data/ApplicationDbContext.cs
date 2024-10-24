@@ -11,7 +11,6 @@ namespace Infrastructure.Data
         {
         }
 
-
         public DbSet<Product> Products { get; set; }
         public DbSet<Order> Orders { get; set; }
         public DbSet<Client> Clients { get; set; }
@@ -31,29 +30,29 @@ namespace Infrastructure.Data
                 .HasForeignKey<ShoppingCart>(sc => sc.ClientId);
 
             modelBuilder.Entity<Order>()
-                .HasOne(x => x.ShoppingCart)
-                .WithMany(x => x.Orders)
-                .HasForeignKey(x => x.ShoppingCartId);
+                .HasOne(o => o.ShoppingCart)
+                .WithMany(sc => sc.Orders)
+                .HasForeignKey(o => o.ShoppingCartId);
 
             modelBuilder.Entity<OrderDetail>()
-                .HasOne(x => x.Order)
-                .WithMany(x => x.OrderDetails)
-                .HasForeignKey(x => x.OrderId);
+                .HasOne(od => od.Order)
+                .WithMany(o => o.OrderDetails)
+                .HasForeignKey(od => od.OrderId);
 
             modelBuilder.Entity<OrderDetail>()
-                .HasOne(x => x.Product)
-                .WithMany(x => x.OrderDetails)
-                .HasForeignKey(x => x.ProductId);
+                .HasOne(od => od.Product)
+                .WithMany(p => p.OrderDetails)
+                .HasForeignKey(od => od.ProductId);
 
             modelBuilder.Entity<ShoppingCartProduct>()
-                .HasOne(x => x.ShoppingCart)
-                .WithMany(x => x.ShoppingCartProducts)
-                .HasForeignKey(x => x.ShoppingCartId);
+                .HasOne(scp => scp.ShoppingCart)
+                .WithMany(sc => sc.ShoppingCartProducts)
+                .HasForeignKey(scp => scp.ShoppingCartId);
 
             modelBuilder.Entity<ShoppingCartProduct>()
-                .HasOne(x => x.Product)
-                .WithMany(x => x.ShoppingCartItems)
-                .HasForeignKey(x => x.ProductId);
+                .HasOne(scp => scp.Product)
+                .WithMany(p => p.ShoppingCartItems)
+                .HasForeignKey(scp => scp.ProductId);
         }
 
     }

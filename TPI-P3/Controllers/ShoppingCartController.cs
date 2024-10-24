@@ -4,12 +4,16 @@ using Domain.Models.Purchases;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Application.Models.Requests;
+using Application.Models;
+using Microsoft.AspNetCore.Authorization;
+using System.Security.Claims;
 
 namespace TPI_P3.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class ShoppingCartController : ControllerBase
+    [Authorize]
+    public class ShoppingCartController : RoleCheckController
     {
         private readonly IShoppingCartService _shoppingCartService;
         public ShoppingCartController(IShoppingCartService shoppingCartService)
@@ -17,83 +21,82 @@ namespace TPI_P3.Controllers
             _shoppingCartService = shoppingCartService;
         }
 
-        [HttpGet("{clientId}")]
-        public ActionResult<ShoppingCart> GetShoppingCart(int clientId)
+        [HttpGet("Get-Cart-From-Client")]
+        public ActionResult<ShoppingCartDto> GetShoppingCart()
         {
-            var shoppingCart = _shoppingCartService.GetCartByClientId(clientId);
+            int userId = int.Parse(User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.NameIdentifier)?.Value ?? "");
+            var shoppingCart = _shoppingCartService.GetCartByClientId(userId);
+
             if (shoppingCart == null)
+
             {
-                return NotFound("Shopping cart not found.");
+                return NotFound();
             }
-            return Ok(shoppingCart);
+
+            var shoppingCartDto = ShoppingCartDto.Create(shoppingCart);
+            return Ok(shoppingCartDto);
         }
 
-        [HttpGet]
-        public ActionResult<List<ShoppingCart>> GetAll()
-        { 
+        [HttpGet("Get-All-Shopping-Carts")]
+        public ActionResult<List<ShoppingCartDto>> GetAll()
+        {
+            if (!IsAdminOrSuperAdmin())
+            {
+                return Forbid();
+            }
+
             var allShoppingCarts = _shoppingCartService.GetAll()
+                .Select(ShoppingCartDto.Create)
                 .ToList();
+
             return Ok(allShoppingCarts);
         }
 
-        [HttpGet("/GetCartByCartId/{id}")]
-        public ActionResult Get( int id) 
+        [HttpGet("Get-Any-Cart-By-Id/{id}")]
+        public ActionResult<ShoppingCartDto> Get(int id)
         {
+            if (!IsAdminOrSuperAdmin())
+            {
+                return Forbid();
+            }
+
             var shoppingCart = _shoppingCartService.GetById(id);
             if (shoppingCart == null)
 
             {
-                return NotFound("product doesnt exist");
+                return NotFound();
             }
-            else {
-                return Ok(shoppingCart);
+            else
+            {
+                var ShoppingCartDTO = ShoppingCartDto.Create(shoppingCart);
+                return Ok(ShoppingCartDTO);
             }
         }
 
-        [HttpPost("{clientId}/add-product")]
-        public ActionResult AddProductToCart(int clientId, [FromBody] AddProductToCartDto addProductToCartDto)
+        [HttpPost("Add-Product-To-Cart")]
+        public ActionResult AddProductToCart([FromBody] AddOrRemoveProductToCartDto addProductToCartDto)
         {
-            if (addProductToCartDto == null || addProductToCartDto.Quantity <= 0)
+            int userId = int.Parse(User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.NameIdentifier)?.Value ?? "");
+                        
+            if (!_shoppingCartService.AddProductToCart(userId, addProductToCartDto))
             {
-                return BadRequest("Invalid product details or quantity.");
+                return BadRequest("Invalid product details or unable to add product!");
             }
 
-            var product = new Product
-            {
-                Id = addProductToCartDto.ProductId
-            };
-
-            _shoppingCartService.AddProductToCart(clientId, product, addProductToCartDto.Quantity);
-            return Ok("Product added to cart successfully.");
+            return Ok("Product added to cart successfully!");
         }
 
-        [HttpDelete("remove-product/")]
-        public ActionResult RemoveProductFromCart(int clientId, int productId, int quantity)
+        [HttpDelete("Remove-Product-From-Cart")]
+        public ActionResult RemoveProductFromCart( [FromBody] AddOrRemoveProductToCartDto productToRemoveDto)
         {
-            if (quantity <= 0)
+            int userId = int.Parse(User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.NameIdentifier)?.Value ?? "");
+
+            if (!_shoppingCartService.RemoveProductFromCart(userId, productToRemoveDto))
             {
-                return BadRequest("Quantity must be greater than zero.");
+                return BadRequest();
             }
 
-            var shoppingCart = _shoppingCartService.GetCartByClientId(clientId);
-            if (shoppingCart == null)
-            {
-                return NotFound("Shopping cart not found.");
-            }
-
-            var cartProduct = shoppingCart.ShoppingCartProducts.FirstOrDefault(x => x.ProductId == productId);
-            if (cartProduct == null)
-            {
-                return NotFound("Product not found in the shopping cart.");
-            }
-
-            if (cartProduct.Quantity < quantity)
-            {
-                return BadRequest("Cannot remove more than available quantity.");
-            }
-
-            _shoppingCartService.RemoveProductFromCart(clientId, productId, quantity);
-            return Ok("Product removed from cart successfully.");
+            return Ok();
         }
     }
 }

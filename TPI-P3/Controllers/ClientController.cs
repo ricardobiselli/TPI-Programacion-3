@@ -1,13 +1,20 @@
 ﻿using Application.Interfaces;
+using Application.Models;
+using Application.Services;
 using Domain.Models.Users;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using System.ComponentModel.DataAnnotations;
+using TPI_P3.Controllers;
+
 
 namespace Api.Controllers
 {
     [Route("api/Clients")]
     [ApiController]
-    //[Authorize(Roles = "admin, superadmin")]
-    public class ClientController : ControllerBase
+    [Authorize]
+
+    public class ClientController : RoleCheckController
     {
         private readonly IClientService _clientService;
 
@@ -16,64 +23,85 @@ namespace Api.Controllers
             _clientService = clientService;
         }
 
-        [HttpPost("register")]
-        public  ActionResult<Client> Add([FromBody] Client client)
+        [HttpPost("Register-Client")]
+        [AllowAnonymous]
+        public ActionResult<ClientDTO> Add([FromBody] ClientDTO clientDto)
         {
-
-             _clientService.Add(client);
-            return Ok(client);
-
-
+            var newClient = _clientService.Add(clientDto);
+            return Ok(newClient);
         }
 
-        [HttpGet]
-        public  ActionResult<IEnumerable<Client>> GetAll()
+        [HttpGet("Get-All")]
+        public ActionResult<List<ClientDTO>> GetAll()
         {
-            var clients =  _clientService.GetAll();
-            if (clients == null)
+            if (!IsAdminOrSuperAdmin())
+            {
+                return Forbid();
+            }
+            var clients = _clientService.GetAll();
+
+            if (clients == null || clients.Count == 0)
             {
                 return NotFound();
             }
-            return Ok(clients);
+
+            var listOfClientsDto = new List<ClientDTO>();
+
+            return Ok(listOfClientsDto);
         }
 
-        [HttpGet("{id}")]
-        public  ActionResult<Client> GetById([FromRoute] int id)
+        [HttpGet("Get-One/{id}")]
+        public ActionResult<ClientDTO> GetById([FromRoute] int id)
         {
-            var client =  _clientService.GetById(id);
+            if (!IsAdminOrSuperAdmin())
+            {
+                return Forbid();
+            }
+            var client = _clientService.GetById(id);
+
             if (client == null)
             {
                 return NotFound();
             }
-            return Ok(client);
+
+            var clientDto = ClientDTO.Create(client);
+            return Ok(clientDto);
         }
 
-        [HttpDelete("{id}")]
-        public  ActionResult Delete([FromRoute] int id)
+        [HttpDelete("Delete/{id}")]
+        public ActionResult Delete([FromRoute] int id)
         {
-            var client =  _clientService.GetById(id);
+            if (!IsAdminOrSuperAdmin())
+            {
+                return Forbid();
+            }
+            var client = _clientService.GetById(id);
             if (client == null)
             {
                 return NotFound();
             }
 
-             _clientService.Delete(id);
+            _clientService.Delete(id);
             return NoContent();
         }
 
-        [HttpPut("{id}")]
-        public  ActionResult Update([FromRoute] int id, [FromBody] Client updatedClient)
+        [HttpPut("Update")]
+        public ActionResult Update([FromBody] ClientDTO clientDto)
         {
-            var client =  _clientService.GetById(id);
-            if (client == null)
+            if (!IsAdminOrSuperAdmin())
+            {
+                return Forbid();
+            }
+            var client = _clientService.GetById(clientDto.Id);
+            if (client == null )
             {
                 return NotFound();
             }
 
-             _clientService.Update(id, updatedClient);
+            _clientService.UpdateClient(clientDto);
             return NoContent();
         }
 
-        
+
     }
 }

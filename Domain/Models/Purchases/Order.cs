@@ -1,6 +1,7 @@
 ﻿using Domain.Models.Users;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Text.Json.Serialization;
 
 namespace Domain.Models.Purchases
 {
@@ -15,10 +16,13 @@ namespace Domain.Models.Purchases
         public Client Client { get; set; }
         [ForeignKey("ShoppingCartId")]
 
-        public int ShoppingCartId { get; set; }
+        public int? ShoppingCartId { get; set; }
         public ShoppingCart ShoppingCart { get; set; }
         public ICollection<OrderDetail> OrderDetails { get; set; }
-
+        public Order()
+        {
+            OrderDetails = new List<OrderDetail>();
+        }
         public Order(decimal totalAmount, int clientId)
         {
             OrderDate = DateTime.Now;

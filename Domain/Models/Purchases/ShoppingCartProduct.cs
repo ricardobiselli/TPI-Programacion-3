@@ -1,5 +1,6 @@
 ﻿using Domain.Models.Products;
 using System.ComponentModel.DataAnnotations;
+using System.Text.Json.Serialization;
 
 namespace Domain.Models.Purchases
 {

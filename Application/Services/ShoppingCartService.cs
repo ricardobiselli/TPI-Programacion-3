@@ -1,82 +1,109 @@
-﻿using Application.Interfaces;
-using Domain.IRepositories;
+﻿using System;
+using System.Collections.Generic;
+using Application.Exceptions;
+using Application.Interfaces;
+using Application.Models;
+using Application.Models.Requests;
 using Domain.IRepositories;
 using Domain.Models.Products;
 using Domain.Models.Purchases;
 
 namespace Application.Services
 {
-    public class ShoppingCartService : BaseService<ShoppingCart, int>, IShoppingCartService
+    public class ShoppingCartService : IShoppingCartService
     {
         private readonly IShoppingCartRepository _shoppingCartRepository;
         private readonly IProductRepository _productRepository;
-        public ShoppingCartService(IShoppingCartRepository shoppingCartRepository, IProductRepository productRepository): base(shoppingCartRepository) 
+
+        public ShoppingCartService(IShoppingCartRepository shoppingCartRepository, IProductRepository productRepository)
         {
             _shoppingCartRepository = shoppingCartRepository;
             _productRepository = productRepository;
         }
-        public ShoppingCart GetCartByClientId(int clientId)
-        {
-            return _shoppingCartRepository.GetByClientId(clientId);
 
+        public ShoppingCart GetCartByClientId(int userId)
+        {
+            try
+            {
+                return _shoppingCartRepository.GetCartByClientId(userId);
+            }
+            catch (Exception ex)
+            {
+                throw new ServiceException("Error retrieving cart by client ID", ex);
+            }
         }
-        public ShoppingCart Get(int shoppingCartId)
+
+        public bool AddProductToCart(int userId, AddOrRemoveProductToCartDto addProductToCartDto)
         {
-            return _shoppingCartRepository.GetShoppingCartWithProducts(shoppingCartId);
-        }
-
-
-        public void AddProductToCart(int clientId, Product product, int quantity)
-        {
-            var shoppingCart = _shoppingCartRepository.GetByClientId(clientId);
-
-            var existingProduct = _productRepository.GetById(product.Id);
-            if (existingProduct == null)
+            try
             {
-                throw new Exception("Product does not exist");
-            }
-
-            if (existingProduct.StockQuantity < quantity)
-            {
-                throw new Exception("No stock available for that quantity");
-            }
-            var cartProduct = shoppingCart.ShoppingCartProducts
-                                  .FirstOrDefault(x => x.ProductId == product.Id);
-
-            if (cartProduct != null)
-            {
-                cartProduct.Quantity += quantity; 
-            }
-            else
-            {
-                shoppingCart.ShoppingCartProducts.Add(new ShoppingCartProduct
+                if (addProductToCartDto == null || addProductToCartDto.Quantity <= 0)
                 {
-                    ShoppingCartId = shoppingCart.ShoppingCartId,
-                    ProductId = existingProduct.Id,
-                    Product = existingProduct,
-                    Quantity = quantity
-                });
-            }
+                    return false;
+                }
 
-            _shoppingCartRepository.Update(shoppingCart);
-        }
-      
-        public void RemoveProductFromCart(int clientId, int productId, int quantity)
-        {
-            var shoppingCart = _shoppingCartRepository.GetByClientId(clientId);
-            if (shoppingCart.ShoppingCartProducts.Count == 0)
-            {
-                throw new Exception("Shopping cart is empty");
-            }
+                var shoppingCart = _shoppingCartRepository.GetCartByClientId(userId);
+                var existingProduct = _productRepository.GetById(addProductToCartDto.ProductId);
 
-            var cartProduct = shoppingCart.ShoppingCartProducts
-                                         .FirstOrDefault(x => x.ProductId == productId);
-
-            if (cartProduct != null)
-            {
-                if (cartProduct.Quantity > quantity)
+                if (existingProduct == null || existingProduct.StockQuantity < addProductToCartDto.Quantity)
                 {
-                    cartProduct.Quantity -= quantity;
+                    return false;
+                }
+
+                var cartProduct = shoppingCart.ShoppingCartProducts
+                                              .FirstOrDefault(scp => scp.ProductId == addProductToCartDto.ProductId);
+
+                if (cartProduct != null)
+                {
+                    cartProduct.Quantity += addProductToCartDto.Quantity;
+                }
+                else
+                {
+                    shoppingCart.ShoppingCartProducts.Add(new ShoppingCartProduct
+                    {
+                        ShoppingCartId = shoppingCart.ShoppingCartId,
+                        ProductId = existingProduct.Id,
+                        Product = existingProduct,
+                        Quantity = addProductToCartDto.Quantity
+                    });
+                }
+
+                _shoppingCartRepository.Update(shoppingCart);
+                return true;
+            }
+            catch (Exception ex)
+            {
+                throw new ServiceException("Error adding product to cart", ex);
+            }
+        }
+
+        public bool RemoveProductFromCart(int userId, AddOrRemoveProductToCartDto productToRemoveDto)
+        {
+            try
+            {
+                if (productToRemoveDto == null || productToRemoveDto.Quantity <= 0)
+                {
+                    return false;
+                }
+
+                var shoppingCart = _shoppingCartRepository.GetCartByClientId(userId);
+
+                if (shoppingCart == null || shoppingCart.ShoppingCartProducts.Count == 0)
+                {
+                    return false;
+                }
+
+                var cartProduct = shoppingCart.ShoppingCartProducts
+                                              .FirstOrDefault(scp => scp.ProductId == productToRemoveDto.ProductId);
+
+                if (cartProduct == null || cartProduct.Quantity < productToRemoveDto.Quantity)
+                {
+                    return false;
+                }
+
+                if (cartProduct.Quantity > productToRemoveDto.Quantity)
+                {
+                    cartProduct.Quantity -= productToRemoveDto.Quantity;
                 }
                 else
                 {
@@ -84,10 +111,57 @@ namespace Application.Services
                 }
 
                 _shoppingCartRepository.Update(shoppingCart);
+                return true;
             }
-            else
+            catch (Exception ex)
             {
-                throw new Exception("Product not found in current cart");
+                throw new ServiceException("Error removing product from cart", ex);
+            }
+        }
+
+        public List<ShoppingCart> GetAll()
+        {
+            try
+            {
+                return _shoppingCartRepository.GetAll();
+            }
+            catch (Exception ex)
+            {
+                throw new ServiceException("Error retrieving carts", ex);
+            }
+        }
+
+        public ShoppingCart GetById(int id)
+        {
+            try
+            {
+                var shoppingCart = _shoppingCartRepository.GetById(id);
+                if (shoppingCart == null)
+                {
+                    throw new NotFoundException($"Cart with ID {id} not found");
+                }
+                return shoppingCart;
+            }
+            catch (NotFoundException)
+            {
+                throw;
+            }
+            catch (Exception ex)
+            {
+                throw new ServiceException("Error retrieving cart by ID", ex);
+            }
+        }
+
+        public void Delete(int id)
+        {
+            try
+            {
+                var shoppingCart = _shoppingCartRepository.GetById(id);
+                _shoppingCartRepository.Delete(shoppingCart);
+            }
+            catch (Exception ex)
+            {
+                throw new ServiceException("Error deleting cart", ex);
             }
         }
     }

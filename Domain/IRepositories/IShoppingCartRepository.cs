@@ -10,7 +10,7 @@ namespace Domain.IRepositories
 {
     public interface IShoppingCartRepository : IRepositoryBase<ShoppingCart>
     {
-        ShoppingCart GetByClientId(int clientId);
+        ShoppingCart GetCartByClientId(int clientId);
         ShoppingCart GetShoppingCartWithProducts(int shoppingCartId);
     }
 }

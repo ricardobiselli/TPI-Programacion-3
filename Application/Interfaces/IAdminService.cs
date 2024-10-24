@@ -4,8 +4,7 @@ using Domain.Models.Users;
 
 namespace Application.Interfaces
 {
-    public interface IAdminService : IBaseService<Admin, int>
+    public interface IAdminService 
     {
-        public void Update(int id, Admin updatedAdmin);
     }
 }

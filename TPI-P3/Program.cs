@@ -21,27 +21,22 @@ var issuer = authSettings["Issuer"];
 var audience = authSettings["Audience"];
 var jwtSecretKey = authSettings["SecretForKey"];
 
-
 if (string.IsNullOrEmpty(jwtSecretKey))
 {
     throw new InvalidOperationException("JWT secret key is missing or empty in configuration.");
 }
 
-
-
 // Add services to the container.
 builder.Services.AddControllers()
-//.AddJsonOptions(options =>
-//{
-//    options.JsonSerializerOptions.ReferenceHandler = System.Text.Json.Serialization.ReferenceHandler.IgnoreCycles;
-
-//});
 .AddJsonOptions(options =>
 {
-    options.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.Preserve;
+    options.JsonSerializerOptions.ReferenceHandler = System.Text.Json.Serialization.ReferenceHandler.IgnoreCycles;
+
 });
-
-
+//.AddJsonOptions(options =>
+//{
+//    options.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.Preserve;
+//});
 
 // Swagger Configuration
 builder.Services.AddEndpointsApiExplorer();
@@ -87,8 +82,6 @@ builder.Services.AddScoped<IAdminService, AdminService>();
 builder.Services.AddScoped<IOrderService, OrderService>();
 builder.Services.AddScoped<IShoppingCartService, ShoppingCartService>();
 
-
-
 // Configure JWT authentication
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
     .AddJwtBearer(options =>
@@ -112,18 +105,15 @@ builder.Services.AddAuthorization();
 builder.Services.Configure<CustomAuthenticationService.AuthenticationServiceOptions>(
     builder.Configuration.GetSection("AuthenticationService"));
 
-
-
-
-builder.Services.AddCors(options =>
-{
-    options.AddDefaultPolicy(builder =>
-    {
-        builder.WithOrigins("http://localhost:5173")
-               .AllowAnyHeader()
-               .AllowAnyMethod();
-    });
-});
+//builder.Services.AddCors(options =>
+//{
+//    options.AddDefaultPolicy(builder =>
+//    {
+//        builder.WithOrigins("http://localhost:5173")
+//               .AllowAnyHeader()
+//               .AllowAnyMethod();
+//    });
+//});
 
 var app = builder.Build();
 
@@ -136,9 +126,7 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 app.UseAuthentication();
-
 app.UseAuthorization();
 app.MapControllers();
 app.UseCors();
-
 app.Run();

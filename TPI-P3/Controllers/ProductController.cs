@@ -1,15 +1,18 @@
 ﻿using Application.Interfaces;
 using Domain.Models.Products;
+using Domain.Models.Users;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Application.Models;
+using Application.Services;
 
 namespace TPI_P3.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    //[Authorize]
+    [Authorize]
 
-    public class ProductsController : ControllerBase
+    public class ProductsController : RoleCheckController
     {
         private readonly IProductService _productService;
 
@@ -18,63 +21,91 @@ namespace TPI_P3.Controllers
             _productService = productService;
         }
 
-        [HttpGet]
+        [HttpGet("Get-All")]
         [AllowAnonymous]
-        public  ActionResult<IEnumerable<Product>> GetAll()
+        public ActionResult<List<ProductDto>> GetAll()
         {
-            var products =  _productService.GetAll();
-            return Ok(products);
+            var products = _productService.GetAll();
+
+            if (products == null || products.Count == 0)
+            {
+                return NotFound();
+            }
+            else
+            {
+                var productDtos = products
+                .Select(ProductDto.Create)
+                .ToList();
+
+                return Ok(productDtos);
+            }
         }
 
-        [HttpGet("{id}")]
+
+        [HttpGet("Get-One/{id}")]
         [AllowAnonymous]
-        public  ActionResult<Product> GetById(int id)
+        public ActionResult<ProductDto> GetById(int id)
         {
-            var product =  _productService.GetById(id);
+            var product = _productService.GetById(id);
 
             if (product == null)
             {
                 return NotFound();
             }
 
-            return Ok(product);
+            var productDto = ProductDto.Create(product);
+            return Ok(productDto);
         }
 
         [HttpPost("Add-Product")]
-        //[Authorize(Roles = "admin, superadmin")]
-        public  ActionResult<Product> Add(Product product)
+        public ActionResult<AddOrUpdateProductDto> Add(AddOrUpdateProductDto productDto)
         {
-             _productService.Add(product);
-            return Ok(product);
-        }
-
-        [HttpPut("Update-Product{id}")]
-        //[Authorize(Roles = "admin, superadmin")]
-        public  IActionResult Update(int id, Product product)
-        {
-            if (id != product.Id)
+            if (!IsAdminOrSuperAdmin())
+            {
+                return Forbid();
+            }
+            if (productDto == null)
             {
                 return BadRequest();
             }
+            else
+            {
+                var createdProduct = _productService.AddProduct(productDto);
 
-             _productService.Update(product);
-
-            return NoContent();
+                return Ok(createdProduct);
+            }
         }
-        
-        [HttpDelete("Detele-Product/{id}")]
-        //[Authorize(Roles = "admin, superadmin")]
 
-        public  IActionResult Delete(int id)
+        [HttpPut("Update-Product")]
+        public ActionResult Update(AddOrUpdateProductDto productDto)
         {
-            var product =  _productService.GetById(id);
+            if (!IsAdminOrSuperAdmin())
+            {
+                return Forbid();
+            }
+
+            else
+            {
+                _productService.UpdateProduct(productDto);
+                return NoContent();
+            }
+        }
+
+        [HttpDelete("Delete-Product/{id}")]
+        public ActionResult Delete(int id)
+        {
+            if (!IsAdminOrSuperAdmin())
+            {
+                return Forbid();
+            }
+
+            var product = _productService.GetById(id);
             if (product == null)
             {
                 return NotFound();
             }
 
-             _productService.Delete(id);
-
+            _productService.Delete(id);
             return NoContent();
         }
     }

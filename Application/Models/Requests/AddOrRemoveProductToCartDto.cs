@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Application.Models.Requests
 {
-    public class AddProductToCartDto
+    public class AddOrRemoveProductToCartDto
     {
         public int ProductId { get; set; }
         public int Quantity { get; set; }
