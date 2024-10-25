@@ -20,8 +20,15 @@ namespace Presentation.Controllers
         [HttpPost("authenticate")]
         public async Task<ActionResult<string>> AuthenticateAsync(UserLoginRequest authenticationRequest)
         {
-            string token = await _customAuthenticationService.AuthenticateAsync(authenticationRequest);
+            var token = await _customAuthenticationService.AuthenticateAsync(authenticationRequest);
+
+            if (token == null)
+            {
+                return Unauthorized("Usuario o contraseña incorrecta"); 
+            }
+
             return Ok(token);
         }
+
     }
 }

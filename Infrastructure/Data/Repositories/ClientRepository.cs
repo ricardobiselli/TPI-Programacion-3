@@ -17,10 +17,10 @@ namespace Infrastructure.Data.Repositories
             return _context.Clients
                 .Include(x => x.ShoppingCart)
                     .ThenInclude(x => x.ShoppingCartProducts)
-                        .ThenInclude(x => x.Product)  
+                        .ThenInclude(x => x.Product)
                 .Include(x => x.Orders)
                     .ThenInclude(x => x.OrderDetails)
-                        .ThenInclude(x => x.Product)  
+                        .ThenInclude(x => x.Product)
                 .FirstOrDefault(x => x.Id == id);
         }
 

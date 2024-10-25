@@ -1,13 +1,12 @@
 ﻿namespace Domain.Models.Users
 {
-    public class SuperAdmin: Admin
+    public class SuperAdmin : User
     {
-        public SuperAdmin(string userName, string email, string password, string userType) : base(userName, email, password, userType)
+        public SuperAdmin(string userName, string email, string password)
+            : base(userName, email, password, "superadmin")
         {
-            UserName = UserName;
-            Email = Email;
-            Password = Password;
-            UserType = "superadmin";
         }
     }
 }
+
+

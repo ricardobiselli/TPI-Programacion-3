@@ -1,16 +1,8 @@
 ﻿using Domain.Models.Products;
-using Domain.Models.Purchases;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text;
-using System.Text.Json.Serialization;
-using System.Threading.Tasks;
 
-namespace Application.Models
+namespace Application.Models.Requests
 {
-    public class AddOrUpdateProductDto
+    public class AddProductForAdminsDTO
     {
         public int Id { get; set; }
         public string? Name { get; set; }
@@ -20,9 +12,9 @@ namespace Application.Models
         public string? Category { get; set; }
         public decimal PowerConsumption { get; set; }
 
-        public static AddOrUpdateProductDto Create(Product product)
+        public static AddProductForAdminsDTO Create(Product product)
         {
-            return new AddOrUpdateProductDto
+            return new AddProductForAdminsDTO
             {
                 Name = product.Name,
                 Description = product.Description,
@@ -31,7 +23,7 @@ namespace Application.Models
                 Category = product.Category,
                 PowerConsumption = product.PowerConsumption,
             };
-            
+
         }
 
     }

@@ -1,8 +1,4 @@
-﻿using Application.Models;
-using Domain.Models.Products;
-using Domain.Models.Purchases;
-using System.Collections.Generic;
-using System.Threading.Tasks;
+﻿using Domain.Models.Purchases;
 
 namespace Application.Interfaces
 {

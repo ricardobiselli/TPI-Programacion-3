@@ -1,10 +1,10 @@
-﻿using Application.Interfaces;
+﻿using Application.Exceptions;
+using Application.Interfaces;
 using Application.Models;
-using Application.Services;
-using Domain.Models.Users;
+using Application.Models.Requests;
+using Domain.Enums;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using System.ComponentModel.DataAnnotations;
 using TPI_P3.Controllers;
 
 
@@ -25,10 +25,21 @@ namespace Api.Controllers
 
         [HttpPost("Register-Client")]
         [AllowAnonymous]
-        public ActionResult<ClientDTO> Add([FromBody] ClientDTO clientDto)
+        public ActionResult<AddClientDTO> Add([FromBody] AddClientDTO clientDto)
         {
-            var newClient = _clientService.Add(clientDto);
-            return Ok(newClient);
+            {
+                try
+                {
+                    var newClient = _clientService.Add(clientDto);
+                    return Ok(newClient);
+                }
+
+                catch (ServiceException ex)
+                {
+                    return BadRequest(new { message = ex.Message });
+                }
+            }
+
         }
 
         [HttpGet("Get-All")]
@@ -38,17 +49,20 @@ namespace Api.Controllers
             {
                 return Forbid();
             }
-            var clients = _clientService.GetAll();
 
-            if (clients == null || clients.Count == 0)
+            var clients = _clientService.GetAll()
+                .Where(c => c.State == EntitiesState.Active)
+                .Select(ClientDTO.Create)
+                .ToList();
+
+            if (!clients.Any())
             {
-                return NotFound();
+                return NotFound(new { message = "No active clients found" });
             }
 
-            var listOfClientsDto = new List<ClientDTO>();
-
-            return Ok(listOfClientsDto);
+            return Ok(clients);
         }
+
 
         [HttpGet("Get-One/{id}")]
         public ActionResult<ClientDTO> GetById([FromRoute] int id)
@@ -57,15 +71,17 @@ namespace Api.Controllers
             {
                 return Forbid();
             }
-            var client = _clientService.GetById(id);
-
-            if (client == null)
+            try
             {
-                return NotFound();
+                var client = _clientService.GetById(id);
+                var clientDto = ClientDTO.Create(client);
+                return Ok(clientDto);
             }
 
-            var clientDto = ClientDTO.Create(client);
-            return Ok(clientDto);
+            catch (NotFoundException ex)
+            {
+                return NotFound(new { message = ex.Message });
+            }
         }
 
         [HttpDelete("Delete/{id}")]
@@ -75,33 +91,37 @@ namespace Api.Controllers
             {
                 return Forbid();
             }
-            var client = _clientService.GetById(id);
-            if (client == null)
+            try
             {
-                return NotFound();
+                var client = _clientService.GetById(id);
+                _clientService.Delete(id);
+                return NoContent();
+            }
+            catch (NotFoundException ex)
+            {
+                return NotFound(new { message = ex.Message });
+
             }
 
-            _clientService.Delete(id);
-            return NoContent();
         }
 
         [HttpPut("Update")]
-        public ActionResult Update([FromBody] ClientDTO clientDto)
+        public ActionResult Update([FromBody] ClientUpdateDto clientDto)
         {
             if (!IsAdminOrSuperAdmin())
             {
                 return Forbid();
             }
-            var client = _clientService.GetById(clientDto.Id);
-            if (client == null )
+            try
             {
-                return NotFound();
+                _clientService.UpdateClient(clientDto);
+                return NoContent();
             }
-
-            _clientService.UpdateClient(clientDto);
-            return NoContent();
+            catch (NotFoundException ex)
+            {
+                return NotFound(new { message = ex.Message });
+            }
         }
-
 
     }
 }

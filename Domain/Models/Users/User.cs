@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Domain.Enums;
+using System.ComponentModel.DataAnnotations;
 
 namespace Domain.Models.Users
 {
@@ -10,7 +11,9 @@ namespace Domain.Models.Users
         public string? UserName { get; set; }
         public string? Email { get; set; }
         public string? Password { get; set; }
-        public string? UserType { get; set; } 
+        public string? UserType { get; set; }
+        public EntitiesState State { get; set; } = EntitiesState.Active;
+
         public User()
         {
         }
@@ -20,6 +23,7 @@ namespace Domain.Models.Users
             Email = email;
             Password = password;
             UserType = userType;
+            State = EntitiesState.Active;
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using Domain.IRepositories;
+﻿
+using Domain.IRepositories;
 using Domain.Models.Purchases;
 using Microsoft.EntityFrameworkCore;
 
@@ -16,18 +17,19 @@ namespace Infrastructure.Data.Repositories
         public ShoppingCart? GetCartByClientId(int clientId)
         {
             return _context.ShoppingCarts
-                .Include(x => x.Client)
-                .Include(x => x.ShoppingCartProducts)
-                    .ThenInclude(x => x.Product)
-                .FirstOrDefault(x => x.ClientId == clientId);
+                .Include(sc => sc.Client)
+                .Include(sc => sc.ShoppingCartProducts)
+                    .ThenInclude(scp => scp.Product)
+
+                .FirstOrDefault(sc => sc.ClientId == clientId);
         }
 
         public ShoppingCart? GetShoppingCartWithProducts(int shoppingCartId)
         {
             return _context.ShoppingCarts
-                .Include(x => x.ShoppingCartProducts)
-                    .ThenInclude(x => x.Product)
-                .FirstOrDefault(x => x.ShoppingCartId == shoppingCartId);
+                .Include(sc => sc.ShoppingCartProducts)
+                    .ThenInclude(scp => scp.Product)
+                .FirstOrDefault(sc => sc.ShoppingCartId == shoppingCartId);
         }
     }
 }

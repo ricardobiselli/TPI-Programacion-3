@@ -4,8 +4,6 @@ namespace Domain.Models.Users
 {
     public class Client : User
     {
-
-
         public string? FirstName { get; set; }
         public string? LastName { get; set; }
         public string? DniNumber { get; set; }
@@ -16,15 +14,14 @@ namespace Domain.Models.Users
         public Client(string userName, string email, string password, string firstName, string lastName, string dniNumber, string address)
             : base(userName, email, password, "client")
         {
-
             FirstName = firstName;
             LastName = lastName;
             DniNumber = dniNumber;
             Address = address;
             Orders = new List<Order>();
-            ShoppingCart = new ShoppingCart
+            ShoppingCart = new ShoppingCart()
             {
-                Client = this 
+                Client = this
             };
         }
         public Client()
@@ -33,7 +30,7 @@ namespace Domain.Models.Users
             Orders = new List<Order>();
             ShoppingCart = new ShoppingCart()
             {
-                Client = this 
+                Client = this
             };
 
         }

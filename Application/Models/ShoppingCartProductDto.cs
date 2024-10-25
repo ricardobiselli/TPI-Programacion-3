@@ -1,12 +1,4 @@
-﻿using Domain.Models.Products;
-using Domain.Models.Purchases;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text;
-using System.Text.Json.Serialization;
-using System.Threading.Tasks;
+﻿using Domain.Models.Purchases;
 
 namespace Application.Models
 {

@@ -1,7 +1,6 @@
 ﻿using Application.Exceptions;
 using Application.Interfaces;
 using Domain.IRepositories;
-using Domain.Models.Products;
 using Domain.Models.Purchases;
 
 namespace Application.Services
@@ -29,7 +28,7 @@ namespace Application.Services
                 var shoppingCart = _shoppingCartRepository.GetCartByClientId(userId);
                 if (shoppingCart.ShoppingCartProducts.Count == 0)
                 {
-                    throw new ServiceException("The shopping cart is empty!");
+                    throw new ValidateException("The shopping cart is empty!");
                 }
 
                 decimal totalAmount = shoppingCart.ShoppingCartProducts
@@ -45,7 +44,7 @@ namespace Application.Services
                     var product = _productRepository.GetById(cartProduct.ProductId);
                     if (product.StockQuantity < cartProduct.Quantity)
                     {
-                        throw new ServiceException($"Insufficient stock for product {product.Name}");
+                        throw new ValidateException($"Insufficient stock for product {product.Name}");
                     }
 
                     var orderDetail = new OrderDetail
@@ -68,13 +67,9 @@ namespace Application.Services
 
                 return order;
             }
-            catch (ServiceException)
-            {
-                throw;  
-            }
+
             catch (Exception ex)
             {
-                
                 throw new ServiceException("Error placing order from cart content", ex);
             }
         }
@@ -89,41 +84,25 @@ namespace Application.Services
             }
             catch (Exception ex)
             {
-                throw new ServiceException("Error retrieving orders by client ID", ex);
+                throw new NotFoundException("Error retrieving orders by client ID", ex);
             }
         }
 
         public List<Order> GetAll()
         {
-            try
-            {
-                return _orderRepository.GetAll();
-            }
-            catch (Exception ex)
-            {
-                throw new ServiceException("Error retrieving all orders", ex);
-            }
+            return _orderRepository.GetAll();
         }
 
         public Order GetById(int id)
         {
-            try
+
+            var order = _orderRepository.GetById(id);
+            if (order == null)
             {
-                var order = _orderRepository.GetById(id);
-                if (order == null)
-                {
-                    throw new NotFoundException($"Order with ID {id} not found");
-                }
-                return order;
+                throw new NotFoundException($"Order with ID {id} not found");
             }
-            catch (NotFoundException)
-            {
-                throw;
-            }
-            catch (Exception ex)
-            {
-                throw new ServiceException("Error retrieving order by ID", ex);
-            }
+            return order;
+
         }
 
         public void Delete(int id)
@@ -135,11 +114,10 @@ namespace Application.Services
             }
             catch (Exception ex)
             {
-                throw new ServiceException("Error deleting order", ex);
+                throw new NotFoundException($"Error deleting order {id}", ex);
             }
         }
     }
 }
 
 
-    

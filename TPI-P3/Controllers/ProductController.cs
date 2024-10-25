@@ -1,10 +1,10 @@
-﻿using Application.Interfaces;
-using Domain.Models.Products;
-using Domain.Models.Users;
+﻿using Application.Exceptions;
+using Application.Interfaces;
+using Application.Models;
+using Application.Models.Requests;
+using Domain.Enums;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Application.Models;
-using Application.Services;
 
 namespace TPI_P3.Controllers
 {
@@ -27,18 +27,17 @@ namespace TPI_P3.Controllers
         {
             var products = _productService.GetAll();
 
-            if (products == null || products.Count == 0)
-            {
-                return NotFound();
-            }
-            else
-            {
-                var productDtos = products
-                .Select(ProductDto.Create)
-                .ToList();
 
-                return Ok(productDtos);
+            var productDtos = products
+            .Where(p => p.State == EntitiesState.Active)
+            .Select(ProductDto.Create)
+            .ToList();
+
+            if (!productDtos.Any())
+            {
+                return NotFound(new { message = "List of Products in empty" });
             }
+            return Ok(productDtos);
         }
 
 
@@ -46,38 +45,43 @@ namespace TPI_P3.Controllers
         [AllowAnonymous]
         public ActionResult<ProductDto> GetById(int id)
         {
-            var product = _productService.GetById(id);
-
-            if (product == null)
+            try
             {
-                return NotFound();
+                var product = _productService.GetById(id);
+                var productDto = ProductDto.Create(product);
+                return Ok(productDto);
+            }
+            catch (NotFoundException ex)
+
+            {
+                return NotFound(new { message = ex.Message });
             }
 
-            var productDto = ProductDto.Create(product);
-            return Ok(productDto);
         }
 
         [HttpPost("Add-Product")]
-        public ActionResult<AddOrUpdateProductDto> Add(AddOrUpdateProductDto productDto)
+        public ActionResult<AddProductForAdminsDTO> Add(AddProductForAdminsDTO productDto)
         {
             if (!IsAdminOrSuperAdmin())
             {
                 return Forbid();
             }
-            if (productDto == null)
-            {
-                return BadRequest();
-            }
-            else
+            try
             {
                 var createdProduct = _productService.AddProduct(productDto);
 
                 return Ok(createdProduct);
             }
+            catch (ValidateException ex)
+            {
+
+                return BadRequest(new { message = ex.Message });
+            }
         }
 
+
         [HttpPut("Update-Product")]
-        public ActionResult Update(AddOrUpdateProductDto productDto)
+        public ActionResult Update(UpdateProductDto productDto)
         {
             if (!IsAdminOrSuperAdmin())
             {
@@ -98,15 +102,18 @@ namespace TPI_P3.Controllers
             {
                 return Forbid();
             }
-
-            var product = _productService.GetById(id);
-            if (product == null)
+            try
             {
-                return NotFound();
+                var product = _productService.GetById(id);
+                _productService.Delete(id);
+                return NoContent();
+            }
+            catch (NotFoundException ex)
+            {
+                return (NotFound(new { message = ex.Message }));
             }
 
-            _productService.Delete(id);
-            return NoContent();
         }
+
     }
 }

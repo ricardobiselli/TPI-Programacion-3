@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using Application.Exceptions;
+﻿using Application.Exceptions;
 using Application.Interfaces;
-using Application.Models;
 using Application.Models.Requests;
 using Domain.IRepositories;
-using Domain.Models.Products;
 using Domain.Models.Purchases;
 
 namespace Application.Services
@@ -23,14 +19,14 @@ namespace Application.Services
 
         public ShoppingCart GetCartByClientId(int userId)
         {
-            try
+
+            var cart = _shoppingCartRepository.GetCartByClientId(userId);
+
+            if (cart == null)
             {
-                return _shoppingCartRepository.GetCartByClientId(userId);
+                throw new NotFoundException("cart not found");
             }
-            catch (Exception ex)
-            {
-                throw new ServiceException("Error retrieving cart by client ID", ex);
-            }
+            return cart;
         }
 
         public bool AddProductToCart(int userId, AddOrRemoveProductToCartDto addProductToCartDto)
@@ -73,7 +69,7 @@ namespace Application.Services
             }
             catch (Exception ex)
             {
-                throw new ServiceException("Error adding product to cart", ex);
+                throw new ValidateException("Error adding product to cart", ex);
             }
         }
 
@@ -115,41 +111,24 @@ namespace Application.Services
             }
             catch (Exception ex)
             {
-                throw new ServiceException("Error removing product from cart", ex);
+                throw new ValidateException("Error removing product from cart", ex);
             }
         }
 
         public List<ShoppingCart> GetAll()
         {
-            try
-            {
-                return _shoppingCartRepository.GetAll();
-            }
-            catch (Exception ex)
-            {
-                throw new ServiceException("Error retrieving carts", ex);
-            }
+
+            return _shoppingCartRepository.GetAll();
         }
 
         public ShoppingCart GetById(int id)
         {
-            try
+            var shoppingCart = _shoppingCartRepository.GetById(id);
+            if (shoppingCart == null)
             {
-                var shoppingCart = _shoppingCartRepository.GetById(id);
-                if (shoppingCart == null)
-                {
-                    throw new NotFoundException($"Cart with ID {id} not found");
-                }
-                return shoppingCart;
+                throw new NotFoundException($"Cart with ID {id} not found");
             }
-            catch (NotFoundException)
-            {
-                throw;
-            }
-            catch (Exception ex)
-            {
-                throw new ServiceException("Error retrieving cart by ID", ex);
-            }
+            return shoppingCart;
         }
 
         public void Delete(int id)
@@ -161,7 +140,7 @@ namespace Application.Services
             }
             catch (Exception ex)
             {
-                throw new ServiceException("Error deleting cart", ex);
+                throw new NotFoundException($"cart number {id} doesn't exist", ex);
             }
         }
     }

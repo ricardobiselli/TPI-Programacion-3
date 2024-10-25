@@ -51,7 +51,7 @@ namespace Infrastructure.Data
 
             modelBuilder.Entity<ShoppingCartProduct>()
                 .HasOne(scp => scp.Product)
-                .WithMany(p => p.ShoppingCartItems)
+                .WithMany(p => p.ShoppingCartProducts)
                 .HasForeignKey(scp => scp.ProductId);
         }
 

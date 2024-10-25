@@ -38,6 +38,9 @@ namespace Infrastructure.Migrations
                     b.Property<decimal>("Price")
                         .HasColumnType("TEXT");
 
+                    b.Property<int>("State")
+                        .HasColumnType("INTEGER");
+
                     b.Property<int>("StockQuantity")
                         .HasColumnType("INTEGER");
 
@@ -164,6 +167,9 @@ namespace Infrastructure.Migrations
                     b.Property<string>("Password")
                         .HasColumnType("TEXT");
 
+                    b.Property<int>("State")
+                        .HasColumnType("INTEGER");
+
                     b.Property<string>("UserName")
                         .HasColumnType("TEXT");
 
@@ -207,7 +213,7 @@ namespace Infrastructure.Migrations
 
             modelBuilder.Entity("Domain.Models.Users.SuperAdmin", b =>
                 {
-                    b.HasBaseType("Domain.Models.Users.Admin");
+                    b.HasBaseType("Domain.Models.Users.User");
 
                     b.HasDiscriminator().HasValue("SuperAdmin");
                 });
@@ -262,7 +268,7 @@ namespace Infrastructure.Migrations
             modelBuilder.Entity("Domain.Models.Purchases.ShoppingCartProduct", b =>
                 {
                     b.HasOne("Domain.Models.Products.Product", "Product")
-                        .WithMany("ShoppingCartItems")
+                        .WithMany("ShoppingCartProducts")
                         .HasForeignKey("ProductId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -282,7 +288,7 @@ namespace Infrastructure.Migrations
                 {
                     b.Navigation("OrderDetails");
 
-                    b.Navigation("ShoppingCartItems");
+                    b.Navigation("ShoppingCartProducts");
                 });
 
             modelBuilder.Entity("Domain.Models.Purchases.Order", b =>

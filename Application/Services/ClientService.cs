@@ -1,18 +1,9 @@
-﻿using Domain.IRepositories;
-using Domain.Models.Users;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Application.Exceptions;
 using Application.Interfaces;
-using static System.Runtime.InteropServices.JavaScript.JSType;
-using Domain.Models.Purchases;
-using Application.Models;
-using System.Net;
-using System.Numerics;
-using Application.Exceptions;
-using Domain.Models.Products;
+using Application.Models.Requests;
+using Domain.Enums;
+using Domain.IRepositories;
+using Domain.Models.Users;
 
 namespace Application.Services
 {
@@ -25,46 +16,35 @@ namespace Application.Services
         }
         public Client GetByIdWithDetailsIncluded(int id)
         {
-            try
+            var client = _clientRepository.GetClientByIdWithDetailsIncluded(id);
+            if (client == null)
             {
-                return _clientRepository.GetClientByIdWithDetailsIncluded(id);
+                throw new ServiceException($"Error retrieving client number {id} with details");
             }
-            catch (Exception ex)
-            {
-                throw new ServiceException("Error retrieving client with details", ex);
-            }
+            return client;
         }
 
-        public void UpdateClient(ClientDTO clientDto)
+        public void UpdateClient(ClientUpdateDto clientDto)
         {
-            try
-            {
-                var client = _clientRepository.GetById(clientDto.Id);
-                if (client == null)
-                {
-                    throw new NotFoundException($"Client with ID {clientDto.Id} not found");
-                }
+            var client = _clientRepository.GetById(clientDto.Id);
 
-                client.UserName = clientDto.UserName;
-                client.Email = clientDto.Email;
-                client.FirstName = clientDto.FirstName;
-                client.LastName = clientDto.LastName;
-                client.Address = clientDto.Address;
-                client.DniNumber = clientDto.DniNumber;
+            if (client == null)
+            {
+                throw new NotFoundException($"Client with ID {clientDto.Id} not found");
+            }
 
-                _clientRepository.Update(client);
-            }
-            catch (NotFoundException)
-            {
-                throw;
-            }
-            catch (Exception ex)
-            {
-                throw new ServiceException("Error updating client", ex);
-            }
+            client.UserName = clientDto.UserName;
+            client.Email = clientDto.Email;
+            client.FirstName = clientDto.FirstName;
+            client.LastName = clientDto.LastName;
+            client.Address = clientDto.Address;
+            client.DniNumber = clientDto.DniNumber;
+
+            _clientRepository.Update(client);
         }
 
-        public Client Add(ClientDTO clientDTO)
+
+        public Client Add(AddClientDTO clientDTO)
         {
             try
             {
@@ -82,7 +62,8 @@ namespace Application.Services
                 _clientRepository.Add(newClient);
                 return newClient;
             }
-            catch (Exception ex)
+
+            catch (ServiceException ex)
             {
                 throw new ServiceException("Error adding client", ex);
             }
@@ -90,49 +71,34 @@ namespace Application.Services
 
         public List<Client> GetAll()
         {
-            try
-            {
-                return _clientRepository.GetAll();
-            }
-            catch (Exception ex)
-            {
-                throw new ServiceException("Error retrieving clients", ex);
-            }
+            return _clientRepository.GetAll();
         }
+
 
         public Client GetById(int id)
         {
-            try
+
+            var client = _clientRepository.GetById(id);
+            if (client == null)
             {
-                var client = _clientRepository.GetById(id);
-                if (client == null)
-                {
-                    throw new NotFoundException($"client with ID {id} not found");
-                }
-                return client;
+                throw new NotFoundException($"client with ID {id} not found");
             }
-            catch (NotFoundException)
-            {
-                throw;
-            }
-            catch (Exception ex)
-            {
-                throw new ServiceException("Error retrieving client by ID", ex);
-            }
+            return client;
+
         }
 
         public void Delete(int id)
         {
-            try
-            {
-                var client = GetById(id);
-                _clientRepository.Delete(client);
-            }
-            catch (Exception ex)
-            {
-                throw new ServiceException("Error deleting client", ex);
-            }
-        }
+            var clientForSoftDeletion = GetById(id);
 
+            if (clientForSoftDeletion == null)
+            {
+                throw new NotFoundException($"Error deleting client with id {id} (not found)");
+            }
+
+            clientForSoftDeletion.State = EntitiesState.Deleted;
+            _clientRepository.Update(clientForSoftDeletion);
+
+        }
     }
 }

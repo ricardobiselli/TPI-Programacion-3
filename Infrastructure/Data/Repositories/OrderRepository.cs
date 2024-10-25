@@ -1,6 +1,5 @@
 ﻿using Domain.IRepositories;
 using Domain.Models.Purchases;
-using Domain.Models.Users;
 using Microsoft.EntityFrameworkCore;
 
 namespace Infrastructure.Data.Repositories
@@ -20,7 +19,7 @@ namespace Infrastructure.Data.Repositories
         {
             return _context.Orders
                 .Include(o => o.OrderDetails)
-                    .ThenInclude(od=>od.Product)
+                    .ThenInclude(od => od.Product)
                 .Where(o => o.ClientId == clientId)
                 .ToList();
         }

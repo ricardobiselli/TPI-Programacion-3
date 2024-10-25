@@ -1,9 +1,4 @@
-﻿using Domain.Models.Purchases;
-using Domain.Models.Users;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
-using Newtonsoft.Json.Linq;
-using System.Security.Claims;
+﻿using Microsoft.AspNetCore.Mvc;
 
 namespace TPI_P3.Controllers
 {

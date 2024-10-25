@@ -1,10 +1,4 @@
-﻿using Domain.IRepositories;
-using Domain.Models.Purchases;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Domain.Models.Purchases;
 
 namespace Domain.IRepositories
 {

@@ -1,8 +1,4 @@
 ﻿using Domain.Models.Purchases;
-using Domain.Models.Users;
-using System.ComponentModel.DataAnnotations.Schema;
-using System.ComponentModel.DataAnnotations;
-using System.Text.Json.Serialization;
 namespace Application.Models
 {
     public class OrderDTO
