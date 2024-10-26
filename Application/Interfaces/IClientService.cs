@@ -1,4 +1,5 @@
-﻿using Application.Models.Requests;
+﻿using Application.Models;
+using Application.Models.Requests;
 using Domain.Models.Users;
 
 namespace Application.Interfaces
@@ -6,7 +7,7 @@ namespace Application.Interfaces
     public interface IClientService
     {
         public void UpdateClient(ClientUpdateDto clientDto);
-        public Client Add(AddClientDTO clientDTO);
+        public ClientResponseDTO Add(AddClientDTO clientDTO);
         public Client GetByIdWithDetailsIncluded(int id);
         public List<Client> GetAll();
         public Client GetById(int id);

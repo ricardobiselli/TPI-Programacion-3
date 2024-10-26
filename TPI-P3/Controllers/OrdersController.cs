@@ -34,7 +34,7 @@ namespace Api.Controllers
                 }
                 else
                 {
-                    return Unauthorized();
+                    return NotFound();
                 }
             }
             catch (ValidateException ex)

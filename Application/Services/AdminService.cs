@@ -1,5 +1,6 @@
 ﻿using Application.Exceptions;
 using Application.Interfaces;
+using Application.Models;
 using Application.Models.Requests;
 using Domain.Enums;
 using Domain.IRepositories;
@@ -16,7 +17,7 @@ namespace Application.Services
             _adminRepository = adminRepository;
         }
 
-        public Admin Add(AddNewAdminDTO addNewAdminDTO)
+        public ShowAdminDto Add(AddNewAdminDTO addNewAdminDTO)
         {
             try
             {
@@ -28,7 +29,8 @@ namespace Application.Services
 
                 _adminRepository.Add(newAdmin);
 
-                return newAdmin;
+                var createdAdmin =  ShowAdminDto.Create(newAdmin);
+                return createdAdmin;
             }
             catch (Exception ex)
             {

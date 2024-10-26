@@ -45,12 +45,13 @@ namespace Api.Controllers
         {
             var admins = _adminService.GetAll();
 
-            var ListOfAdminsDTO = admins.Select(ShowAdminDto.Create).ToList();
+            var ListOfAdminsDTO = admins.Where(a=>a.State == Domain.Enums.EntitiesState.Active).Select(ShowAdminDto.Create).ToList();
             if (!ListOfAdminsDTO.Any())
             {
                 return NotFound(new { message = "list of adming ins empty" });
             }
             return Ok(ListOfAdminsDTO);
+                
         }
 
         [HttpGet("Get-One/{id}")]

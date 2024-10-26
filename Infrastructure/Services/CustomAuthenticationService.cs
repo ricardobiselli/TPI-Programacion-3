@@ -27,24 +27,24 @@ namespace Infrastructure.Services
 
             if (user == null || user.Password != authenticationRequest.Password)
             {
-                return null; 
+                return null;
             }
 
             var securityKey = new SymmetricSecurityKey(Encoding.ASCII.GetBytes(_options.SecretForKey));
             var credentials = new SigningCredentials(securityKey, SecurityAlgorithms.HmacSha256);
 
             var claimsForToken = new List<Claim>
-    {
-        new Claim("sub", user.Id.ToString()),
-        new Claim("userName", user.UserName),
-        new Claim(ClaimTypes.Role, user.UserType)
-    };
-
-            if (user is Client client)
             {
-                claimsForToken.Add(new Claim("firstName", client.FirstName));
-                claimsForToken.Add(new Claim("lastName", client.LastName));
-            }
+                new Claim("sub", user.Id.ToString()),
+                //new Claim("userName", user.UserName),
+                new Claim(ClaimTypes.Role, user.UserType)
+            };
+
+            //if (user is Client client)
+            //{
+            //    claimsForToken.Add(new Claim("firstName", client.FirstName));
+            //    claimsForToken.Add(new Claim("lastName", client.LastName));
+            //}
 
             var jwtSecurityToken = new JwtSecurityToken(
                 _options.Issuer,

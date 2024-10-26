@@ -33,7 +33,10 @@ namespace Api.Controllers
                     var newClient = _clientService.Add(clientDto);
                     return Ok(newClient);
                 }
-
+                catch (ValidateException ex)
+                {
+                    return BadRequest(new { message = ex.Message });
+                }
                 catch (ServiceException ex)
                 {
                     return BadRequest(new { message = ex.Message });

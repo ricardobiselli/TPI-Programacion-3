@@ -1,4 +1,5 @@
 ﻿using Domain.Models.Users;
+using System.Text.Json.Serialization;
 
 namespace Application.Models
 {
@@ -7,6 +8,8 @@ namespace Application.Models
         public int Id { get; set; }
         public string UserName { get; set; }
         public string Email { get; set; }
+        [JsonIgnore]
+        public string Password { get; set; }
 
         public static ShowAdminDto Create(Admin admin)
         {
@@ -14,7 +17,8 @@ namespace Application.Models
             {
                 Id = admin.Id,
                 UserName = admin.UserName,
-                Email = admin.Email
+                Email = admin.Email,
+                Password = admin.Password
 
             };
         }

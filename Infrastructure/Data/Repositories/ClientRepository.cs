@@ -35,6 +35,15 @@ namespace Infrastructure.Data.Repositories
                         .ThenInclude(x => x.Product)
                 .ToList();
         }
+        public bool ExistsByUserName(string userName)
+        {
+            return _context.Clients.Any(c => c.UserName == userName);
+        }
+
+        public bool ExistsByEmail(string email)
+        {
+            return _context.Clients.Any(c => c.Email == email);
+        }
 
     }
 }

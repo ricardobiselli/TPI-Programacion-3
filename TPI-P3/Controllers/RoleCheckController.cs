@@ -54,10 +54,5 @@ namespace TPI_P3.Controllers
                 return false;
             }
         }
-
-
-
     }
-
 }
-

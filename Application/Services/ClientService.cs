@@ -1,5 +1,6 @@
 ﻿using Application.Exceptions;
 using Application.Interfaces;
+using Application.Models;
 using Application.Models.Requests;
 using Domain.Enums;
 using Domain.IRepositories;
@@ -44,10 +45,19 @@ namespace Application.Services
         }
 
 
-        public Client Add(AddClientDTO clientDTO)
+        public ClientResponseDTO Add(AddClientDTO clientDTO)
         {
             try
             {
+                if (_clientRepository.ExistsByUserName(clientDTO.UserName))
+                {
+                    throw new ValidateException($"The username '{clientDTO.UserName}' is already taken");
+                }
+
+                if (_clientRepository.ExistsByEmail(clientDTO.Email))
+                {
+                    throw new ValidateException($"The email '{clientDTO.Email}' is already registered");
+                }
                 var newClient = new Client
                 {
                     UserName = clientDTO.UserName,
@@ -60,7 +70,9 @@ namespace Application.Services
                 };
 
                 _clientRepository.Add(newClient);
-                return newClient;
+                var newClientToDto = ClientResponseDTO.Create(newClient);
+                return newClientToDto;
+
             }
 
             catch (ServiceException ex)
