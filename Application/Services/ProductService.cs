@@ -25,7 +25,8 @@ namespace Application.Services
                     Name = productDto.Name,
                     Description = productDto.Description,
                     Price = productDto.Price,
-                    StockQuantity = productDto.StockQuantity
+                    StockQuantity = productDto.StockQuantity,
+                    Category = productDto.Category,
                 };
 
                 _productRepository.Add(productToAdd);
