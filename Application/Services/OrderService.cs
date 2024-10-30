@@ -23,8 +23,7 @@ namespace Application.Services
 
         public Order PlaceAnOrderFromCartContent(int userId)
         {
-            try
-            {
+            
                 var shoppingCart = _shoppingCartRepository.GetCartByClientId(userId);
                 if (shoppingCart.ShoppingCartProducts.Count == 0)
                 {
@@ -66,12 +65,7 @@ namespace Application.Services
                 _shoppingCartRepository.Update(shoppingCart);
 
                 return order;
-            }
-
-            catch (Exception ex)
-            {
-                throw new ServiceException("Error placing order from cart content", ex);
-            }
+            
         }
 
 

@@ -59,7 +59,8 @@ namespace Application.Services
 
         public List<Product> GetAll()
         {
-            return _productRepository.GetAll();
+            var products = _productRepository.GetAll();
+            return products ?? new List<Product>();
         }
 
         public Product GetById(int id)

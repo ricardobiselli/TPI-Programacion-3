@@ -2,6 +2,7 @@
 using Application.Interfaces;
 using Application.Models.Requests;
 using Domain.IRepositories;
+using Domain.Models.Products;
 using Domain.Models.Purchases;
 
 namespace Application.Services
@@ -58,7 +59,7 @@ namespace Application.Services
                     shoppingCart.ShoppingCartProducts.Add(new ShoppingCartProduct
                     {
                         ShoppingCartId = shoppingCart.ShoppingCartId,
-                        ProductId = existingProduct.Id,
+                        ProductId = existingProduct.ProductId,
                         Product = existingProduct,
                         Quantity = addProductToCartDto.Quantity
                     });

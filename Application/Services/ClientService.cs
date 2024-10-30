@@ -11,9 +11,11 @@ namespace Application.Services
     public class ClientService : IClientService
     {
         private readonly IClientRepository _clientRepository;
-        public ClientService(IClientRepository clientRepository)
+        private readonly IUserRepository _userRepository;
+        public ClientService(IClientRepository clientRepository, IUserRepository userRepository)
         {
             _clientRepository = clientRepository;
+            _userRepository = userRepository;
         }
         public Client GetByIdWithDetailsIncluded(int id)
         {
@@ -45,45 +47,40 @@ namespace Application.Services
         }
 
 
-        public ClientResponseDTO Add(AddClientDTO clientDTO)
+        public ClientResponseDTO Add(AddClientDTO addClientDTO)
         {
-            try
+
+            if (_userRepository.ExistsByUserName(addClientDTO.UserName))
             {
-                if (_clientRepository.ExistsByUserName(clientDTO.UserName))
-                {
-                    throw new ValidateException($"The username '{clientDTO.UserName}' is already taken");
-                }
-
-                if (_clientRepository.ExistsByEmail(clientDTO.Email))
-                {
-                    throw new ValidateException($"The email '{clientDTO.Email}' is already registered");
-                }
-                var newClient = new Client
-                {
-                    UserName = clientDTO.UserName,
-                    Email = clientDTO.Email,
-                    FirstName = clientDTO.FirstName,
-                    LastName = clientDTO.LastName,
-                    Address = clientDTO.Address,
-                    Password = clientDTO.Password,
-                    DniNumber = clientDTO.DniNumber
-                };
-
-                _clientRepository.Add(newClient);
-                var newClientToDto = ClientResponseDTO.Create(newClient);
-                return newClientToDto;
-
+                throw new ValidateException($"The username '{addClientDTO.UserName}' is already taken");
             }
 
-            catch (ServiceException ex)
+            if (_userRepository.ExistsByEmail(addClientDTO.Email))
             {
-                throw new ServiceException("Error adding client", ex);
+                throw new ValidateException($"The email '{addClientDTO.Email}' is already registered");
             }
+            var newClient = new Client
+            {
+                UserName = addClientDTO.UserName,
+                Email = addClientDTO.Email,
+                FirstName = addClientDTO.FirstName,
+                LastName = addClientDTO.LastName,
+                Address = addClientDTO.Address,
+                Password = addClientDTO.Password,
+                DniNumber = addClientDTO.DniNumber
+            };
+
+            _clientRepository.Add(newClient);
+            var newClientToDto = ClientResponseDTO.Create(newClient);
+            return newClientToDto;
+
+
         }
 
         public List<Client> GetAll()
         {
-            return _clientRepository.GetAll();
+            var clients = _clientRepository.GetAll();
+            return clients ?? new List<Client>();
         }
 
 

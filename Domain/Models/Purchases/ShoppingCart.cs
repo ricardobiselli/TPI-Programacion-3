@@ -6,12 +6,12 @@ namespace Domain.Models.Purchases
 {
     public class ShoppingCart
     {
-        [Key]
         public int ShoppingCartId { get; set; }
-        [ForeignKey("Client")]
         public int ClientId { get; set; }
         public Client Client { get; set; }
+
         public DateTime DateOfShoppingCartCreation { get; set; }
+
         public ICollection<Order> Orders { get; set; }
         public ICollection<ShoppingCartProduct> ShoppingCartProducts { get; set; }
 

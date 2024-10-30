@@ -6,52 +6,67 @@ using Domain.Enums;
 using Domain.IRepositories;
 using Domain.Models.Users;
 
+
 namespace Application.Services
 {
     public class AdminService : IAdminService
     {
         private readonly IAdminRepository _adminRepository;
+        private readonly IUserRepository _userRepository;
 
-        public AdminService(IAdminRepository adminRepository)
+        public AdminService(IAdminRepository adminRepository, IUserRepository userRepository)
         {
             _adminRepository = adminRepository;
+            _userRepository = userRepository;
         }
 
         public ShowAdminDto Add(AddNewAdminDTO addNewAdminDTO)
         {
-            try
+            //try
+            //{
+            if (_userRepository.ExistsByUserName(addNewAdminDTO.UserName))
             {
-                var newAdmin = new Admin(
-                    addNewAdminDTO.UserName,
-                    addNewAdminDTO.Email,
-                    addNewAdminDTO.Password
-                );
-
-                _adminRepository.Add(newAdmin);
-
-                var createdAdmin =  ShowAdminDto.Create(newAdmin);
-                return createdAdmin;
+                throw new ValidateException($"The username '{addNewAdminDTO.UserName}' is already taken");
             }
-            catch (Exception ex)
+
+            if (_userRepository.ExistsByEmail(addNewAdminDTO.Email))
             {
-                throw new ValidateException("Something went wrong while adding a new admin", ex);
+                throw new ValidateException($"The email '{addNewAdminDTO.Email}' is already registered");
             }
+
+            var newAdmin = new Admin(
+                addNewAdminDTO.UserName,
+                addNewAdminDTO.Email,
+                addNewAdminDTO.Password
+            );
+
+            _adminRepository.Add(newAdmin);
+
+            var createdAdmin = ShowAdminDto.Create(newAdmin);
+            return createdAdmin;
+
+            //}
+            //catch (Exception ex)
+            //{
+            //    throw new ValidateException("Something went wrong while adding a new admin", ex);
+            //}
         }
         public List<Admin> GetAll()
         {
-            return _adminRepository.GetAll();
+            var admins = _adminRepository.GetAll();
+            return admins ?? new List<Admin>();
         }
 
         public Admin GetById(int id)
         {
-          
-                var admin = _adminRepository.GetById(id);
-                if (admin == null)
-                {
-                    throw new NotFoundException($"admin with ID {id} not found");
-                }
-                return admin;
-            
+
+            var admin = _adminRepository.GetById(id);
+            if (admin == null)
+            {
+                throw new NotFoundException($"admin with ID {id} not found");
+            }
+            return admin;
+
         }
 
         public void Delete(int id)
@@ -77,8 +92,7 @@ namespace Application.Services
 
             admin.UserName = updateAdminDTO.UserName;
             admin.Email = updateAdminDTO.Email;
-            admin.Password = updateAdminDTO.Password;
-           
+
 
             _adminRepository.Update(admin);
         }

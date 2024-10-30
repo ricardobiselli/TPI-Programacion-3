@@ -22,17 +22,12 @@ namespace TPI_P3.Controllers
         [HttpGet("Get-Cart-From-Client")]
         public ActionResult<ShoppingCartDto> GetShoppingCart()
         {
-            try
-            {
-                int userId = int.Parse(User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.NameIdentifier)?.Value ?? "");
-                var shoppingCart = _shoppingCartService.GetCartByClientId(userId);
-                var shoppingCartDto = ShoppingCartDto.Create(shoppingCart);
-                return Ok(shoppingCartDto);
-            }
-            catch (NotFoundException ex)
-            {
-                return NotFound(new { message = ex.Message });
-            }
+
+            int userId = int.Parse(User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.NameIdentifier)?.Value ?? "");
+            var shoppingCart = _shoppingCartService.GetCartByClientId(userId);
+            var shoppingCartDto = ShoppingCartDto.Create(shoppingCart);
+            return Ok(shoppingCartDto);
+
         }
 
         [HttpGet("Get-All-Shopping-Carts")]
@@ -62,56 +57,41 @@ namespace TPI_P3.Controllers
             {
                 return Forbid();
             }
-            try
-            {
-                var shoppingCart = _shoppingCartService.GetById(id);
-                var ShoppingCartDTO = ShoppingCartDto.Create(shoppingCart);
-                return Ok(ShoppingCartDTO);
-            }
-            catch (NotFoundException ex)
-            {
-                return NotFound(new { message = ex.Message });
-            }
+
+            var shoppingCart = _shoppingCartService.GetById(id);
+            var ShoppingCartDTO = ShoppingCartDto.Create(shoppingCart);
+            return Ok(ShoppingCartDTO);
+
         }
 
         [HttpPost("Add-Product-To-Cart")]
         public ActionResult AddProductToCart([FromBody] AddOrRemoveProductToCartDto addProductToCartDto)
         {
-            try
-            {
-                int userId = int.Parse(User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.NameIdentifier)?.Value ?? "");
 
-                if (!_shoppingCartService.AddProductToCart(userId, addProductToCartDto))
-                {
-                    return BadRequest("Invalid product details or unable to add product!");
-                }
+            int userId = int.Parse(User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.NameIdentifier)?.Value ?? "");
 
-                return Ok("Product added to cart successfully!");
-            }
-            catch (ValidateException ex)
+            if (!_shoppingCartService.AddProductToCart(userId, addProductToCartDto))
             {
-                return BadRequest(new { message = ex.Message });
+                return BadRequest("Invalid product details or unable to add product!");
             }
+
+            return Ok(new { message = "Product added to cart successfully!" });
+
         }
 
         [HttpDelete("Remove-Product-From-Cart")]
         public ActionResult RemoveProductFromCart([FromBody] AddOrRemoveProductToCartDto productToRemoveDto)
         {
-            try
-            {
-                int userId = int.Parse(User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.NameIdentifier)?.Value ?? "");
 
-                if (!_shoppingCartService.RemoveProductFromCart(userId, productToRemoveDto))
-                {
-                    return BadRequest();
-                }
+            int userId = int.Parse(User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.NameIdentifier)?.Value ?? "");
 
-                return Ok();
-            }
-            catch (ValidateException ex)
+            if (!_shoppingCartService.RemoveProductFromCart(userId, productToRemoveDto))
             {
-                return BadRequest(new { message = ex.Message });
+                return BadRequest();
             }
+
+            return Ok();
+
         }
     }
 }

@@ -6,7 +6,6 @@ namespace TPI_P3.Controllers
     [ApiController]
     public abstract class RoleCheckController : ControllerBase
     {
-
         protected bool IsAdminOrSuperAdmin()
         {
             if (User.IsInRole("admin") || User.IsInRole("superadmin"))
@@ -18,7 +17,6 @@ namespace TPI_P3.Controllers
                 return false;
             }
         }
-
         protected bool IsClient()
         {
             if (User.IsInRole("client"))
@@ -42,7 +40,6 @@ namespace TPI_P3.Controllers
                 return false;
             }
         }
-
         protected bool IsAdmin()
         {
             if (User.IsInRole("admin"))

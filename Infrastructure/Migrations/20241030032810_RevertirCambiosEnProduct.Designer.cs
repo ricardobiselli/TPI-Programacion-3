@@ -3,6 +3,7 @@ using System;
 using Infrastructure.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,20 +11,26 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Infrastructure.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20241030032810_RevertirCambiosEnProduct")]
+    partial class RevertirCambiosEnProduct
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "8.0.6");
 
             modelBuilder.Entity("Domain.Models.Products.Product", b =>
                 {
-                    b.Property<int>("ProductId")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("Category")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Compatibility")
+                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Description")
@@ -44,7 +51,7 @@ namespace Infrastructure.Migrations
                     b.Property<int>("StockQuantity")
                         .HasColumnType("INTEGER");
 
-                    b.HasKey("ProductId");
+                    b.HasKey("Id");
 
                     b.ToTable("Products");
                 });
@@ -162,22 +169,18 @@ namespace Infrastructure.Migrations
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Email")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Password")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<int>("State")
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("UserName")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<string>("UserType")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.HasKey("Id");
@@ -201,19 +204,15 @@ namespace Infrastructure.Migrations
                     b.HasBaseType("Domain.Models.Users.User");
 
                     b.Property<string>("Address")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<string>("DniNumber")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<string>("FirstName")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<string>("LastName")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.HasDiscriminator().HasValue("Client");

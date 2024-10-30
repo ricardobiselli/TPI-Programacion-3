@@ -13,6 +13,16 @@ namespace Infrastructure.Data.Repositories
             _context = context;
         }
 
+        public bool ExistsByUserName(string userName)
+        {
+            return _context.Users.Any(c => c.UserName == userName);
+        }
+
+        public bool ExistsByEmail(string email)
+        {
+            return _context.Users.Any(c => c.Email == email);
+        }
+
         public Task<User> GetUserByEmailOrUsername(string emailOrUsername)
         {
             return _context.Users.FirstOrDefaultAsync(u =>

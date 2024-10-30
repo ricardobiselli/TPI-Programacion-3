@@ -27,22 +27,8 @@ namespace Api.Controllers
         [AllowAnonymous]
         public ActionResult<AddClientDTO> Add([FromBody] AddClientDTO clientDto)
         {
-            {
-                try
-                {
-                    var newClient = _clientService.Add(clientDto);
-                    return Ok(newClient);
-                }
-                catch (ValidateException ex)
-                {
-                    return BadRequest(new { message = ex.Message });
-                }
-                catch (ServiceException ex)
-                {
-                    return BadRequest(new { message = ex.Message });
-                }
-            }
-
+            var newClient = _clientService.Add(clientDto);
+            return Ok(newClient);
         }
 
         [HttpGet("Get-All")]
@@ -74,17 +60,10 @@ namespace Api.Controllers
             {
                 return Forbid();
             }
-            try
-            {
-                var client = _clientService.GetById(id);
-                var clientDto = ClientDTO.Create(client);
-                return Ok(clientDto);
-            }
 
-            catch (NotFoundException ex)
-            {
-                return NotFound(new { message = ex.Message });
-            }
+            var client = _clientService.GetById(id);
+            var clientDto = ClientDTO.Create(client);
+            return Ok(clientDto);
         }
 
         [HttpDelete("Delete/{id}")]
@@ -94,18 +73,10 @@ namespace Api.Controllers
             {
                 return Forbid();
             }
-            try
-            {
-                var client = _clientService.GetById(id);
-                _clientService.Delete(id);
-                return NoContent();
-            }
-            catch (NotFoundException ex)
-            {
-                return NotFound(new { message = ex.Message });
 
-            }
-
+            var client = _clientService.GetById(id);
+            _clientService.Delete(id);
+            return NoContent();
         }
 
         [HttpPut("Update")]
@@ -115,15 +86,9 @@ namespace Api.Controllers
             {
                 return Forbid();
             }
-            try
-            {
-                _clientService.UpdateClient(clientDto);
-                return NoContent();
-            }
-            catch (NotFoundException ex)
-            {
-                return NotFound(new { message = ex.Message });
-            }
+
+            _clientService.UpdateClient(clientDto);
+            return NoContent();
         }
 
     }

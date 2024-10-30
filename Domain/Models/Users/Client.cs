@@ -4,10 +4,10 @@ namespace Domain.Models.Users
 {
     public class Client : User
     {
-        public string? FirstName { get; set; }
-        public string? LastName { get; set; }
-        public string? DniNumber { get; set; }
-        public string? Address { get; set; }
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+        public string DniNumber { get; set; }
+        public string Address { get; set; }
         public ICollection<Order>? Orders { get; set; }
         public ShoppingCart ShoppingCart { get; set; }
 

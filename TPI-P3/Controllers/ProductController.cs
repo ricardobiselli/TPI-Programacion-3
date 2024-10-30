@@ -26,9 +26,8 @@ namespace TPI_P3.Controllers
         public ActionResult<List<ProductDto>> GetAll()
         {
             var products = _productService.GetAll();
-
-
             var productDtos = products
+
             .Where(p => p.State == EntitiesState.Active)
             .Select(ProductDto.Create)
             .ToList();
@@ -40,22 +39,14 @@ namespace TPI_P3.Controllers
             return Ok(productDtos);
         }
 
-
         [HttpGet("Get-One/{id}")]
         [AllowAnonymous]
         public ActionResult<ProductDto> GetById(int id)
         {
-            try
-            {
-                var product = _productService.GetById(id);
-                var productDto = ProductDto.Create(product);
-                return Ok(productDto);
-            }
-            catch (NotFoundException ex)
 
-            {
-                return NotFound(new { message = ex.Message });
-            }
+            var product = _productService.GetById(id);
+            var productDto = ProductDto.Create(product);
+            return Ok(productDto);
 
         }
 
@@ -66,19 +57,11 @@ namespace TPI_P3.Controllers
             {
                 return Forbid();
             }
-            try
-            {
-                var createdProduct = _productService.AddProduct(productDto);
 
-                return Ok(createdProduct);
-            }
-            catch (ValidateException ex)
-            {
+            var createdProduct = _productService.AddProduct(productDto);
 
-                return BadRequest(new { message = ex.Message });
-            }
+            return Ok(createdProduct);
         }
-
 
         [HttpPut("Update-Product")]
         public ActionResult Update(UpdateProductDto productDto)
@@ -102,16 +85,10 @@ namespace TPI_P3.Controllers
             {
                 return Forbid();
             }
-            try
-            {
-                var product = _productService.GetById(id);
-                _productService.Delete(id);
-                return NoContent();
-            }
-            catch (NotFoundException ex)
-            {
-                return (NotFound(new { message = ex.Message }));
-            }
+
+            var product = _productService.GetById(id);
+            _productService.Delete(id);
+            return NoContent();
 
         }
 

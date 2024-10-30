@@ -28,60 +28,45 @@ namespace Api.Controllers
             {
                 return Forbid();
             }
-            try
-            {
 
-                var createdAdmin = _adminService.Add(addNewAdminDTO);
 
-                return Ok(createdAdmin);
-            }
-            catch (ValidateException ex)
-            {
-                return BadRequest(ex.Message);
-            }
+            var createdAdmin = _adminService.Add(addNewAdminDTO);
+
+            return Ok(createdAdmin);
+
         }
         [HttpGet("Get-All")]
         public ActionResult<List<ShowAdminDto>> GetAll()
         {
             var admins = _adminService.GetAll();
 
-            var ListOfAdminsDTO = admins.Where(a=>a.State == Domain.Enums.EntitiesState.Active).Select(ShowAdminDto.Create).ToList();
+            var ListOfAdminsDTO = admins.Where(a => a.State == Domain.Enums.EntitiesState.Active).Select(ShowAdminDto.Create).ToList();
             if (!ListOfAdminsDTO.Any())
             {
                 return NotFound(new { message = "list of adming ins empty" });
             }
             return Ok(ListOfAdminsDTO);
-                
+
         }
 
         [HttpGet("Get-One/{id}")]
         public ActionResult<ShowAdminDto> GetById([FromRoute] int id)
         {
-            try
-            {
-                var admin = _adminService.GetById(id);
-                var adminDTO = ShowAdminDto.Create(admin);
-                return Ok(adminDTO);
-            }
-            catch (NotFoundException ex)
-            {
-                return NotFound(ex.Message);
-            }
+
+            var admin = _adminService.GetById(id);
+            var adminDTO = ShowAdminDto.Create(admin);
+            return Ok(adminDTO);
+
         }
 
         [HttpDelete("Delete/{id}")]
         public ActionResult Delete([FromRoute] int id)
         {
-            try
-            {
-                var admin = _adminService.GetById(id);
-                _adminService.Delete(id);
-                return NoContent();
-            }
-            catch (NotFoundException ex)
-            {
-                return NotFound(ex.Message);
-            }
+
+            var admin = _adminService.GetById(id);
+            _adminService.Delete(id);
+            return NoContent();
+
         }
 
         [HttpPut("Update")]
@@ -91,15 +76,10 @@ namespace Api.Controllers
             {
                 return Forbid();
             }
-            try
-            {
-                _adminService.Update(updateAdminDTO);
-                return NoContent();
-            }
-            catch (NotFoundException ex)
-            {
-                return NotFound(new { message = ex.Message });
-            }
+
+            _adminService.Update(updateAdminDTO);
+            return NoContent();
+
         }
     }
 }

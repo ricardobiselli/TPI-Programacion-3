@@ -6,17 +6,16 @@ namespace Domain.Models.Purchases
 {
     public class Order
     {
-        [Key]
+   
         public int OrderId { get; set; }
-        public DateTime OrderDate { get; set; }
-        public decimal TotalAmount { get; set; }
-        [ForeignKey("ClientId")]
         public int ClientId { get; set; }
         public Client Client { get; set; }
-        [ForeignKey("ShoppingCartId")]
-
         public int? ShoppingCartId { get; set; }
         public ShoppingCart ShoppingCart { get; set; }
+
+        public DateTime OrderDate { get; set; }
+        public decimal TotalAmount { get; set; }
+
         public ICollection<OrderDetail> OrderDetails { get; set; }
         public Order()
         {

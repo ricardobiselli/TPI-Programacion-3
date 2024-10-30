@@ -17,6 +17,7 @@ namespace Infrastructure.Data.Repositories
         }
         public List<Order> GetOrdersWithDetails(int clientId)
         {
+
             return _context.Orders
                 .Include(o => o.OrderDetails)
                     .ThenInclude(od => od.Product)

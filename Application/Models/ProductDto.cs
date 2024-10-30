@@ -12,16 +12,12 @@ namespace Application.Models
         public int StockQuantity { get; set; }
         public string? Category { get; set; }
         public decimal PowerConsumption { get; set; }
-        [JsonIgnore]
-        public ICollection<OrderDetailDTO> OrderDetails { get; set; }
-        [JsonIgnore]
-        public ICollection<ShoppingCartProductDTO> ShoppingCartItems { get; set; }
 
         public static ProductDto Create(Product product)
         {
             return new ProductDto
             {
-                Id = product.Id,
+                Id = product.ProductId,
                 Name = product.Name,
                 Description = product.Description,
                 Price = product.Price,
