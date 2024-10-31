@@ -24,7 +24,7 @@ namespace Presentation.Controllers
 
             if (token == null)
             {
-                return Unauthorized("Usuario o contraseña incorrecta"); 
+                return Unauthorized(new { message = "Usuario o contraseña incorrecta" }); 
             }
 
             return Ok(token);

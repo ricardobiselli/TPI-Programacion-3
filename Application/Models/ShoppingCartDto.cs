@@ -5,6 +5,7 @@ namespace Application.Models
 {
     public class ShoppingCartDto
     {
+        [JsonIgnore]
         public int Id { get; set; }
         [JsonIgnore]
         public int ClientId { get; set; }

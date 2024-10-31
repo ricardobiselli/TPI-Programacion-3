@@ -1,10 +1,12 @@
 ﻿using Domain.Models.Purchases;
+using System.Text.Json.Serialization;
 
 namespace Application.Models
 {
 
     public class OrderDetailDTO
     {
+        [JsonIgnore]
         public int ProductId { get; set; }
         public string ProductName { get; set; }
         public int Quantity { get; set; }

@@ -4,7 +4,6 @@ namespace Application.Models
 {
     public class ShowOrdersToClientDTO
     {
-        public int Id { get; set; }
         public DateTime OrderDate { get; set; }
         public decimal TotalAmount { get; set; }
 
@@ -14,7 +13,6 @@ namespace Application.Models
         {
             return new ShowOrdersToClientDTO
             {
-                Id = order.OrderId,
                 TotalAmount = order.TotalAmount,
                 OrderDate = order.OrderDate,
                 OrderDetails = order.OrderDetails.Select(OrderDetailDTO.Create).ToList()
@@ -22,3 +20,4 @@ namespace Application.Models
         }
     }
 }
+    

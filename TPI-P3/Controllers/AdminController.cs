@@ -43,7 +43,7 @@ namespace Api.Controllers
             var ListOfAdminsDTO = admins.Where(a => a.State == Domain.Enums.EntitiesState.Active).Select(ShowAdminDto.Create).ToList();
             if (!ListOfAdminsDTO.Any())
             {
-                return NotFound(new { message = "list of adming ins empty" });
+                return NotFound(new { message = "list of admins is empty" });
             }
             return Ok(ListOfAdminsDTO);
 

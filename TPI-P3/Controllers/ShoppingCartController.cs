@@ -72,7 +72,7 @@ namespace TPI_P3.Controllers
 
             if (!_shoppingCartService.AddProductToCart(userId, addProductToCartDto))
             {
-                return BadRequest("Invalid product details or unable to add product!");
+                return BadRequest(new { message = "Invalid product details or unable to add product!" });
             }
 
             return Ok(new { message = "Product added to cart successfully!" });
