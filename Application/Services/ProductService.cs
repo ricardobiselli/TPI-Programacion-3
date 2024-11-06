@@ -20,14 +20,16 @@ namespace Application.Services
         {
             try
             {
-                var productToAdd = new Product
-                {
-                    Name = productDto.Name,
-                    Description = productDto.Description,
-                    Price = productDto.Price,
-                    StockQuantity = productDto.StockQuantity,
-                    Category = productDto.Category,
-                };
+
+                var productToAdd = new Product(
+                        productDto.Name,
+                        productDto.Description,
+                        productDto.Category,
+                        productDto.Price,
+                        productDto.StockQuantity,
+                        productDto.PowerConsumption
+                 );
+
 
                 _productRepository.Add(productToAdd);
                 return productToAdd;

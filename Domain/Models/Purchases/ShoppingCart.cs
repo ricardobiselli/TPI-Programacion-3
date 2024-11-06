@@ -1,6 +1,4 @@
 ﻿using Domain.Models.Users;
-using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Domain.Models.Purchases
 {
@@ -9,9 +7,7 @@ namespace Domain.Models.Purchases
         public int ShoppingCartId { get; set; }
         public int ClientId { get; set; }
         public Client Client { get; set; }
-
         public DateTime DateOfShoppingCartCreation { get; set; }
-
         public ICollection<Order> Orders { get; set; }
         public ICollection<ShoppingCartProduct> ShoppingCartProducts { get; set; }
 
@@ -21,9 +17,5 @@ namespace Domain.Models.Purchases
             ShoppingCartProducts = new List<ShoppingCartProduct>();
             DateOfShoppingCartCreation = DateTime.Now;
         }
-
-
-
-
     }
 }

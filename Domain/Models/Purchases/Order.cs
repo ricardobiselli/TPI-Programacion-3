@@ -6,7 +6,7 @@ namespace Domain.Models.Purchases
 {
     public class Order
     {
-   
+
         public int OrderId { get; set; }
         public int ClientId { get; set; }
         public Client Client { get; set; }
@@ -18,14 +18,13 @@ namespace Domain.Models.Purchases
 
         public ICollection<OrderDetail> OrderDetails { get; set; }
         public Order()
-        {
-            OrderDetails = new List<OrderDetail>();
-        }
-        public Order(decimal totalAmount, int clientId)
+        {}
+        public Order(decimal totalAmount, int clientId, int shoppingcartId)
         {
             OrderDate = DateTime.Now;
             TotalAmount = totalAmount;
             ClientId = clientId;
+            ShoppingCartId = shoppingcartId;
             OrderDetails = new List<OrderDetail>();
 
         }

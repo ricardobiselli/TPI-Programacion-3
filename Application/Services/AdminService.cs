@@ -22,8 +22,7 @@ namespace Application.Services
 
         public ShowAdminDto Add(AddNewAdminDTO addNewAdminDTO)
         {
-            //try
-            //{
+            
             if (_userRepository.ExistsByUserName(addNewAdminDTO.UserName))
             {
                 throw new ValidateException($"The username '{addNewAdminDTO.UserName}' is already taken");
@@ -45,11 +44,7 @@ namespace Application.Services
             var createdAdmin = ShowAdminDto.Create(newAdmin);
             return createdAdmin;
 
-            //}
-            //catch (Exception ex)
-            //{
-            //    throw new ValidateException("Something went wrong while adding a new admin", ex);
-            //}
+            
         }
         public List<Admin> GetAll()
         {

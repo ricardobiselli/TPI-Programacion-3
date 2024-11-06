@@ -60,15 +60,15 @@ namespace Application.Services
                 throw new ValidateException($"The email '{addClientDTO.Email}' is already registered");
             }
             var newClient = new Client
-            {
-                UserName = addClientDTO.UserName,
-                Email = addClientDTO.Email,
-                FirstName = addClientDTO.FirstName,
-                LastName = addClientDTO.LastName,
-                Address = addClientDTO.Address,
-                Password = addClientDTO.Password,
-                DniNumber = addClientDTO.DniNumber
-            };
+            (
+                addClientDTO.UserName,
+                addClientDTO.Email,
+                addClientDTO.Password,
+                addClientDTO.FirstName,
+                addClientDTO.LastName,
+                addClientDTO.DniNumber,
+                addClientDTO.Address
+            );
 
             _clientRepository.Add(newClient);
             var newClientToDto = ClientResponseDTO.Create(newClient);

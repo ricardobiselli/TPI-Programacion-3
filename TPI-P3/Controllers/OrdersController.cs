@@ -23,6 +23,8 @@ namespace Api.Controllers
         [HttpPost("Place-Order")]
         public ActionResult ConfirmOrder()
         {
+            if (!IsClient())
+            { return Forbid(); }
 
             var userId = int.Parse(User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.NameIdentifier)?.Value ?? "");
             var order = _orderService.PlaceAnOrderFromCartContent(userId);

@@ -35,19 +35,6 @@ namespace Application.Models.Requests
         public string? Password { get; set; }
 
 
-        //public static AddClientDTO Create(Client client)
-        //{
-        //    return new AddClientDTO
-        //    {
-        //        FirstName = client.FirstName,
-        //        LastName = client.LastName,
-        //        DniNumber = client.DniNumber,
-        //        Address = client.Address,
-        //        UserName = client.UserName,
-        //        Email = client.Email,
-        //        Password = client.Password,
-
-        //    };
-        //}
+       
     }
 }

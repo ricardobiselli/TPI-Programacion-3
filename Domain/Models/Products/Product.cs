@@ -1,6 +1,5 @@
 ﻿using Domain.Enums;
 using Domain.Models.Purchases;
-using System.ComponentModel.DataAnnotations;
 
 
 namespace Domain.Models.Products
@@ -17,8 +16,9 @@ namespace Domain.Models.Products
         public EntitiesState State { get; set; } = EntitiesState.Active;
         public ICollection<OrderDetail> OrderDetails { get; set; }
         public ICollection<ShoppingCartProduct> ShoppingCartProducts { get; set; }
+
         public Product() { }
-        public Product(string name, string description, string category, decimal price, int stock, int power)
+        public Product(string name, string description, string category, decimal price, int stock, decimal power)
         {
             Name = name;
             Description = description;

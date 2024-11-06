@@ -27,6 +27,9 @@ namespace Api.Controllers
         [AllowAnonymous]
         public ActionResult<AddClientDTO> Add([FromBody] AddClientDTO clientDto)
         {
+            if (IsClient())
+            { return Forbid(); }
+
             var newClient = _clientService.Add(clientDto);
             return Ok(newClient);
         }

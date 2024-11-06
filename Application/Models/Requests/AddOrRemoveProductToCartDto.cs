@@ -11,13 +11,6 @@ namespace Application.Models.Requests
 
         public int Quantity { get; set; }
 
-        public static AddOrRemoveProductToCartDto Create(Product product)
-        {
-            return new AddOrRemoveProductToCartDto
-            {
-                ProductId = product.ProductId,
-                Quantity = product.StockQuantity,
-            };
-        }
+       
     }
 }

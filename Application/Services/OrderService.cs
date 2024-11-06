@@ -23,49 +23,42 @@ namespace Application.Services
 
         public Order PlaceAnOrderFromCartContent(int userId)
         {
-            
-                var shoppingCart = _shoppingCartRepository.GetCartByClientId(userId);
-                if (shoppingCart.ShoppingCartProducts.Count == 0)
+
+            var shoppingCart = _shoppingCartRepository.GetCartByClientId(userId);
+            if (shoppingCart.ShoppingCartProducts.Count == 0)
+            {
+                throw new ValidateException("The shopping cart is empty!");
+            }
+
+            decimal totalAmount = shoppingCart.ShoppingCartProducts
+                .Sum(product => product.Quantity * product.Product.Price);
+
+            var order = new Order(totalAmount, userId, shoppingCart.ShoppingCartId);
+           
+            foreach (var cartProduct in shoppingCart.ShoppingCartProducts)
+            {
+                var product = _productRepository.GetById(cartProduct.ProductId);
+                if (product.StockQuantity < cartProduct.Quantity)
                 {
-                    throw new ValidateException("The shopping cart is empty!");
+                    throw new ValidateException($"Insufficient stock for product {product.Name}");
                 }
 
-                decimal totalAmount = shoppingCart.ShoppingCartProducts
-                    .Sum(product => product.Quantity * product.Product.Price);
+                var orderDetail = new OrderDetail
+                (
+                    cartProduct.ProductId, order.OrderId, cartProduct.Quantity, cartProduct.Product.Price
+                );
 
-                var order = new Order(totalAmount, userId)
-                {
-                    ShoppingCartId = shoppingCart.ShoppingCartId
-                };
+                order.OrderDetails.Add(orderDetail);
+                product.StockQuantity -= cartProduct.Quantity;
+                _productRepository.Update(product);
+            }
 
-                foreach (var cartProduct in shoppingCart.ShoppingCartProducts)
-                {
-                    var product = _productRepository.GetById(cartProduct.ProductId);
-                    if (product.StockQuantity < cartProduct.Quantity)
-                    {
-                        throw new ValidateException($"Insufficient stock for product {product.Name}");
-                    }
+            _orderRepository.Add(order);
+            shoppingCart.ShoppingCartProducts.Clear();
+            _shoppingCartRepository.Update(shoppingCart);
 
-                    var orderDetail = new OrderDetail
-                    {
-                        ProductId = cartProduct.ProductId,
-                        Quantity = cartProduct.Quantity,
-                        UnitPrice = cartProduct.Product.Price,
-                        Subtotal = cartProduct.Quantity * cartProduct.Product.Price,
-                        Order = order
-                    };
+            return order;
 
-                    order.OrderDetails.Add(orderDetail);
-                    product.StockQuantity -= cartProduct.Quantity;
-                    _productRepository.Update(product);
-                }
-
-                _orderRepository.Add(order);
-                shoppingCart.ShoppingCartProducts.Clear();
-                _shoppingCartRepository.Update(shoppingCart);
-
-                return order;
-            
         }
 
 

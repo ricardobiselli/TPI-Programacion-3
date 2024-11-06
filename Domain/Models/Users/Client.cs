@@ -24,16 +24,6 @@ namespace Domain.Models.Users
                 Client = this
             };
         }
-        public Client()
-        {
-            UserType = "client";
-            Orders = new List<Order>();
-            ShoppingCart = new ShoppingCart()
-            {
-                Client = this
-            };
-
-        }
 
     }
 }

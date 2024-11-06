@@ -30,19 +30,7 @@ namespace Application.Models.Requests
         [Range(0, 999, ErrorMessage = "Power consumption value must be between 0 and 999")]
         public decimal PowerConsumption { get; set; }
 
-        //public static UpdateProductDto Create(Product product)
-        //{
-        //    return new UpdateProductDto
-        //    {
-        //        Name = product.Name,
-        //        Description = product.Description,
-        //        Price = product.Price,
-        //        StockQuantity = product.StockQuantity,
-        //        Category = product.Category,
-        //        PowerConsumption = product.PowerConsumption,
-        //    };
-
-        //}
+        
 
     }
 }

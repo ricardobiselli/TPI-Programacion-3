@@ -57,12 +57,12 @@ namespace Application.Services
                 else
                 {
                     shoppingCart.ShoppingCartProducts.Add(new ShoppingCartProduct
-                    {
-                        ShoppingCartId = shoppingCart.ShoppingCartId,
-                        ProductId = existingProduct.ProductId,
-                        Product = existingProduct,
-                        Quantity = addProductToCartDto.Quantity
-                    });
+                    (
+                        shoppingCart.ShoppingCartId,
+                        existingProduct.ProductId,
+                        existingProduct,
+                        addProductToCartDto.Quantity
+                    ));
                 }
 
                 _shoppingCartRepository.Update(shoppingCart);

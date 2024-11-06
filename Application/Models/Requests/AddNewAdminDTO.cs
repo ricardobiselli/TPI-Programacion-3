@@ -18,15 +18,7 @@ namespace Application.Models.Requests
         [RegularExpression(@"[^@\s]+@[^@\s]+\.[^@\s]+$",ErrorMessage = "invalid mail format")]
         public string Email { get; set; }
 
-        //public static AddNewAdminDTO Create(Admin admin)
-        //{
-        //    return new AddNewAdminDTO
-        //    {
-        //        UserName = admin.UserName,
-        //        Password = admin.Password,
-        //        Email = admin.Email,
-        //    };
-        //}
+        
     }
 }
 

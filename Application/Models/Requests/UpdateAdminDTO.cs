@@ -16,15 +16,7 @@ namespace Application.Models.Requests
         [Required(ErrorMessage = "Email  is required")]
         public string Email { get; set; }
 
-        //public static UpdateAdminDTO Create(Admin admin)
-        //{
-        //    return new UpdateAdminDTO
-        //    {
-        //        Id = admin.Id,
-        //        UserName = admin.UserName,
-        //        Email = admin.Email,
-        //    };
-        //}
+       
     }
 }
 

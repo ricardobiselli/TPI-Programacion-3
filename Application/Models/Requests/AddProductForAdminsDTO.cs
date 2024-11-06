@@ -22,7 +22,7 @@ namespace Application.Models.Requests
         [Range(0, 99999, ErrorMessage = "Stock value must be between 0 and 99999")]
         public int StockQuantity { get; set; }
 
-        [Required(ErrorMessage ="Category field is required")]
+        [Required(ErrorMessage = "Category field is required")]
         [StringLength(20, MinimumLength = 3)]
         public string? Category { get; set; }
 
@@ -30,19 +30,7 @@ namespace Application.Models.Requests
         [Range(0, 999, ErrorMessage = "Power consumption value must be between 0 and 999")]
         public decimal PowerConsumption { get; set; }
 
-        //public static AddProductForAdminsDTO Create(Product product)
-        //{
-        //    return new AddProductForAdminsDTO
-        //    {
-        //        Name = product.Name,
-        //        Description = product.Description,
-        //        Price = product.Price,
-        //        StockQuantity = product.StockQuantity,
-        //        Category = product.Category,
-        //        PowerConsumption = product.PowerConsumption,
-        //    };
-
-        //}
+        
 
     }
 }

@@ -1,6 +1,4 @@
 ﻿using Domain.Models.Products;
-using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Domain.Models.Purchases
 {
@@ -16,13 +14,10 @@ namespace Domain.Models.Purchases
         public decimal UnitPrice { get; set; }
         public decimal Subtotal { get; set; }
 
-        public OrderDetail()
-        {
-        }
-
-        public OrderDetail(int productId, int quantity, decimal unitPrice)
+        public OrderDetail(int productId, int orderId, int quantity, decimal unitPrice)
         {
             ProductId = productId;
+            OrderId = orderId;
             Quantity = quantity;
             UnitPrice = unitPrice;
             Subtotal = quantity * unitPrice;
